@@ -1,0 +1,40 @@
+/*
+Theme Name: TP1 Sammuel Rwota
+Theme URI: https://referenced.ca/
+Author: the WordPress team
+Author URI: https://github.com/
+Description: Thème développé dans le cadre du cours 4w4
+Version: 1.0
+Requires at least: 6.0
+Tested up to: 5.4
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: tp1-sr
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* ///////////////////////////
+Les variables
+/////////////////////////////// */
+@import "variables/couleurs";
+
+/* //////////////////////////////
+Les balises de bases
+/////////////////////////////// */
+@import "base/simple";
+
+/* //////////////////////////////
+Les composants
+/////////////////////////////// */
+@import "composants/menu";
+@import "composants/recherche";
+
+/* //////////////////////////////
+Les layouts
+/////////////////////////////// */
+@import "layouts/general";
+@import "layouts/entete";
+@import "layouts/galerie";
+@import "layouts/hero";
