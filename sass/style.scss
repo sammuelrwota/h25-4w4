@@ -28,13 +28,16 @@ Les balises de bases
 /* //////////////////////////////
 Les composants
 /////////////////////////////// */
+@import "composants/carte";
 @import "composants/menu";
 @import "composants/recherche";
+
 
 /* //////////////////////////////
 Les layouts
 /////////////////////////////// */
-@import "layouts/general";
 @import "layouts/entete";
-@import "layouts/galerie";
-@import "layouts/hero";
+@import "layouts/footer";
+@import "layouts/principal";
+
+

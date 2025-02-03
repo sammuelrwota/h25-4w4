@@ -60,6 +60,16 @@ Les composants
 /* //////////////////////////////
 Les layouts
 /////////////////////////////// */
+.global {
+  max-width: 1100px;
+  padding: 10vh 5vw;
+}
+
+.hero {
+  background-image: url("images/maldives.jpg");
+  min-height: 100vh;
+}/*# sourceMappingURL=style.css.map */
+
 
 .menu {
   flex: 1 1 50%;
@@ -150,15 +160,7 @@ Le composant .carte
 /* /////////////////////////
 Layout 
 /////////////////////////// */
-.global {
-  margin: 0 auto;
-  max-width: 1000px;
-}
 
-.hero {
-  min-height: 100vh;
-  background-image: url("images/maldives.jpg");
-}
 
 .entete {
   display: flex;
