@@ -68,7 +68,10 @@ Les layouts
 .hero {
   background-image: url("images/maldives.jpg");
   min-height: 100vh;
-}/*# sourceMappingURL=style.css.map */
+}
+
+    
+
 
 
 .menu {
@@ -95,9 +98,10 @@ Les layouts
 Le composant .carte
 ********************** */
 .carte {
+  background-color: #eeeded;
   border: 1px solid #ddd;
   padding: 20px;
-  border-radius: 8px;
+
 }
 .carte--grande {
   padding: 40px;
@@ -107,9 +111,12 @@ Le composant .carte
 }
 .carte__image img {
   max-width: 100%;
-  border-radius: 8px;
+
 }
+
+
 .carte__contenu {
+
   margin-top: 15px;
 }
 .carte__titre {
@@ -125,7 +132,7 @@ Le composant .carte
   background-color: #007bff;
   color: #fff;
   border: none;
-  border-radius: 4px;
+
   cursor: pointer;
 }
 .carte__bouton--actif {

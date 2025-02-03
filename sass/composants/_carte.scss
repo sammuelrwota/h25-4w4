@@ -5,7 +5,7 @@ Le composant .carte
 .carte {
     border: 1px solid #ddd;
     padding: 20px;
-    border-radius: 8px;
+
     
   
     &--grande {
@@ -16,7 +16,7 @@ Le composant .carte
     }
     &__image img {
       max-width: 100%;
-      border-radius: 8px;
+      
     }
   
     &__contenu {
@@ -38,7 +38,7 @@ Le composant .carte
       background-color: #007bff;
       color: #fff;
       border: none;
-      border-radius: 4px;
+
       cursor: pointer;
   
       &--actif {
