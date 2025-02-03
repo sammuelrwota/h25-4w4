@@ -110,8 +110,8 @@ Le composant .carte
   padding: 20px;
 }
 .carte__image img {
-  max-width: 100%;
-
+  width: 200px;
+  height: 100px;
 }
 
 
