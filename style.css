@@ -86,33 +86,40 @@ Les layouts
   flex-wrap: wrap;
 }
 
-/* Styles pour mobile */
-@media screen and (max-width: 576px) { /* Remplace $point__rupture par la valeur souhaitée */
+
+@media screen and (max-width: 576px) { 
   .entete__nav {
       flex-direction: column;
       align-items: center;
-      gap: 20px;
+     
       position: absolute;
-      top: 100px; /* Ajuste selon la hauteur de ton header */
-      left: 0;
+      top: 100px; 
+  
       width: 100%;
       background: white;
-      padding: 20px 0;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      display: none; /* Caché par défaut */
+      padding: 50px 0;
+     
+      display: none;
   }
 
-  /* Cache l'input checkbox */
+  .menu a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+
+
   #menu-toggle {
       display: none;
   }
 
-  /* Affichage du menu quand le checkbox est coché */
+
   #menu-toggle:checked + .entete__menu {
       display: flex;
   }
 
-  /* Styles du menu burger */
+
   .menu-icon {
       display: block;
       cursor: pointer;
@@ -125,19 +132,14 @@ Les layouts
       display: none;
       flex-direction: column;
       align-items: center;
-      gap: 20px;
+      
       position: absolute;
-      top: 100px;
+  
       left: 0;
       width: 100%;
       background: white;
       padding: 20px 0;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-      /* Ajout de l'effet de transition */
-      opacity: 0;
-      transform: translateY(-20px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
 
   
   }  
@@ -154,13 +156,13 @@ Les layouts
 
 
 
-/* Cacher la recherche sur mobile */
+
 @media screen and (max-width: 576px) { 
   .entete__recherche {
       display: none;
   }
 
-  /* Positionner le menu burger en haut à droite */
+
   .menu-icon {
       position: absolute;
       top: 10px;
@@ -170,42 +172,23 @@ Les layouts
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .conteneur {
   display: flex;
-  justify-content: center; /* Centre horizontalement */
-  /* Déplace vers le bas */
+  justify-content: center;
 }
 
 td {
   border:1px solid rgb(0, 217, 255);
 }
-
   table {
-    margin: 50px auto; /* Centre horizontalement */
+    margin: 50px auto; 
     background: white;
-    width: auto; /* Ajuste la largeur selon le contenu */
+    width: auto; 
     border-collapse: collapse;
   }
   th {
     text-align: left;
-     /* Ajoute de l’espace autour du texte */
+
   }
 
   td, th {
@@ -220,12 +203,6 @@ td {
     color: #4a4949;
   }
   
-
-
-    
-
-
-
 .menu {
   flex: 1 1 50%;
   display: flex;
