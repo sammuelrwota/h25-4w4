@@ -161,7 +161,7 @@ Les layouts
   .menu-icon {
       position: relative;
       top: -100px;
-      right: -120px;
+      right: -200px;
       font-size: 1rem;
       cursor: pointer;
   }
