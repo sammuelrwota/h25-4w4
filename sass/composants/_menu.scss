@@ -21,3 +21,29 @@
       }
     }
   
+    .hero__tableau {
+      table {
+        margin: 50px auto; // Centre horizontalement
+        background: white;
+        width: auto; // Ajuste la largeur selon le contenu
+        border-collapse: collapse;
+      }
+    
+      th {
+        text-align: left;
+      }
+    
+      td, th {
+        padding: 8px;
+      }
+    
+      td {
+        border: 1px solid rgb(0, 217, 255);
+        color: #666;
+    
+        &:last-child {
+          color: #4a4949;
+        }
+      }
+    }
+    
