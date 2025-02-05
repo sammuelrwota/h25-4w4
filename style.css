@@ -70,6 +70,35 @@ Les layouts
   min-height: 100vh;
 }
 
+td {
+  border:1px solid rgb(0, 217, 255);
+}
+
+  table {
+    margin-top: 50px auto; /* Centre horizontalement */
+    background: white;
+    width: auto; /* Ajuste la largeur selon le contenu */
+    border-collapse: collapse;
+  }
+  th {
+    text-align: left;
+     /* Ajoute de l’espace autour du texte */
+  }
+
+  td, th {
+    padding: 8px;
+  }
+
+  td {
+    color: #666;
+  }
+
+  td:last-child {
+    color: #4a4949;
+  }
+  
+
+
     
 
 
@@ -111,7 +140,7 @@ Le composant .carte
 }
 .carte__image img {
   width: 200px;
-  height: 100px;
+  height: 150px;
 }
 
 
