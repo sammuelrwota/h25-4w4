@@ -96,7 +96,9 @@ $point__rupture: 576px;
     top: 10px;
     right: 10px;
     .menu-icon,
-    #menu-toggle {
+    #menu-toggle,
+    section.promotion,
+    table {
       display: none;
     }
   }

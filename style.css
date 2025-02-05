@@ -71,6 +71,13 @@ Les layouts
 }
 
 
+@media screen and (max-width: 576px) { 
+
+  section.promotion,
+  table {
+    display: none;
+  }
+}
 
 .entete {
   display: flex;
