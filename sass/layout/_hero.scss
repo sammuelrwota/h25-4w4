@@ -4,10 +4,31 @@
     min-height: 100vh;
 
     &__titre {
-        background-color: rgba(128, 128, 128, 0.5); 
+        background-color: rgba(176, 176, 176, 0.5); 
         color: white; 
         padding: 20px;
         border-radius: 5px; 
+    }
+
+    &__courriel {
+        background-color: rgba(176, 176, 176, 0.5); 
+        color: white; 
+        padding: 20px;
+        border-radius: 5px;  
+    }
+
+    &__adresse {
+        background-color: rgba(176, 176, 176, 0.5); 
+        color: white; 
+        padding: 20px;
+        border-radius: 5px;  
+    }
+
+    &__telephone {
+        background-color: rgba(176, 176, 176, 0.5); 
+        color: white; 
+        padding: 20px;
+        border-radius: 5px;  
     }
 }
 

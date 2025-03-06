@@ -1,8 +1,8 @@
 @charset "UTF-8";
 /*
-Theme Name: TP1 Eddy Martin
+Theme Name: TP1 - Sammuel Rwota
 Theme URI: https://referenced.ca
-Author: Eddy Martin
+Author: Sammuel Rwota
 Author URI: https://github.com/eddytuto
 Description: Thème développé dans le cadre du cours 4w4
 Version: 1.0
@@ -169,7 +169,25 @@ Les layouts
   min-height: 100vh;
 }
 .hero__titre {
-  background-color: rgba(128, 128, 128, 0.5);
+  background-color: rgba(176, 176, 176, 0.5);
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+.hero__courriel {
+  background-color: rgba(176, 176, 176, 0.5);
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+.hero__adresse {
+  background-color: rgba(176, 176, 176, 0.5);
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+.hero__telephone {
+  background-color: rgba(176, 176, 176, 0.5);
   color: white;
   padding: 20px;
   border-radius: 5px;
