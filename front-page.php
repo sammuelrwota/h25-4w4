@@ -11,11 +11,35 @@
             <p class="hero__adresse">
                 5800 Sherbrooke-est - Montréal (Québec) H1X 2A2
             </p>
+            <p>
+                H1X 2A2
+            </p>
+            <p class="hero__telephone">
+                514-254-7131
+            </p>
+
             <div class="hero__icone">
                 <img src="https://s2.svgbox.net/social.svg?ic=facebook&color=000000" width="20" height="20">
                 <img src="https://s2.svgbox.net/social.svg?ic=linkedin&color=000000" width="20" height="20">
                 <img src="https://s2.svgbox.net/social.svg?ic=stackoverflow&color=000000" width="20" height="20">
                 <img src="https://s2.svgbox.net/social.svg?ic=snapchat&color=000000" width="20" height="20">
+            </div>
+            <div class="conteneur">
+                <table>
+                    <tr>
+                      <th>Nom</th>
+                      <th>Prénom</th>
+                      <th>Courriel</th>
+                      <th>Téléphone</th>   
+                    </tr>
+                    <tr>
+                      <td>Écrivez votre nom</td>
+                      <td>Écrivez votre prénom</td>
+                      <td>Écrivez votre courriel</td>
+                      <td>Écrivez votre téléphone</td>
+                      <td>S'INSCRIRE</td>
+                    </tr>
+                </table>
             </div>
         </div>
     </section>
