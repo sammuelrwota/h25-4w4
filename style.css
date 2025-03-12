@@ -24,6 +24,7 @@ Les balise de bases
 body {
   font-size: 16px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  background-color: rgb(213, 206, 206);
 }
 
 h1 {
@@ -173,29 +174,36 @@ Les layouts
   color: white;
   padding: 20px;
   border-radius: 5px;
+  width: 40%;
 }
 .hero__courriel {
   background-color: rgba(176, 176, 176, 0.5);
   color: white;
   padding: 20px;
   border-radius: 5px;
+  width: 30%;
 }
 .hero__adresse {
   background-color: rgba(176, 176, 176, 0.5);
   color: white;
   padding: 20px;
   border-radius: 5px;
+  width: 30%;
 }
 .hero__telephone {
   background-color: rgba(176, 176, 176, 0.5);
   color: white;
   padding: 20px;
   border-radius: 5px;
+  width: 10%;
 }
 
 .conteneur {
   display: flex;
   justify-content: center;
+  position: absolute;
+  right: 346px;
+  bottom: -255px;
 }
 
 td {

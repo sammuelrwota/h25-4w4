@@ -8,6 +8,7 @@
         color: white; 
         padding: 20px;
         border-radius: 5px; 
+        width: 40%;
     }
 
     &__courriel {
@@ -15,6 +16,7 @@
         color: white; 
         padding: 20px;
         border-radius: 5px;  
+        width: 30%;
     }
 
     &__adresse {
@@ -22,6 +24,7 @@
         color: white; 
         padding: 20px;
         border-radius: 5px;  
+        width: 30%;
     }
 
     &__telephone {
@@ -29,12 +32,16 @@
         color: white; 
         padding: 20px;
         border-radius: 5px;  
+        width: 10%;
     }
 }
 
 .conteneur {
-    display: flex;
-    justify-content: center;
+      display: flex ;
+      justify-content: center;
+      position: absolute;
+      right: 346px;
+      bottom: -255px;
   }
   
   td {

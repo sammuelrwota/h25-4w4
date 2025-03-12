@@ -1,5 +1,7 @@
 <?php
-
+$functions_dir = get_template_directory() . '/functions/';
+// Inclure les fichiers spécifiques
+include_once $functions_dir . 'customizer.php';
 function mon_theme_supports() {
 
   add_theme_support('title-tag');
