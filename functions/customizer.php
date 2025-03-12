@@ -53,6 +53,45 @@ function theme_tp_customize_register($wp_customize) {
     'section' => 'footer_section',
     'type' => 'text',
   ));
+
+  //////////////////////////////////////////////  Mission.
+  $wp_customize->add_setting('footer_mission', array(
+    'default' => __('Voyager!', 'theme_tp'),
+    'sanitize_callback' => 'sanitize_text_field',
+  ));
+
+  $wp_customize->add_control('footer_mission', array(
+    'label' => __('Mission', 'theme_tp'),
+    'section' => 'footer_section',
+    'type' => 'text',
+  ));
+
+  //////////////////////////////////////////////  Adresse.
+  $wp_customize->add_setting('footer_adresse', array(
+      'default' => __('5800 Sherbrooke-est - Montréal (Québec) H1X 2A2', 'theme_tp'),
+      'sanitize_callback' => 'sanitize_text_field',
+  ));
+
+  $wp_customize->add_control('footer_adresse', array(
+      'label' => __('Adresse', 'theme_tp'),
+      'section' => 'footer_section',
+      'type' => 'text',
+  ));
+
+//////////////////////////////////////////////  Telephone.
+  $wp_customize->add_setting('footer_telephone', array(
+      'default' => __('514-254-7131', 'theme_tp'),
+      'sanitize_callback' => 'sanitize_text_field',
+  ));
+
+  $wp_customize->add_control('footer_telephone', array(
+      'label' => __('Téléphone', 'theme_tp'),
+      'section' => 'footer_section',
+      'type' => 'text',
+  ));
+
   }
   add_action('customize_register', 'theme_tp_customize_register');
 ?>
+
+-
