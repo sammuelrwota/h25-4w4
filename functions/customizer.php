@@ -8,7 +8,7 @@ function theme_tp_customize_register($wp_customize) {
   ));
   ///////////////////////////////////////////////////// Ajout de la donnée.
   $wp_customize->add_setting('hero_auteur', array(
-    'default' => __('Juba Ameziane', 'theme_tp'),
+    'default' => __('Sammuel Rwota', 'theme_tp'),
     'sanitize_callback' => 'sanitize_text_field'
   ));
   //////////////////////////////////////////////////// Ajout du contrôle de la donnée.
@@ -23,10 +23,20 @@ function theme_tp_customize_register($wp_customize) {
     'sanitize_callback' => 'esc_url_raw',
   ));
   /////////////////////////////////////////////////// Ajout du contrôle de la donnée du background
-  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background', array(
-    'label' => __('Hero Background Image', 'theme_31w'),
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hero_couleur', array(
+    'label' => __('Hero Couleur texte', 'theme_31w'),
     'section' => 'hero_section',
   )));
+    /////////////////////////////////////////////////// Ajout de la donnée image en arriere plan.
+    $wp_customize->add_setting('hero_couleur', array(
+      'default' => '',
+      'sanitize_callback' => 'esc_url_raw',
+    ));
+    /////////////////////////////////////////////////// Ajout du contrôle de la donnée du background
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background', array(
+      'label' => __('Hero Background Image', 'theme_31w'),
+      'section' => 'hero_section',
+    )));
   ////////////////////////////////////////////////// Création de la section footer dans le customizer:
   $wp_customize->add_section('footer_section', array(
     'title' => __('Section Footer', 'theme_tp'),
