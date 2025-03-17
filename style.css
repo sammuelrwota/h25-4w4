@@ -342,33 +342,40 @@ td:last-child {
   color: #4a4949;
 }
 
-/*
-  --------------------------------- Layout du pied de page
-*/
 footer {
   background-color: rgb(255, 153, 170);
   color: #000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem;
 }
 
 .piedpage {
   display: flex;
+  flex-direction: row;
+  flex: 1;
+  gap: 75px;
+}
+.piedpage__s1, .piedpage__s2, .piedpage__s3 {
+  display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 .piedpage__s1 {
+  flex: 1;
+}
+.piedpage__s2 {
+  flex: 1;
+}
+.piedpage__s3 {
+  flex: 1;
+}
+
+.footer_menu_nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 3rem 15rem;
-}
-.piedpage__s1__externe {
-  flex: 0 0 20%;
-}
-.piedpage__s1__externe .menu {
-  display: flex;
-  flex-direction: column;
-}
-.piedpage__s1__adresse {
-  flex: 0 0 40%;
-}
-.piedpage__s1__description {
-  flex: 1 0 400px;
+  justify-content: flex-end;
+  gap: 1rem;
+  flex: 1;
+  margin-right: 20px;
 }/*# sourceMappingURL=style.css.map */
