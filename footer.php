@@ -13,12 +13,12 @@
             <div class="footer__contact">
                 Téléphone: <?php echo esc_html(get_theme_mod('footer_telephone', '514-254-7131')); ?>
             </div>
-            <div class="piedpage__s1__adresse">
-                <div class="piedpage__s1__adresse__coord">
+            <div class="piedpage__s2__adresse">
+                <div class="piedpage__s2__adresse__coord">
                     <?php echo esc_html(get_theme_mod('footer_adresse', '5800 Sherbrooke-est - Montréal (Québec) H1X 2A2')); ?>
                 </div>
             </div>
-            <div class="piedpage__s1__description">
+            <div class="piedpage__s2__description">
                 <?php echo esc_html(get_theme_mod('footer_mission', 'Voyager pour vivre!')); ?>
             </div>
         </section>

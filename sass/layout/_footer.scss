@@ -1,5 +1,9 @@
+/*
+  --------------------------------- Layout du pied de page
+*/
+
 footer {
-    background-color: rgb(255, 153, 170);
+    background-color: rgb(204, 204, 204);
     color: #000;
     display: flex;  
     flex-direction: row; 
@@ -11,16 +15,22 @@ footer {
     display: flex;
     flex-direction: row;
     flex: 1;  
-    gap: 75px;
+    gap: 90px;
 
     &__s1, &__s2, &__s3 {
         display: flex;
         flex-direction: column;  
         gap: 20px; 
+        max-width: 500;
     }
 
     &__s1 {
         flex: 1;
+
+            & .menu { //ul
+                display : flex;
+                flex-direction: column;
+            }
     
     }
 
@@ -36,8 +46,6 @@ footer {
 
 .footer_menu_nav {
     display: flex;
-    justify-content: flex-end; 
-    gap: 1rem;
     flex: 1;  
-    margin-right: 20px; 
+    gap: 15px;
 }
