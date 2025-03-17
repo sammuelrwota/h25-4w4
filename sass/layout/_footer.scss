@@ -15,7 +15,6 @@ footer {
     display: flex;
     flex-direction: row;
     flex: 1;  
-    gap: 90px;
 
     &__s1, &__s2, &__s3 {
         display: flex;
@@ -26,6 +25,7 @@ footer {
 
     &__s1 {
         flex: 1;
+        margin-left: -50px;
 
             & .menu { //ul
                 display : flex;
@@ -55,6 +55,7 @@ footer {
         flex-direction: column;
         gap: 40px; 
         align-items: center;
+        margin-right: 500px;
     }
 
     .piedpage__s1,
@@ -64,11 +65,11 @@ footer {
     }
 
     .piedpage__s1 {
-        margin-left: 30px;
+        margin: 0 auto;
     }
 
     .piedpage__s2 {
-        margin-left: 115px;
+        margin-left: 83px;
     }
 
 
@@ -86,5 +87,9 @@ footer {
         flex: 1;  
         gap: 15px;
         margin-right: 45px;
+
+        & .menu { //ul
+            margin-right: 30px;
+        }
     }
 }
