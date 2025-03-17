@@ -36,6 +36,7 @@ footer {
 
     &__s2 {
         flex: 1;
+        margin-right: 100px;
     }
 
     &__s3 {
@@ -70,6 +71,7 @@ footer {
 
     .piedpage__s2 {
         margin-left: 83px;
+        margin-right: 0px;
     }
 
 
@@ -86,7 +88,7 @@ footer {
         flex-direction: row;
         flex: 1;  
         gap: 15px;
-        margin-right: 45px;
+        margin-right: 175px;
 
         & .menu { //ul
             margin-right: 30px;

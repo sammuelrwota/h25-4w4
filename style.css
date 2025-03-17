@@ -388,6 +388,7 @@ footer {
 }
 .piedpage__s2 {
   flex: 1;
+  margin-right: 100px;
 }
 .piedpage__s3 {
   flex: 1;
@@ -416,6 +417,7 @@ footer {
   }
   .piedpage__s2 {
     margin-left: 83px;
+    margin-right: 0px;
   }
   .piedpage__s1__externe,
   .piedpage__s2 > div {
@@ -429,7 +431,7 @@ footer {
     flex-direction: row;
     flex: 1;
     gap: 15px;
-    margin-right: 45px;
+    margin-right: 175px;
   }
   .footer_menu_nav .menu {
     margin-right: 30px;
