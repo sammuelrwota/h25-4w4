@@ -69,3 +69,14 @@
     td:last-child {
       color: #4a4949;
     }
+
+
+ @media screen and (max-width: 800px) {
+
+  .conteneur {
+    right: 38px;
+    bottom: -275px;
+    left: 37px;
+  }
+    
+  }

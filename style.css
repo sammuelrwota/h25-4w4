@@ -177,7 +177,6 @@ Les composants
 
 @media screen and (max-width: 800px) {
   .carte {
-    margin-right: 88px;
     width: 100%;
     margin-left: -3px;
   }
@@ -349,6 +348,13 @@ td:last-child {
   color: #4a4949;
 }
 
+@media screen and (max-width: 800px) {
+  .conteneur {
+    right: 38px;
+    bottom: -275px;
+    left: 37px;
+  }
+}
 /*
   --------------------------------- Layout du pied de page
 */
