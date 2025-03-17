@@ -3,7 +3,7 @@
 Theme Name: TP1 - Sammuel Rwota
 Theme URI: https://referenced.ca
 Author: Sammuel Rwota
-Author URI: https://github.com/eddytuto
+Author URI: https://github.com/sammuelrwota
 Description: Thème développé dans le cadre du cours 4w4
 Version: 1.0
 Requires at least: 6.0
@@ -102,27 +102,77 @@ Les composants
 .carte {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin: 10px 10px 10px;
-  text-decoration: none;
+  width: 100%;
+  margin: 20px;
+  border: 4px solid black;
+  border-radius: 10px;
+  background-color: #f0f0f0;
 }
 .carte--grande {
-  flex: 1 1 250px;
+  flex: 1;
 }
-.carte__image {
-  color: transparent;
-}
-.carte__image img {
+.carte__image .carte__image-background {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
 }
 .carte__contenu {
-  background-color: aliceblue;
+  padding: 15px 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-.carte .carte--grande {
-  margin: 10px 10px 10px;
+.carte__contenu__titre {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 10px 0;
 }
-.carte__contenu {
-  margin: 10px 10px 10px;
+.carte__contenu__description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.carte__contenu p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+.carte__contenu a {
+  padding: 10px 20px;
+  text-align: left;
+  margin-left: -40px;
+  background-color: blue;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+}
+.carte__contenu a:hover {
+  background-color: darkblue;
+}
+.carte__contenu a.carte__bouton.carte__bouton--actif {
+  padding: 10px 20px;
+  text-align: left;
+  margin-left: 0px;
+  background-color: blue;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+}
+.carte__contenu a.carte__bouton.carte__bouton--actif:hover {
+  background-color: darkblue;
 }
 
 /* /////////////////////////////////
@@ -142,24 +192,84 @@ Les layouts
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  padding: 10px 20px;
 }
 .entete__navigation {
-  width: auto;
-  position: static;
-  flex-direction: row;
-  background-color: transparent;
   display: flex;
   align-items: center;
+  background-color: transparent;
+  position: relative;
 }
-@media screen and (max-width: 800px) {
-  .entete__navigation {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #fff;
-    padding: 20px;
+.entete__navigation .menu-toggle-checkbox {
+  display: none;
+}
+.entete__navigation .menu-toggle-label {
+  display: none;
+  cursor: pointer;
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+@media screen and (max-width: 768px) {
+  .entete__navigation .menu-toggle-label {
+    display: block;
+  }
+}
+.entete__navigation .menu-toggle-label img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.entete__navigation .menu-toggle-label .icon-close {
+  display: none;
+}
+.entete__navigation .entete__menu-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  .entete__navigation .entete__menu-wrapper {
+    display: none;
     flex-direction: column;
+    position: absolute;
+    top: 150%;
+    right: -20px;
+    background-color: #fff;
     width: 100vw;
+    padding: 30px 20px;
+    gap: 35px;
+    text-align: center;
+  }
+}
+.entete__navigation .menu-toggle-checkbox:checked + .menu-toggle-label .icon-burger {
+  display: none;
+}
+.entete__navigation .menu-toggle-checkbox:checked + .menu-toggle-label .icon-close {
+  display: block;
+}
+.entete__navigation .menu-toggle-checkbox:checked ~ .entete__menu-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.entete .entete__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+@media screen and (min-width: 992px) {
+  .entete .menu-toggle-label {
+    display: none;
+  }
+  .entete .entete__navigation .entete__menu-wrapper {
+    display: flex !important;
+    flex-direction: row;
+    gap: 20px;
   }
 }
 

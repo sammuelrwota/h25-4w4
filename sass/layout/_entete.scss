@@ -1,28 +1,96 @@
-.entete{
+.entete {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    padding: 10px 20px;
+  
     &__navigation {
-        @media screen and (max-width: 800px) {
-            position : absolute;
-            top:0;
-            right:0;
-            background-color: #fff;
-            padding : 20px;
-            flex-direction: column; 
-            width : 100vw;
-        }
-        width : auto;
-        position : static;
-        flex-direction: row; 
-        background-color: transparent;
-
-
-
-
-        display: flex;
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+      position: relative;
+      
+      .menu-toggle-checkbox {
+        display: none;
+      }
+      
+      .menu-toggle-label {
+        display: none;
+        cursor: pointer;
+        position: relative;
+        width: 40px;
+        height: 40px;
         
+        @media screen and (max-width: 768px) {
+          display: block;
+        }
+        
+        img {
+          width: 100%;
+          height: auto;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        
+        .icon-close {
+          display: none;
+        }
+      }
+      
+      .entete__menu-wrapper {
+        display: flex;
+        flex-direction: row;
         align-items: center;
-                                                                   
+        
+        @media screen and (max-width: 768px) {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 150%;
+            right: -20px;
+            background-color: #fff;
+            width: 100vw;
+            padding: 30px 20px;
+            gap: 35px;
+            text-align: center;
+        }
+      }
+      
+      .menu-toggle-checkbox:checked + .menu-toggle-label {
+        .icon-burger {
+          display: none;
+        }
+        .icon-close {
+          display: block;
+        }
+      }
+      .menu-toggle-checkbox:checked ~ .entete__menu-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     }
-}
+  
+    .entete__menu {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+  
+    @media screen and (min-width: 992px) {
+      .menu-toggle-label {
+        display: none;
+      }
+      .entete__navigation {
+        .entete__menu-wrapper {
+          display: flex !important;
+          flex-direction: row;
+          gap: 20px;
+        }
+      }
+    }
+  }
+  
