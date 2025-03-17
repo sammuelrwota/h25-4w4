@@ -49,3 +49,42 @@ footer {
     flex: 1;  
     gap: 15px;
 }
+
+@media screen and (max-width: 800px) {
+    .piedpage {
+        flex-direction: column;
+        gap: 40px; 
+        align-items: center;
+    }
+
+    .piedpage__s1,
+    .piedpage__s2{
+        width: 100%;
+        text-align: left;
+    }
+
+    .piedpage__s1 {
+        margin-left: 30px;
+    }
+
+    .piedpage__s2 {
+        margin-left: 115px;
+    }
+
+
+    .piedpage__s1__externe,
+    .piedpage__s2 > div { 
+        display: flex;
+        flex-direction: row;
+        gap: 15px; 
+        flex-wrap: wrap; 
+    }
+
+    .footer_menu_nav {
+        display: flex;
+        flex-direction: row;
+        flex: 1;  
+        gap: 15px;
+        margin-right: 45px;
+    }
+}
