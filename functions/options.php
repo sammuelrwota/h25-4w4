@@ -1,4 +1,12 @@
 <?php 
+/**
+ * OPTIONS.PHP
+ * 
+ * Ce fichier contient diverses fonctions utilisées pour configurer et personnaliser le thème WordPress.
+ * - Ajout du support pour les fonctionnalités du thème (menus, images à la une, titre, logo personnalisé).
+ * - Enregistrement et inclusion des styles CSS du thème.
+ * - Modification de la requête principale pour la page d'accueil afin d'afficher un type de contenu spécifique.
+ */
 function mon_theme_supports() {
 
     add_theme_support('title-tag');

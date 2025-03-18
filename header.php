@@ -1,8 +1,20 @@
+<?php 
+/**
+ * HEADER.PHP
+ * 
+ * Template de l'en-tête : Ce fichier inclut la structure HTML de l'en-tête de la page.
+ *  - Le logo personnalisé est récupéré via la fonction `the_custom_logo()`.
+ *  - La navigation inclut un menu burger (avec une icône d'ouverture et de fermeture), affiché sous forme de menu mobile.
+ *  - Le menu principal est généré via `wp_nav_menu()` et un formulaire de recherche est également inclus.
+ *  - Le fichier charge également les scripts nécessaires pour afficher le menu burger et la logique associée au basculement de l'état du menu.
+ */
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF8">
+  <meta name="viewport" content="width=devicewidth, initial-scale=1.0">
   <title>Club de voyage</title>
   <?php wp_head(); ?>
 </head>

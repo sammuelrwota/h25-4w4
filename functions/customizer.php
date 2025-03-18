@@ -1,4 +1,10 @@
 <?php
+/**
+ * CUSTOMIZER.PHP
+ * 
+ * Modifie facilement les éléments des sections Hero et Footer.
+ */
+
 function theme_tp_customize_register($wp_customize) {
   // Le code pour ajouter des sections, des réglages et des contrôles ira ici.
   //Création d'une nouvelle section dans le customizer.

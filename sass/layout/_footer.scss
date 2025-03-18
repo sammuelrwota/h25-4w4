@@ -1,6 +1,10 @@
-/*
-  --------------------------------- Layout du pied de page
-*/
+/**
+ * FOOTER
+ *
+ *  Layout du pied de page : Définit l'apparence et la disposition du footer avec un design flexible pour les sections de contenu. 
+ *  Les styles sont optimisés pour être réactifs, avec des ajustements pour les petits écrans (moins de 800px et moins de 576px) et une présentation en colonne sur mobile.
+ *  
+ */
 
 footer {
     background-color: black;
@@ -8,7 +12,7 @@ footer {
     display: flex;  
     flex-direction: row; 
     justify-content: space-between; 
-    padding: 2rem;
+    padding: 0.3rem;
 }
 
 .piedpage {

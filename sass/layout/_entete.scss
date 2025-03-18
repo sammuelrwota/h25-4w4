@@ -1,114 +1,117 @@
+/**
+ * ENTETE
+ *
+ * Style de l'en-tête : Définit l'apparence et le comportement de l'en-tête, avec une navigation flexible et réactive. 
+ * Le menu burger et les éléments associés sont configurés pour s'adapter aux petits écrans, avec un effet d'animation pour l'ouverture et la fermeture du menu.
+ *  
+ */
+
 .entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 10px 20px;
+  background-color: rgb(228, 228, 228);
+
+  &__navigation {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    background-color: transparent;
     position: relative;
-    padding: 10px 20px;
-    background-color: rgb(228, 228, 228);
-  
-    &__navigation {
-      display: flex;
-      align-items: center;
-      background-color: transparent;
+    
+    .menu-toggle-checkbox {
+      display: none;
+    }
+    
+    .menu-toggle-label {
+      display: none;
+      cursor: pointer;
       position: relative;
+      width: 40px;
+      height: 40px;
       
-      .menu-toggle-checkbox {
-        display: none;
+      @media screen and (max-width: 800px) {
+        display: block;
       }
       
-      .menu-toggle-label {
+      img {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      
+      .icon-close {
         display: none;
-        cursor: pointer;
-        position: relative;
-        width: 40px;
-        height: 40px;
-        
-        @media screen and (max-width: 800px) {
-          display: block;
-        }
-        
-        img {
-          width: 100%;
-          height: auto;
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-        
-        .icon-close {
-          display: none;
-        }
+      }
 
-
-        .icon-burger,
-        .icon-close {
-            transition: background-color 0.1s ease-in-out, border-radius 0.1s ease-in-out;
-            &:hover {
-                background-color: rgb(78, 78, 78);
-                border-radius: 20px;
-            }
+      .icon-burger,
+      .icon-close {
+          transition: background-color 0.1s ease-in-out, border-radius 0.1s ease-in-out;
+          &:hover {
+              background-color: rgb(78, 78, 78);
+              border-radius: 20px;
           }
-      }
-      
-      .entete__menu-wrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        .recherche {
-          margin-bottom: -5px;
         }
-        
-        @media screen and (max-width: 800px) {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: 150%;
-            right: -20px;
-            background-color: #fff;
-            width: 100vw;
-            padding: 30px 20px;
-            gap: 35px;
-            text-align: center;
-        }
-      }
-      
-      .menu-toggle-checkbox:checked + .menu-toggle-label {
-        .icon-burger {
-          display: none;
-        }
-        .icon-close {
-          display: block;
-        }
-      }
-      .menu-toggle-checkbox:checked ~ .entete__menu-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
     }
-  
-    .entete__menu {
+    
+    .entete__menu-wrapper {
       display: flex;
-      flex-direction: column;
-      gap: 20px;
-      text-align: center;
-    }
-  
-    @media screen and (min-width: 992px) {
+      flex-direction: row;
+      align-items: center;
+      transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
 
-      .entete {
-        background-color: rgb(228, 228, 228);
+      .recherche {
+        margin-bottom: -5px;
       }
-      .menu-toggle-label {
+      
+      @media screen and (max-width: 800px) {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: 150%;
+          right: -20px;
+          background-color: rgb(228, 228, 228);
+          width: 100vw;
+          padding: 30px 20px;
+          gap: 35px;
+          text-align: center;
+      }
+    }
+    
+    .menu-toggle-checkbox:checked + .menu-toggle-label {
+      .icon-burger {
         display: none;
       }
-      .entete__navigation {
-        .entete__menu-wrapper {
-          display: flex !important;
-          flex-direction: row;
-          gap: 20px;
-        }
+      .icon-close {
+        display: block;
       }
+    }
+    .menu-toggle-checkbox:checked ~ .entete__menu-wrapper {
+      max-height: 500px;
+      opacity: 1;
+      background-color: rgb(228, 228, 228);
     }
   }
+
+  .entete__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 801px) {
+    .entete__menu-wrapper {
+      display: flex !important;
+      max-height: none;
+      opacity: 1;
+      overflow: visible;
+    }
+  }
+}

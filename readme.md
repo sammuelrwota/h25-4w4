@@ -1,6 +1,6 @@
 # TP1
 
-## Concevoir un site Wordpress pour un club de voyage
+## Concevoir un site Wordpress pour un club de voyage.
 
 ### Auteur: Sammuel Rwota
 

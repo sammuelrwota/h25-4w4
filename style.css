@@ -4,7 +4,7 @@ Theme Name: TP1 - Sammuel Rwota
 Theme URI: https://referenced.ca
 Author: Sammuel Rwota
 Author URI: https://github.com/sammuelrwota
-Description: Thème développé dans le cadre du cours 4w4
+Description: Thème développé dans le cadre du cours 4w4 Q1 
 Version: 1.0
 Requires at least: 6.0
 Tested up to: 5.3
@@ -18,9 +18,21 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /* /////////////////////////////////
 Les variables
 //////////////////////////////////// */
+/**
+ * COULEURS
+ *
+ * Variables de couleur pour les liens...
+ *  
+ */
 /* /////////////////////////////////
 Les balise de bases
 //////////////////////////////////// */
+/**
+ * SIMPLE
+ * 
+ *  Style de base du site : Définit les polices et tailles de police pour les éléments de texte principaux 
+ *  (body, h1, h2, h3, h4, h5, h6, p) avec des valeurs responsives pour une meilleure adaptabilité.
+ */
 body {
   font-size: 16px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
@@ -59,7 +71,13 @@ p {
 /* /////////////////////////////////
 Les composants
 //////////////////////////////////// */
-/* ----------------------------------------- .menu */
+/**
+ * MENU
+ *
+ *  Style du menu : Définit l'apparence et la disposition du menu avec une disposition flexible pour les éléments de la liste. 
+ *  Le menu devient vertical sur les petits écrans (moins de 800px) grâce à un ajustement avec la propriété flex-direction.
+ *  
+ */
 .menu {
   display: flex;
   flex-direction: row;
@@ -76,6 +94,14 @@ Les composants
   padding: 4px;
 }
 
+/**
+ * RECHERCHE
+ *
+ * Style de la barre de recherche : Définit l'apparence et le comportement de la barre de recherche, 
+ * avec un champ d'entrée réactif et une icône d'image à côté. Le style est optimisé pour l'interaction utilisateur, 
+ * avec des effets de survol et des styles pour le texte de l'espace réservé.
+ *  
+ */
 .recherche {
   display: flex;
   height: 1.6rem;
@@ -101,6 +127,12 @@ Les composants
   padding: 3px;
 }
 
+/**
+ * CARTE
+ *
+ *  Style des cartes : Définit l'apparence des cartes (image, contenu, bouton, etc.) avec des styles de base,
+ *  une disposition flexible, et un design réactif pour les petites résolutions.
+ */
 .carte {
   display: flex;
   flex-direction: column;
@@ -186,13 +218,21 @@ Les composants
 /* /////////////////////////////////
 Les layouts
 //////////////////////////////////// */
+/**
+ * GENERAL
+ *
+ * Styles généraux : Définit les styles de base pour les éléments populaires et les conteneurs globaux. 
+ * Le conteneur .global est limité en largeur et utilise des marges dynamiques pour un affichage réactif. 
+ * Le style .populaire applique une couleur de fond spécifique, et la classe .populaire .global gère la disposition flexible des éléments à l'intérieur.
+ *  
+ */
+.populaire {
+  background-color: rgb(184, 183, 183);
+}
+
 .global {
   max-width: 1100px;
   padding: 10vh 5vw;
-}
-
-.populaire {
-  background-color: rgb(184, 183, 183);
 }
 
 .populaire .global {
@@ -203,6 +243,13 @@ Les layouts
   padding: 0;
 }
 
+/**
+ * ENTETE
+ *
+ * Style de l'en-tête : Définit l'apparence et le comportement de l'en-tête, avec une navigation flexible et réactive. 
+ * Le menu burger et les éléments associés sont configurés pour s'adapter aux petits écrans, avec un effet d'animation pour l'ouverture et la fermeture du menu.
+ *  
+ */
 .entete {
   display: flex;
   justify-content: space-between;
@@ -255,18 +302,22 @@ Les layouts
   display: flex;
   flex-direction: row;
   align-items: center;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
 }
 .entete__navigation .entete__menu-wrapper .recherche {
   margin-bottom: -5px;
 }
 @media screen and (max-width: 800px) {
   .entete__navigation .entete__menu-wrapper {
-    display: none;
+    display: flex;
     flex-direction: column;
     position: absolute;
     top: 150%;
     right: -20px;
-    background-color: #fff;
+    background-color: rgb(228, 228, 228);
     width: 100vw;
     padding: 30px 20px;
     gap: 35px;
@@ -280,9 +331,9 @@ Les layouts
   display: block;
 }
 .entete__navigation .menu-toggle-checkbox:checked ~ .entete__menu-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  max-height: 500px;
+  opacity: 1;
+  background-color: rgb(228, 228, 228);
 }
 .entete .entete__menu {
   display: flex;
@@ -290,20 +341,27 @@ Les layouts
   gap: 20px;
   text-align: center;
 }
-@media screen and (min-width: 992px) {
-  .entete .entete {
-    background-color: rgb(228, 228, 228);
-  }
-  .entete .menu-toggle-label {
-    display: none;
-  }
-  .entete .entete__navigation .entete__menu-wrapper {
+@media screen and (min-width: 801px) {
+  .entete .entete__menu-wrapper {
     display: flex !important;
-    flex-direction: row;
-    gap: 20px;
+    max-height: none;
+    opacity: 1;
+    overflow: visible;
   }
 }
 
+/**
+ * GALERIE
+ *  
+ */
+/**
+ * HERO
+ *
+ * Styles de la section Hero : Définit l'apparence de la section Hero avec une image de fond, des boîtes d'information (titre, courriel, adresse, téléphone) et des ajustements de mise en page. 
+ * Le style utilise des couleurs de fond semi-transparentes et des bordures arrondies pour les éléments. 
+ * Des ajustements sont faits pour la réactivité, notamment pour l'affichage sur les petits écrans (moins de 800px).
+ *  
+ */
 .hero {
   background-image: url("images/maldives.jpg");
   background-repeat: no-repeat;
@@ -399,16 +457,20 @@ td:last-child {
     width: 23%;
   }
 }
-/*
-  --------------------------------- Layout du pied de page
-*/
+/**
+ * FOOTER
+ *
+ *  Layout du pied de page : Définit l'apparence et la disposition du footer avec un design flexible pour les sections de contenu. 
+ *  Les styles sont optimisés pour être réactifs, avec des ajustements pour les petits écrans (moins de 800px et moins de 576px) et une présentation en colonne sur mobile.
+ *  
+ */
 footer {
   background-color: black;
   color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 2rem;
+  padding: 0.3rem;
 }
 
 .piedpage {

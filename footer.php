@@ -1,3 +1,15 @@
+<?php 
+/**
+ * FOOTER.PHP
+ * 
+ *   Template du pied de page : Affiche le pied de page du site avec trois sections.
+ * - Section 1 : Menu externe (références à des liens externes).
+ * - Section 2 : Informations de contact (téléphone, adresse et mission) récupérées via le Customizer.
+ * - Section 3 : Menu principal et formulaire de recherche.
+ *   Ce fichier inclut également la fonction `wp_footer()` pour charger les scripts et ressources nécessaires avant la fermeture du balise body.
+ */
+?>
+
 <footer>
     <div class="piedpage global">
         <section class="piedpage__s1">

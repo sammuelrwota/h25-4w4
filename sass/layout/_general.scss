@@ -1,10 +1,19 @@
-.global{
-    max-width: 1100px;
-    padding: 10vh 5vw;
-}
+/**
+ * GENERAL
+ *
+ * Styles généraux : Définit les styles de base pour les éléments populaires et les conteneurs globaux. 
+ * Le conteneur .global est limité en largeur et utilise des marges dynamiques pour un affichage réactif. 
+ * Le style .populaire applique une couleur de fond spécifique, et la classe .populaire .global gère la disposition flexible des éléments à l'intérieur.
+ *  
+ */
 
 .populaire {
     background-color : rgb(184, 183, 183);
+}
+
+.global{
+    max-width: 1100px;
+    padding: 10vh 5vw;
 }
 
 .populaire .global {

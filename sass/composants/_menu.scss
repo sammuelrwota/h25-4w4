@@ -1,4 +1,11 @@
-/* ----------------------------------------- .menu */
+/**
+ * MENU
+ *
+ *  Style du menu : Définit l'apparence et la disposition du menu avec une disposition flexible pour les éléments de la liste. 
+ *  Le menu devient vertical sur les petits écrans (moins de 800px) grâce à un ajustement avec la propriété flex-direction.
+ *  
+ */
+
 .menu{ // ul
     display : flex;
     @media screen and (max-width: 800px) {

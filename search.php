@@ -1,3 +1,16 @@
+<?php 
+/**
+ * SEARCH.PHP
+ * 
+ * Modèle pour afficher les résultats de recherche dans WP.
+ * Ce fichier est utilisé lorsqu'un utilisateur effectue une recherche sur le site.
+ * 
+ * Si des résultats de recherche sont trouvés, ils sont affichés sous forme d'articles,
+ * avec un lien vers chacun d'eux. Si aucun résultat n'est trouvé, un message indiquant
+ * "Aucun résultat trouvé" est affiché.
+ */
+?>
+
 <?php
 /**
  * Modèle pour les résultats de recherche

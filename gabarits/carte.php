@@ -1,8 +1,13 @@
 <?php
 /**
- * Template-part carte
+ * CARTE.PHP
+ * 
+ * TEMPLATE-PART CARTE.
+ * 
+ * Voici mon modèle de carte, un gabarit contenant les cartes présentant les articles de voyage.
  */
 ?>
+
 <article class="carte carte--grande">
   <figure class="carte__image">
     </figure>

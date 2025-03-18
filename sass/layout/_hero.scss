@@ -1,9 +1,16 @@
+/**
+ * HERO
+ *
+ * Styles de la section Hero : Définit l'apparence de la section Hero avec une image de fond, des boîtes d'information (titre, courriel, adresse, téléphone) et des ajustements de mise en page. 
+ * Le style utilise des couleurs de fond semi-transparentes et des bordures arrondies pour les éléments. 
+ * Des ajustements sont faits pour la réactivité, notamment pour l'affichage sur les petits écrans (moins de 800px).
+ *  
+ */
+
 .hero{
     background-image: url("images/maldives.jpg");
     background-repeat: no-repeat;
     min-height: 100vh;
-
-
 
     &__titre {
         background-color: rgba(176, 176, 176, 0.5); 

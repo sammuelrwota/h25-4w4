@@ -1,8 +1,15 @@
+/**
+ * SIMPLE
+ * 
+ *  Style de base du site : Définit les polices et tailles de police pour les éléments de texte principaux 
+ *  (body, h1, h2, h3, h4, h5, h6, p) avec des valeurs responsives pour une meilleure adaptabilité.
+ */
+
+
 body{
     font-size : 16px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-
 
 h1{
     font-size: clamp(2rem, 3vw, 5rem);
