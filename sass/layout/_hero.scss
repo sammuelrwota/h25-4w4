@@ -13,44 +13,55 @@
     min-height: 100vh;
 
     &__titre {
-        background-color: rgba(176, 176, 176, 0.5); 
+        // background-color: rgba(176, 176, 176, 0.5); 
         color: white; 
         padding: 20px;
-        border-radius: 5px; 
-        width: 40%;
+        border-radius: 5px;
+        width: 100%;
+        text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+        padding-left: 2px;
         p {
           padding: 0;
         }
     }
 
     &__courriel {
-        background-color: rgba(176, 176, 176, 0.5);
+        // background-color: rgba(176, 176, 176, 0.5);
         color: white;
         padding: 9px;
         border-radius: 5px;
         width: 18%;
+        padding-left: 2px;
+
+        text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
         p {
           padding: 0;
         }
     }
 
     &__adresse {
-        background-color: rgba(176, 176, 176, 0.5);
+        // background-color: rgba(176, 176, 176, 0.5);
         color: white;
+
         padding: 9px;
         border-radius: 5px;
-        width: 35%;
+        width: 100%;
+        text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+        padding-left: 2px;
         p {
           padding: 0;
         }
     }
 
     &__telephone {
-        background-color: rgba(176, 176, 176, 0.5);
+        // background-color: rgba(176, 176, 176, 0.5);
         color: white;
         padding: 9px;
         border-radius: 5px;
-        width: 9%;
+        width: 100%;
+        padding-left: 2px;
+        text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+
         p {
           padding: 0;
         }
@@ -68,8 +79,8 @@
       display: flex ;
       justify-content: center;
       position: absolute;
-      right: 346px;
-      bottom: -255px;
+      right: 490px;
+      bottom: -230px;
   }
   
   td {
@@ -80,6 +91,8 @@
       background: white;
       width: auto; 
       border-collapse: collapse;
+      -webkit-box-shadow: 5px 6px 5px 4px #000000; 
+      box-shadow: 5px 6px 5px 4px #000000;
     }
     th {
       text-align: left;
@@ -107,8 +120,6 @@
     left: 37px;
   }
 
-  .hero__courriel {
-    width: 23%;
-  }
+
     
   }

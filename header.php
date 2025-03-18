@@ -9,12 +9,15 @@
  *  - Le fichier charge également les scripts nécessaires pour afficher le menu burger et la logique associée au basculement de l'état du menu.
  */
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=devicewidth, initial-scale=1.0">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <title>Club de voyage</title>
   <?php wp_head(); ?>
 </head>

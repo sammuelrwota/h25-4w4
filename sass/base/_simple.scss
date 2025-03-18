@@ -5,10 +5,23 @@
  *  (body, h1, h2, h3, h4, h5, h6, p) avec des valeurs responsives pour une meilleure adaptabilité.
  */
 
+// *,
+// *::before,
+// *::after {
+//     box-sizing: border-box;
+// }
+
+// * {
+//     margin: 0;
+//     padding: 0;
+// }
 
 body{
     font-size : 16px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    background-color: rgb(195, 195, 195);
+    
+    font-family:'Roboto';
 }
 
 h1{
@@ -19,7 +32,7 @@ h2{
     font-size: clamp(1.5rem, 2.5vw, 3rem);
 }
 h3{
-    font-size: clamp(1rem, 2.3vw, 2rem);
+    font-size: clamp(1rem, 2.3vw, 1.5rem);
 }
 h4{
     font-size: clamp(0.9rem, 2vw, 1.5rem);
@@ -33,6 +46,7 @@ h6{
 p{
     font-size: clamp(.8rem, 1.7vw, 1rem);
     padding: 10px 70px;
+    line-height: 1.6; 
 }
 
 

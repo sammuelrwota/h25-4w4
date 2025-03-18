@@ -13,6 +13,7 @@
 <footer>
     <div class="piedpage global">
         <section class="piedpage__s1">
+            <h3 class="liens-de-voyage">Liens de voyage</h3>
             <div class="piedpage__s1__externe">
                 <?php wp_nav_menu(array(
                     "menu" => "externe",
@@ -22,27 +23,29 @@
         </section>
 
         <section class="piedpage__s2">
+            <h3>Infos</h3>
             <div class="piedpage__s2__contact">
                 Téléphone: <?php echo esc_html(get_theme_mod('footer_telephone', '514-254-7131')); ?>
-                <img src="https://s2.svgbox.net/hero-outline.svg?ic=phone&color=000" width="32" height="32">
+                <img src="https://s2.svgbox.net/hero-outline.svg?ic=phone&color=FFF" width="20" height="20">
             </div>
             <div class="piedpage__s2__adresse">
                 <div class="piedpage__s2__adresse__coord">
                     <?php echo esc_html(get_theme_mod('footer_adresse', '5800 Sherbrooke-est - Montréal (Québec) H1X 2A2')); ?>
-                    <img src="https://s2.svgbox.net/octicons.svg?ic=location&color=000" width="32" height="32">
+                    <img src="https://s2.svgbox.net/octicons.svg?ic=location&color=FFF" width="20" height="20">
                 </div>
             </div>
             <div class="piedpage__s2__description">
                 <?php echo esc_html(get_theme_mod('footer_mission', 'Votre mission est de voyager pour vivre!')); ?>
             </div>
             <div class="piedpage__s2__icones_reseaux_sociaux">
-                <img src="https://s2.svgbox.net/social.svg?ic=facebook&color=000000" width="20" height="20">
-                <img src="https://s2.svgbox.net/social.svg?ic=linkedin&color=000000" width="20" height="20">
-                <img src="https://s2.svgbox.net/social.svg?ic=stackoverflow&color=000000" width="20" height="20">
-                <img src="https://s2.svgbox.net/social.svg?ic=snapchat&color=000000" width="20" height="20">
-                <img src="https://s2.svgbox.net/social.svg?ic=instagram&color=000000" width="20" height="20" >
-                <img src="https://s2.svgbox.net/social.svg?ic=github&color=000000" width="20" height="20">
+                <img src="https://s2.svgbox.net/social.svg?ic=facebook&color=FFF" width="20" height="20">
+                <img src="https://s2.svgbox.net/social.svg?ic=linkedin&color=FFF" width="20" height="20">
+                <img src="https://s2.svgbox.net/social.svg?ic=stackoverflow&color=FFF" width="20" height="20">
+                <img src="https://s2.svgbox.net/social.svg?ic=snapchat&color=FFF" width="20" height="20">
+                <img src="https://s2.svgbox.net/social.svg?ic=instagram&color=FFF" width="20" height="20" >
+                <img src="https://s2.svgbox.net/social.svg?ic=github&color=FFF" width="20" height="20">
             </div>
+            <?php get_search_form(); ?>
         </section>
 
         <section class="piedpage__s3">
@@ -53,7 +56,7 @@
                     'container' => 'nav',
                     'container_class' => 'piedpage__3_menu_nav'
                 )); ?>
-                     <?php get_search_form(); ?>
+                     
             </div>
         </section>
     </div>

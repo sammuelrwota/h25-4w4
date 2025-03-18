@@ -7,18 +7,23 @@
 ?>
 
 <?php
-$hero_auteur = get_theme_mod('hero_auteur', '');
-$hero_background = get_theme_mod('hero_background', '');
-$hero_couleur = get_theme_mod('hero_couleur', '');
+    $hero_auteur = get_theme_mod('hero_auteur', 'Default Title');
+    $hero_courriel = get_theme_mod('hero_courriel','');
+    $hero_background = get_theme_mod('hero_background', 'Default Title');
+    $couleur = substr(get_theme_mod('hero_icone', '#fff'),1);
+    $couleur_texte = get_theme_mod('hero_texte', '#fff');
 ?>
-
-<section class="hero" style="background-image: url(<?php echo $hero_background ?>); color: <?php echo $hero_couleur ?>;">
+<style>.hero{
+    color: <?php echo $couleur_texte ?> ;
+}
+</style>
+<section class="hero" style="background-image: url('<?php echo $hero_background ?>'); Background-repeat: no-repeat" <?php echo $couleur_texte ?>>
     <div class="hero__contenu global">
-        <h1 class="hero__titre"><?php bloginfo("name"); ?></h1>
+        <h1 class="hero__titre hero__couleur"><?php bloginfo("name"); ?></h1>
         <p class="hero__description">
             <?php bloginfo("description"); ?>
         </p>
-        <p class="hero__courriel">
+        <p class="hero__courriel"><?php echo $hero_courriel ?>
             <a href="#"><?php bloginfo("admin_email"); ?></a>
         </p>
         
@@ -29,7 +34,7 @@ $hero_couleur = get_theme_mod('hero_couleur', '');
         <p class="hero__adresse">
             5800 Sherbrooke-est - Montréal (Québec) H1X 2A2
         </p>
-        <p class="hero_auteur">Auteur: <?php echo $hero_auteur; ?></p>
+        <p class="hero_auteur">Auteur: <?php echo $hero_auteur ?></p>
         <p class="hero__telephone">
             514-254-7131
         </p>
