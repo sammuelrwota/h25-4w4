@@ -3,37 +3,58 @@
     background-repeat: no-repeat;
     min-height: 100vh;
 
+
+
     &__titre {
         background-color: rgba(176, 176, 176, 0.5); 
         color: white; 
         padding: 20px;
         border-radius: 5px; 
         width: 40%;
+        p {
+          padding: 0;
+        }
     }
 
     &__courriel {
-        background-color: rgba(176, 176, 176, 0.5); 
-        color: white; 
-        padding: 20px;
-        border-radius: 5px;  
-        width: 30%;
+        background-color: rgba(176, 176, 176, 0.5);
+        color: white;
+        padding: 9px;
+        border-radius: 5px;
+        width: 18%;
+        p {
+          padding: 0;
+        }
     }
 
     &__adresse {
-        background-color: rgba(176, 176, 176, 0.5); 
-        color: white; 
-        padding: 20px;
-        border-radius: 5px;  
-        width: 30%;
+        background-color: rgba(176, 176, 176, 0.5);
+        color: white;
+        padding: 9px;
+        border-radius: 5px;
+        width: 35%;
+        p {
+          padding: 0;
+        }
     }
 
     &__telephone {
-        background-color: rgba(176, 176, 176, 0.5); 
-        color: white; 
-        padding: 20px;
-        border-radius: 5px;  
-        width: 10%;
+        background-color: rgba(176, 176, 176, 0.5);
+        color: white;
+        padding: 9px;
+        border-radius: 5px;
+        width: 9%;
+        p {
+          padding: 0;
+        }
     }
+
+   
+      p.hero__description,
+      p.hero_auteur {
+        padding: 0;
+      }
+    
 }
 
 .conteneur {

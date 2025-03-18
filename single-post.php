@@ -9,9 +9,9 @@
             ?>  
                 <h2><?php the_title(); ?></h2>
                 <div><?php the_content() ?>
-                <p>Température Maximum: <?php the_field("temperature_maximum"); ?>°C</p>
-    <p>Température Minimum: <?php the_field("temperature_minimum"); ?>°C</p>
-    <p>Température Moyenne: <?php the_field("temperature_moyenne"); ?>°C</p>
+                    <p>Température Maximum: <?php the_field("temperature_maximum"); ?>°C</p>
+                    <p>Température Minimum: <?php the_field("temperature_minimum"); ?>°C</p>
+                    <p>Température Moyenne: <?php the_field("temperature_moyenne"); ?>°C</p>
  
             <?php endwhile; endif; ?>
         </div>

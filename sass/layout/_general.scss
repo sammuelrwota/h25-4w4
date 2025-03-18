@@ -1,11 +1,17 @@
 .global{
     max-width: 1100px;
     padding: 10vh 5vw;
-    
+}
+
+.populaire {
+    background-color : rgb(184, 183, 183);
 }
 
 .populaire .global {
     display: flex;
     flex-wrap: wrap;
+    p {
+        padding: 0;
+    }
 }
 

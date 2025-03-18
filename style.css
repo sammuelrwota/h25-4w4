@@ -28,6 +28,7 @@ body {
 
 h1 {
   font-size: clamp(2rem, 3vw, 5rem);
+  padding-left: 70px;
 }
 
 h2 {
@@ -52,6 +53,7 @@ h6 {
 
 p {
   font-size: clamp(0.8rem, 1.7vw, 1rem);
+  padding: 10px 70px;
 }
 
 /* /////////////////////////////////
@@ -189,9 +191,16 @@ Les layouts
   padding: 10vh 5vw;
 }
 
+.populaire {
+  background-color: rgb(184, 183, 183);
+}
+
 .populaire .global {
   display: flex;
   flex-wrap: wrap;
+}
+.populaire .global p {
+  padding: 0;
 }
 
 .entete {
@@ -236,6 +245,9 @@ Les layouts
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+.entete__navigation .entete__menu-wrapper .recherche {
+  margin-bottom: -5px;
 }
 @media screen and (max-width: 800px) {
   .entete__navigation .entete__menu-wrapper {
@@ -291,26 +303,42 @@ Les layouts
   border-radius: 5px;
   width: 40%;
 }
+.hero__titre p {
+  padding: 0;
+}
 .hero__courriel {
   background-color: rgba(176, 176, 176, 0.5);
   color: white;
-  padding: 20px;
+  padding: 9px;
   border-radius: 5px;
-  width: 30%;
+  width: 18%;
+}
+.hero__courriel p {
+  padding: 0;
 }
 .hero__adresse {
   background-color: rgba(176, 176, 176, 0.5);
   color: white;
-  padding: 20px;
+  padding: 9px;
   border-radius: 5px;
-  width: 30%;
+  width: 35%;
+}
+.hero__adresse p {
+  padding: 0;
 }
 .hero__telephone {
   background-color: rgba(176, 176, 176, 0.5);
   color: white;
-  padding: 20px;
+  padding: 9px;
   border-radius: 5px;
-  width: 10%;
+  width: 9%;
+}
+.hero__telephone p {
+  padding: 0;
+}
+.hero p.hero__description,
+.hero p.hero_auteur {
+  padding: 0;
 }
 
 .conteneur {
@@ -359,8 +387,8 @@ td:last-child {
   --------------------------------- Layout du pied de page
 */
 footer {
-  background-color: rgb(204, 204, 204);
-  color: #000;
+  background-color: black;
+  color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -381,10 +409,12 @@ footer {
 .piedpage__s1 {
   flex: 1;
   margin-left: -50px;
+  margin-top: -15px;
 }
 .piedpage__s1 .menu {
   display: flex;
   flex-direction: column;
+  color: white;
 }
 .piedpage__s2 {
   flex: 1;
@@ -392,6 +422,11 @@ footer {
 }
 .piedpage__s3 {
   flex: 1;
+  margin-top: -15px;
+}
+.piedpage__s3 .recherche {
+  margin-top: 15px;
+  background-color: white;
 }
 
 .footer_menu_nav {
@@ -435,5 +470,11 @@ footer {
   }
   .footer_menu_nav .menu {
     margin-right: 30px;
+    color: white;
+  }
+}
+@media screen and (max-width: 576px) {
+  .footer_menu_nav {
+    margin-right: 45px;
   }
 }/*# sourceMappingURL=style.css.map */

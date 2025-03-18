@@ -3,8 +3,8 @@
 */
 
 footer {
-    background-color: rgb(204, 204, 204);
-    color: #000;
+    background-color: black;
+    color: white;
     display: flex;  
     flex-direction: row; 
     justify-content: space-between; 
@@ -26,10 +26,12 @@ footer {
     &__s1 {
         flex: 1;
         margin-left: -50px;
+        margin-top: -15px;
 
             & .menu { //ul
                 display : flex;
                 flex-direction: column;
+                color: white;
             }
     
     }
@@ -41,6 +43,12 @@ footer {
 
     &__s3 {
         flex: 1;
+        margin-top: -15px;
+
+        .recherche {
+            margin-top: 15px;
+            background-color: white;
+        }
     }
 
 }
@@ -92,6 +100,17 @@ footer {
 
         & .menu { //ul
             margin-right: 30px;
+            color: white;
         }
     }
+}
+
+
+@media screen and (max-width: 576px) {
+
+    .footer_menu_nav {
+
+        margin-right: 45px;
+    }
+
 }

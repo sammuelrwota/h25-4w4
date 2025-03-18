@@ -43,6 +43,10 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+
+        .recherche {
+          margin-bottom: -5px;
+        }
         
         @media screen and (max-width: 800px) {
             display: none;
