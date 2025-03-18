@@ -4,6 +4,7 @@
     align-items: center;
     position: relative;
     padding: 10px 20px;
+    background-color: rgb(228, 228, 228);
   
     &__navigation {
       display: flex;
@@ -37,6 +38,16 @@
         .icon-close {
           display: none;
         }
+
+
+        .icon-burger,
+        .icon-close {
+            transition: background-color 0.1s ease-in-out, border-radius 0.1s ease-in-out;
+            &:hover {
+                background-color: rgb(78, 78, 78);
+                border-radius: 20px;
+            }
+          }
       }
       
       .entete__menu-wrapper {
@@ -85,6 +96,10 @@
     }
   
     @media screen and (min-width: 992px) {
+
+      .entete {
+        background-color: rgb(228, 228, 228);
+      }
       .menu-toggle-label {
         display: none;
       }

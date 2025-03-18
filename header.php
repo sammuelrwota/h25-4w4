@@ -20,8 +20,8 @@
       <div class="entete__navigation">
         <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
         <label for="menu-toggle" class="menu-toggle-label">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/burger-menu.png" alt="Menu" class="icon-burger">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/burger-menu-close.png" alt="Fermer" class="icon-close">
+          <img src="https://s2.svgbox.net/hero-outline.svg?ic=menu&color=000" alt="Menu" class="icon-burger" width="32" height="32">
+          <img src="https://s2.svgbox.net/hero-outline.svg?ic=x&color=000" alt="Fermer" class="icon-close" width="32" height="32">
         </label>
         <div class="entete__menu-wrapper">
           <?php wp_nav_menu(array(

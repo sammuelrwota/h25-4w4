@@ -209,6 +209,7 @@ Les layouts
   align-items: center;
   position: relative;
   padding: 10px 20px;
+  background-color: rgb(228, 228, 228);
 }
 .entete__navigation {
   display: flex;
@@ -240,6 +241,15 @@ Les layouts
 }
 .entete__navigation .menu-toggle-label .icon-close {
   display: none;
+}
+.entete__navigation .menu-toggle-label .icon-burger,
+.entete__navigation .menu-toggle-label .icon-close {
+  transition: background-color 0.1s ease-in-out, border-radius 0.1s ease-in-out;
+}
+.entete__navigation .menu-toggle-label .icon-burger:hover,
+.entete__navigation .menu-toggle-label .icon-close:hover {
+  background-color: rgb(78, 78, 78);
+  border-radius: 20px;
 }
 .entete__navigation .entete__menu-wrapper {
   display: flex;
@@ -281,6 +291,9 @@ Les layouts
   text-align: center;
 }
 @media screen and (min-width: 992px) {
+  .entete .entete {
+    background-color: rgb(228, 228, 228);
+  }
   .entete .menu-toggle-label {
     display: none;
   }
@@ -382,6 +395,9 @@ td:last-child {
     bottom: -275px;
     left: 37px;
   }
+  .hero__courriel {
+    width: 23%;
+  }
 }
 /*
   --------------------------------- Layout du pied de page
@@ -466,7 +482,7 @@ footer {
     flex-direction: row;
     flex: 1;
     gap: 15px;
-    margin-right: 175px;
+    margin-right: 140px;
   }
   .footer_menu_nav .menu {
     margin-right: 30px;
