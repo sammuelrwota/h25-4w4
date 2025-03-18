@@ -4,7 +4,7 @@
  * 
  *   Template du pied de page : Affiche le pied de page du site avec trois sections.
  * - Section 1 : Menu externe (références à des liens externes).
- * - Section 2 : Informations de contact (téléphone, adresse et mission) récupérées via le Customizer.
+ * - Section 2 : Informations de contact (téléphone, adresse et mission) récupérées via le Customizer. + Intégration des icônes.
  * - Section 3 : Menu principal et formulaire de recherche.
  *   Ce fichier inclut également la fonction `wp_footer()` pour charger les scripts et ressources nécessaires avant la fermeture du balise body.
  */
@@ -22,26 +22,36 @@
         </section>
 
         <section class="piedpage__s2">
-            <div class="footer__contact">
+            <div class="piedpage__s2__contact">
                 Téléphone: <?php echo esc_html(get_theme_mod('footer_telephone', '514-254-7131')); ?>
+                <img src="https://s2.svgbox.net/hero-outline.svg?ic=phone&color=000" width="32" height="32">
             </div>
             <div class="piedpage__s2__adresse">
                 <div class="piedpage__s2__adresse__coord">
                     <?php echo esc_html(get_theme_mod('footer_adresse', '5800 Sherbrooke-est - Montréal (Québec) H1X 2A2')); ?>
+                    <img src="https://s2.svgbox.net/octicons.svg?ic=location&color=000" width="32" height="32">
                 </div>
             </div>
             <div class="piedpage__s2__description">
-                <?php echo esc_html(get_theme_mod('footer_mission', 'Voyager pour vivre!')); ?>
+                <?php echo esc_html(get_theme_mod('footer_mission', 'Votre mission est de voyager pour vivre!')); ?>
+            </div>
+            <div class="piedpage__s2__icones_reseaux_sociaux">
+                <img src="https://s2.svgbox.net/social.svg?ic=facebook&color=000000" width="20" height="20">
+                <img src="https://s2.svgbox.net/social.svg?ic=linkedin&color=000000" width="20" height="20">
+                <img src="https://s2.svgbox.net/social.svg?ic=stackoverflow&color=000000" width="20" height="20">
+                <img src="https://s2.svgbox.net/social.svg?ic=snapchat&color=000000" width="20" height="20">
+                <img src="https://s2.svgbox.net/social.svg?ic=instagram&color=000000" width="20" height="20" >
+                <img src="https://s2.svgbox.net/social.svg?ic=github&color=000000" width="20" height="20">
             </div>
         </section>
 
         <section class="piedpage__s3">
 
-            <div class="footer_menu_nav">
+            <div class="piedpage__3_menu_nav">
                 <?php wp_nav_menu(array(
                     'menu' => 'principal',
                     'container' => 'nav',
-                    'container_class' => 'footer_menu_nav'
+                    'container_class' => 'piedpage__3_menu_nav'
                 )); ?>
                      <?php get_search_form(); ?>
             </div>

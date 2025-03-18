@@ -57,7 +57,7 @@ footer {
 
 }
 
-.footer_menu_nav {
+.piedpage__3_menu_nav {
     display: flex;
     flex: 1;  
     gap: 15px;
@@ -95,7 +95,7 @@ footer {
         flex-wrap: wrap; 
     }
 
-    .footer_menu_nav {
+    .piedpage__3_menu_nav {
         display: flex;
         flex-direction: row;
         flex: 1;  
@@ -112,7 +112,7 @@ footer {
 
 @media screen and (max-width: 576px) {
 
-    .footer_menu_nav {
+    .piedpage__3_menu_nav {
 
         margin-right: 45px;
     }
