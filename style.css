@@ -1,0 +1,669 @@
+@charset "UTF-8";
+/*
+Theme Name: TP1 - Sammuel Rwota
+Theme URI: https://referenced.ca
+Author: Sammuel Rwota
+Author URI: https://github.com/sammuelrwota
+Description: Thème développé dans le cadre du cours 4w4 Q1 
+Version: 1.0
+Requires at least: 6.0
+Tested up to: 5.3
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: tp1-em
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+/* /////////////////////////////////
+Les variables
+//////////////////////////////////// */
+/**
+ * COULEURS
+ *
+ * Variables de couleur pour les liens...
+ *  
+ */
+/* /////////////////////////////////
+Les balise de bases
+//////////////////////////////////// */
+/**
+ * SIMPLE
+ * 
+ *  Style de base du site : Définit les polices et tailles de police pour les éléments de texte principaux 
+ *  (body, h1, h2, h3, h4, h5, h6, p) avec des valeurs responsives pour une meilleure adaptabilité.
+ */
+body {
+  font-size: 16px;
+  background-color: rgb(195, 195, 195);
+  font-family: "Roboto";
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: clamp(2rem, 3vw, 5rem);
+  padding-left: 70px;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1rem, 2.3vw, 1.5rem);
+}
+
+h4 {
+  font-size: clamp(0.9rem, 2vw, 1.5rem);
+}
+
+h5 {
+  font-size: clamp(0.9rem, 2vw, 1.3rem);
+}
+
+h6 {
+  font-size: clamp(0.8rem, 1.7vw, 1.2rem);
+}
+
+p {
+  font-size: clamp(0.8rem, 1.7vw, 1rem);
+  padding: 10px 70px;
+  line-height: 1.6;
+}
+
+/* /////////////////////////////////
+Les composants
+//////////////////////////////////// */
+/**
+ * MENU
+ *
+ *  Style du menu : Définit l'apparence et la disposition du menu avec une disposition flexible pour les éléments de la liste. 
+ *  Le menu devient vertical sur les petits écrans (moins de 800px) grâce à un ajustement avec la propriété flex-direction.
+ *  
+ */
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  gap: 10px 0;
+}
+@media screen and (max-width: 800px) {
+  .menu {
+    flex-direction: column;
+  }
+}
+.menu-item a {
+  text-decoration: none;
+  padding: 4px;
+}
+
+/**
+ * RECHERCHE
+ *
+ * Style de la barre de recherche : Définit l'apparence et le comportement de la barre de recherche, 
+ * avec un champ d'entrée réactif et une icône d'image à côté. Le style est optimisé pour l'interaction utilisateur, 
+ * avec des effets de survol et des styles pour le texte de l'espace réservé.
+ *  
+ */
+.recherche {
+  display: flex;
+  height: 1.6rem;
+  width: 14rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.recherche__input {
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.01);
+  flex: 1 0 auto;
+  padding: 3px;
+}
+.recherche__input:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.recherche__input::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+  font-style: "Roboto";
+}
+.recherche__img {
+  flex: 0 0 20px;
+  padding: 3px;
+}
+
+/**
+ * CARTE
+ *
+ *  Style des cartes : Définit l'apparence des cartes (image, contenu, bouton, etc.) avec des styles de base,
+ *  une disposition flexible, et un design réactif pour les petites résolutions.
+ */
+.carte {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 20px;
+  border: 4px solid black;
+  border-radius: 10px;
+  background-color: #e3e3e3;
+  -webkit-box-shadow: 5px 5px 15px 5px #000000;
+  box-shadow: 5px 5px 15px 5px #000000;
+}
+.carte--grande {
+  flex: 1;
+}
+.carte__image {
+  position: relative;
+}
+.carte__image .carte__etoile {
+  position: absolute;
+  bottom: -46px;
+  right: -35px;
+  /* height: 60px; */
+  /* width: 60px; */
+  /* font-size: 2rem; */
+  color: yellow;
+  z-index: 1;
+  transform: rotate(35deg);
+  font-size: 5rem;
+  text-shadow: 0 0 5px rgba(255, 255, 0, 0.7), 0 0 10px rgba(255, 255, 0, 0.7), 0 0 20px rgba(255, 255, 0, 0.8), 0 0 30px rgba(255, 255, 0, 0.9), 0 0 40px rgb(255, 255, 0), 0 0 50px rgb(255, 255, 0), 0 0 75px rgb(255, 255, 0);
+}
+.carte__image .carte__image-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+.carte__contenu {
+  padding: 15px 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.carte__contenu__titre {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+.carte__contenu__description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.carte__contenu p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+.carte__contenu a {
+  padding: 10px 20px;
+  text-align: left;
+  margin-left: -40px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+  background-color: #6835f5;
+  background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+}
+.carte__contenu a:hover {
+  background-color: darkblue;
+}
+.carte__contenu a.carte__bouton.carte__bouton--actif {
+  padding: 10px 20px;
+  text-align: left;
+  margin-left: 0px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+  background-color: #6835f5;
+  background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+}
+.carte__contenu a.carte__bouton.carte__bouton--actif:hover {
+  background-color: darkblue;
+}
+
+@media screen and (max-width: 800px) {
+  .carte {
+    width: 100%;
+    margin-left: -3px;
+  }
+}
+/* /////////////////////////////////
+Les layouts
+//////////////////////////////////// */
+/**
+ * GENERAL
+ *
+ * Styles généraux : Définit les styles de base pour les éléments populaires et les conteneurs globaux. 
+ * Le conteneur .global est limité en largeur et utilise des marges dynamiques pour un affichage réactif. 
+ * Le style .populaire applique une couleur de fond spécifique, et la classe .populaire .global gère la disposition flexible des éléments à l'intérieur.
+ *  
+ */
+.populaire {
+  background-color: rgb(129, 129, 129);
+}
+
+.global {
+  max-width: 1100px;
+  padding: 10vh 5vw;
+}
+
+.populaire .global {
+  display: flex;
+  flex-wrap: wrap;
+}
+.populaire .global p {
+  padding: 0;
+}
+
+/**
+ * ENTETE
+ *
+ * Style de l'en-tête : Définit l'apparence et le comportement de l'en-tête, avec une navigation flexible et réactive. 
+ * Le menu burger et les éléments associés sont configurés pour s'adapter aux petits écrans, avec un effet d'animation pour l'ouverture et la fermeture du menu.
+ * + Ajout : Animation au survol des éléments de menu pour un effet visuel amélioré.
+ */
+.entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 10px 20px;
+  background-color: rgb(228, 228, 228);
+  -webkit-box-shadow: 2px 11px 39px 21px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 11px 39px 21px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 11px 39px 21px rgba(0, 0, 0, 0.75);
+}
+.entete__navigation {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  position: relative;
+}
+.entete .menu-toggle-checkbox {
+  display: none;
+}
+.entete .menu-toggle-label {
+  display: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+@media screen and (max-width: 800px) {
+  .entete .menu-toggle-label {
+    display: block;
+  }
+}
+.entete .menu-toggle-label img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.entete .menu-toggle-label .icon-close {
+  display: none;
+}
+.entete .entete__menu-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  gap: 30px;
+  z-index: 1000;
+  pointer-events: auto;
+}
+.entete .menu-toggle-checkbox:checked ~ .entete__menu-wrapper {
+  max-height: 500px;
+  opacity: 1;
+  background-color: rgb(228, 228, 228);
+}
+.entete .entete__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  list-style: none;
+}
+.entete .entete__menu li {
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+  padding: 10px 10px;
+  left: -51px;
+}
+.entete .entete__menu li a {
+  display: block;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  position: relative;
+  pointer-events: auto;
+}
+.entete .entete__menu li::after {
+  content: "";
+  background: white;
+  width: calc(100% + 20px);
+  height: 0;
+  position: absolute;
+  bottom: -4px;
+  left: -10px;
+  transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  z-index: -1;
+}
+.entete .entete__menu li:hover::after {
+  height: calc(100% + 8px);
+}
+@media screen and (min-width: 801px) {
+  .entete .entete__menu-wrapper {
+    display: flex !important;
+    max-height: none;
+    opacity: 1;
+    overflow: visible;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .entete {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    width: 100%;
+    box-shadow: none !important;
+  }
+  .entete__logo {
+    align-self: flex-start;
+  }
+  .entete__navigation {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  .entete .menu-toggle-label {
+    position: absolute;
+    top: -92px;
+    right: 10px;
+    display: block;
+    z-index: 1100;
+  }
+  .entete .entete__menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    width: 100%;
+    background-color: rgb(228, 228, 228);
+    padding: 43px;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    pointer-events: none;
+  }
+  .entete .menu-toggle-checkbox:checked ~ .entete__menu-wrapper {
+    max-height: 500px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .entete .entete__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 100%;
+    text-align: center;
+    gap: 15px;
+  }
+  .entete .entete__menu-wrapper form.search-form {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+  }
+}
+/**
+ * GALERIE
+ *  
+ */
+/**
+ * HERO
+ *
+ * Styles de la section Hero : Définit l'apparence de la section Hero avec une image de fond, des boîtes d'information (titre, courriel, adresse, téléphone) et des ajustements de mise en page. 
+ * Le style utilise des couleurs de fond semi-transparentes et des bordures arrondies pour les éléments. 
+ * Des ajustements sont faits pour la réactivité, notamment pour l'affichage sur les petits écrans (moins de 800px).
+ *  
+ */
+.hero {
+  background-image: url("images/maldives.jpg");
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+.hero__titre {
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+  text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+  padding-left: 2px;
+}
+.hero__titre p {
+  padding: 0;
+}
+.hero__courriel {
+  color: white;
+  padding: 9px;
+  border-radius: 5px;
+  width: 18%;
+  padding-left: 2px;
+  text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+}
+.hero__courriel p {
+  padding: 0;
+}
+.hero__adresse {
+  color: white;
+  padding: 9px;
+  border-radius: 5px;
+  width: 100%;
+  text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+  padding-left: 2px;
+}
+.hero__adresse p {
+  padding: 0;
+}
+.hero__telephone {
+  color: white;
+  padding: 9px;
+  border-radius: 5px;
+  width: 100%;
+  padding-left: 2px;
+  text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+}
+.hero__telephone p {
+  padding: 0;
+}
+.hero p.hero__description,
+.hero p.hero_auteur {
+  padding: 0;
+}
+
+.conteneur {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  right: 490px;
+  bottom: -230px;
+}
+
+td {
+  border: 1px solid rgb(0, 217, 255);
+}
+
+table {
+  margin: 50px auto;
+  background: white;
+  width: auto;
+  border-collapse: collapse;
+  -webkit-box-shadow: 5px 6px 5px 4px #000000;
+  box-shadow: 5px 6px 5px 4px #000000;
+}
+
+th {
+  text-align: left;
+}
+
+td, th {
+  padding: 8px;
+}
+
+td {
+  color: #666;
+}
+
+td:last-child {
+  color: #4a4949;
+}
+
+@media screen and (max-width: 800px) {
+  .conteneur {
+    right: 38px;
+    bottom: -230px;
+    left: 37px;
+  }
+}
+/**
+ * FOOTER
+ *
+ *  Layout du pied de page : Définit l'apparence et la disposition du footer avec un design flexible pour les sections de contenu. 
+ *  Les styles sont optimisés pour être réactifs, avec des ajustements pour les petits écrans (moins de 800px et moins de 576px) et une présentation en colonne sur mobile.
+ *  
+ */
+footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.3rem;
+}
+
+.piedpage {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  line-height: 25px;
+  gap: 0px;
+  justify-content: space-between;
+}
+.piedpage__s1, .piedpage__s2, .piedpage__s3 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+}
+.piedpage__s1 {
+  flex: 1;
+  margin-left: -30px;
+  margin-top: -15px;
+}
+.piedpage__s1 .h3 {
+  color: white;
+  padding-left: 20px;
+}
+.piedpage__s1 .liens-de-voyage {
+  padding-left: 45px;
+  margin-top: 40px;
+  width: 125%;
+}
+.piedpage__s1 .menu {
+  display: flex;
+  flex-direction: column;
+}
+.piedpage__s2 {
+  flex: 1;
+  margin-right: -300px;
+}
+.piedpage__s2 .recherche {
+  margin-top: 15px;
+  background-color: white;
+}
+.piedpage__s2.icones_reseaux_sociaux img {
+  gap: 15px;
+}
+.piedpage__s3 {
+  flex: 1;
+  margin-top: -15px;
+}
+.piedpage ul#menu-principal-1.menu a,
+.piedpage ul#menu-externe.menu a {
+  color: white !important;
+}
+
+.piedpage__3_menu_nav {
+  display: flex;
+  flex: 1;
+  margin-right: 30px;
+  padding-left: 140px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .piedpage {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    margin-right: 500px;
+  }
+  .piedpage__s1,
+  .piedpage__s2 {
+    width: 100%;
+    text-align: left;
+  }
+  .piedpage__s1 {
+    margin: 0 auto;
+  }
+  .piedpage__s2 {
+    margin-left: 83px;
+    margin-right: 0px;
+    padding: 0;
+  }
+  .piedpage__s1__externe,
+  .piedpage__s2 > div {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .piedpage__3_menu_nav {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    gap: 15px;
+    margin-right: 140px;
+    padding-left: 7px;
+    margin-top: 10px;
+  }
+  .piedpage__3_menu_nav .menu {
+    margin-right: 30px;
+    padding: 10px 20px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .piedpage__3_menu_nav {
+    margin-right: 45px;
+  }
+}/*# sourceMappingURL=style.css.map */
