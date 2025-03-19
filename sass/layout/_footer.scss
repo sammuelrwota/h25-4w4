@@ -49,7 +49,6 @@ footer {
             & .menu { //ul
                 display : flex;
                 flex-direction: column;
-                color: white;
             }
     
     }
@@ -75,6 +74,11 @@ footer {
 
     }
 
+    ul#menu-principal-1.menu a,
+    ul#menu-externe.menu a{
+        color: white !important;
+    }
+
 }
 
 .piedpage__3_menu_nav {
@@ -82,6 +86,7 @@ footer {
     flex: 1;  
     margin-right: 30px;
     padding-left: 140px;
+    margin-top: 10px;
 }
 
 @media screen and (max-width: 800px) {
@@ -128,7 +133,6 @@ footer {
 
         .menu { //ul
             margin-right: 30px;
-            color: white;
             padding: 10px 20px;
         }
     }

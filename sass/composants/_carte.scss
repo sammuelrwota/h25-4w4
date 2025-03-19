@@ -21,6 +21,31 @@
     }
   
     &__image {
+
+
+      position: relative; 
+    
+      .carte__etoile {
+        position: absolute;
+        bottom: -46px;
+        right: -35px;
+        /* height: 60px; */
+        /* width: 60px; */
+        /* font-size: 2rem; */
+        color: yellow;
+        z-index: 1;
+        transform: rotate(35deg);
+        font-size: 5rem;
+        text-shadow: 
+        0 0 5px rgba(255, 255, 0, 0.7), 
+        0 0 10px rgba(255, 255, 0, 0.7), 
+        0 0 20px rgba(255, 255, 0, 0.8),
+        0 0 30px rgba(255, 255, 0, 0.9),
+        0 0 40px rgba(255, 255, 0, 1),
+        0 0 50px rgba(255, 255, 0, 1),
+        0 0 75px rgba(255, 255, 0, 1);
+      }
+
       .carte__image-background {
         position: absolute;
         top: 0;

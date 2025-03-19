@@ -3,113 +3,112 @@
  *
  * Style de l'en-tête : Définit l'apparence et le comportement de l'en-tête, avec une navigation flexible et réactive. 
  * Le menu burger et les éléments associés sont configurés pour s'adapter aux petits écrans, avec un effet d'animation pour l'ouverture et la fermeture du menu.
- *  
+ * + Ajout : Animation au survol des éléments de menu pour un effet visuel amélioré.
  */
 
-.entete {
+ .entete {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
   padding: 10px 20px;
   background-color: rgb(228, 228, 228);
+  -webkit-box-shadow: 2px 11px 39px 21px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 11px 39px 21px rgba(0,0,0,0.75);
+  box-shadow: 2px 11px 39px 21px rgba(0,0,0,0.75);
 
   &__navigation {
     display: flex;
     align-items: center;
     background-color: transparent;
     position: relative;
-    
-    .menu-toggle-checkbox {
-      display: none;
-    }
-    
-    .menu-toggle-label {
-      display: none;
-      cursor: pointer;
-      position: relative;
-      width: 40px;
-      height: 40px;
-      
-      @media screen and (max-width: 800px) {
-        display: block;
-      }
-      
-      img {
-        width: 100%;
-        height: auto;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-      
-      .icon-close {
-        display: none;
-      }
-
-      .icon-burger,
-      .icon-close {
-          transition: background-color 0.1s ease-in-out, border-radius 0.1s ease-in-out;
-          &:hover {
-              background-color: rgb(78, 78, 78);
-              border-radius: 20px;
-          }
-        }
-    }
-    
-    .entete__menu-wrapper {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      gap: 30px;
-
-      .menu {
-        gap: 10px 20px;
-      }
-
-      .recherche {
-        margin-bottom: -5px;
-        background-color: #f9f9f9;
-      }
-      
-      @media screen and (max-width: 800px) {
-          display: flex;
-          flex-direction: column;
-          position: absolute;
-          top: 150%;
-          right: -20px;
-          background-color: rgb(228, 228, 228);
-          width: 100vw;
-          padding: 30px 20px;
-          gap: 35px;
-          text-align: center;
-      }
-    }
-    
-    .menu-toggle-checkbox:checked + .menu-toggle-label {
-      .icon-burger {
-        display: none;
-      }
-      .icon-close {
-        display: block;
-      }
-    }
-    .menu-toggle-checkbox:checked ~ .entete__menu-wrapper {
-      max-height: 500px;
-      opacity: 1;
-      background-color: rgb(228, 228, 228);
-    }
   }
 
+  .menu-toggle-checkbox {
+    display: none;
+  }
+  
+  .menu-toggle-label {
+    display: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+
+    
+    @media screen and (max-width: 800px) {
+      display: block;
+    }
+    
+    img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    
+    .icon-close {
+      display: none;
+    }
+  }
+  
+  .entete__menu-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    gap: 30px;
+    z-index: 1000;
+    pointer-events: auto;
+  }
+  
+  .menu-toggle-checkbox:checked ~ .entete__menu-wrapper {
+    max-height: 500px;
+    opacity: 1;
+    background-color: rgb(228, 228, 228);
+  }
+  
   .entete__menu {
     display: flex;
     flex-direction: column;
     gap: 20px;
     text-align: center;
+    list-style: none;  
+  }
+  
+  .entete__menu li {
+    display: inline-block;  
+    position: relative;
+    z-index: 10; 
+    padding: 10px 10px;
+    left: -51px;
+  }
+  
+  .entete__menu li a {
+    display: block;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    position: relative;
+    pointer-events: auto;
+  }
+  
+  .entete__menu li::after {
+    content: "";
+    background: white;
+    width: calc(100% + 20px);
+    height: 0;
+    position: absolute;
+    bottom: -4px;
+    left: -10px;
+    transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    z-index: -1; 
+  }
+  
+  .entete__menu li:hover::after {
+    height: calc(100% + 8px);
   }
 
   @media screen and (min-width: 801px) {
@@ -120,4 +119,72 @@
       overflow: visible;
     }
   }
+
+ }
+ @media screen and (max-width: 800px) {
+  .entete {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    width: 100%;
+    box-shadow: none !important;
+
+    &__logo {
+      align-self: flex-start; 
+    }
+
+    &__navigation {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+    }
+
+    .menu-toggle-label {
+      position: absolute;
+      top: -92px;
+      right: 10px;
+      display: block;
+      z-index: 1100;
+    }
+
+    .entete__menu-wrapper { 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      top: 10px;
+      left: -10px;
+      width: 100%;
+      background-color: rgb(228, 228, 228);
+      padding: 43px;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      pointer-events: none;
+    }
+
+    .menu-toggle-checkbox:checked ~ .entete__menu-wrapper {
+      max-height: 500px;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .entete__menu {
+      display: flex;
+      flex-direction: column;
+      align-items: left; 
+      width: 100%;
+      text-align: center;
+      gap: 15px;
+    }
+
+
+    .entete__menu-wrapper form.search-form {
+      margin-top: 20px;
+      width: 100%;
+      text-align: center;
+    }
+  }
 }
+
