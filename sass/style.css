@@ -72,38 +72,72 @@ p {
 }
 
 .error404 {
-  height: 120vh;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   font-family: "Montserrat", sans-serif;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
   flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.error404 .erreur {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .error404 .H1Erreur404 {
   font-weight: 600;
   color: yellow;
   background-color: rgba(189, 189, 189, 0.3);
   font-size: 64px;
-  width: 65%;
-  /* margin-left: 550px; */
-  text-align: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 50%;
+  height: -moz-fit-content;
+  height: fit-content;
+  text-align: center !important;
+  padding: 10px 20px;
 }
 .error404 .H2Erreur404 {
   font-size: 22px;
   color: yellow;
   text-align: center;
   background-color: rgba(189, 189, 189, 0.3);
-  width: 30%;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  max-width: 50%;
 }
 .error404 .btn-home {
   background-color: yellow;
   border-radius: 5px;
   padding: 10px;
-  color: rgb(112, 125, 164);
-  font-size: 36px;
+  color: rgb(161, 180, 236);
+  font-size: 1.5rem;
   text-decoration: none !important;
   font-weight: 600 !important;
+}
+@media screen and (max-width: 801px) {
+  .error404 {
+    flex-direction: column !important;
+    gap: 15px;
+  }
+  .error404 .H1Erreur404 {
+    font-size: 48px;
+    max-width: 80%;
+  }
+  .error404 .H2Erreur404 {
+    font-size: 18px;
+    max-width: 80%;
+  }
 }
 
 /* /////////////////////////////////
