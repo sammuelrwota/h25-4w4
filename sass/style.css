@@ -125,9 +125,21 @@ p {
   text-decoration: none !important;
   font-weight: 600 !important;
 }
-.error404 .menu-menu404 li {
-  background-color: rgba(71, 71, 222, 0.2);
+.error404 .menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  gap: 10px 10px;
+}
+.error404 .menu-item {
+  text-decoration: none;
+  /* color: grey !important; */
+  background-color: rgba(121, 121, 189, 0.8);
   padding: 10px;
+  border-radius: 5px;
+}
+.error404 .menu-item a {
+  color: rgb(18, 11, 62);
 }
 @media screen and (max-width: 801px) {
   .error404 {
@@ -141,6 +153,21 @@ p {
   .error404 .H2Erreur404 {
     font-size: 18px;
     max-width: 80%;
+  }
+}
+@media screen and (max-width: 801px) and (max-width: 660px) {
+  .error404 .menu {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    justify-items: center;
+    max-width: 300px;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 801px) {
+  .error404 .menu-item {
+    width: 100%;
   }
 }
 

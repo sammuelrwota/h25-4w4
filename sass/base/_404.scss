@@ -51,9 +51,23 @@
 		font-weight: 600 !important;
 	}
 
-	.menu-menu404 li {
-		background-color: rgb(71, 71, 222, 0.2);
+	.menu {
+		display: flex;
+		flex-direction: row;
+		list-style-type: none;
+		gap: 10px 10px;
+	}
+
+	.menu-item {
+		text-decoration: none;
+		/* color: grey !important; */
+		background-color: rgb(121 121 189 / 80%);
 		padding: 10px;
+		border-radius: 5px;
+	}
+
+	.menu-item a {
+		color: rgb(18, 11, 62);
 	}
 
 	@media screen and (max-width: 801px) {
@@ -66,6 +80,22 @@
 		.H2Erreur404 {
 			font-size: 18px;
 			max-width: 80%;
+		}
+
+		@media screen and (max-width: 660px) {
+			.menu {
+				display: grid !important
+				;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 30px;
+				justify-items: center;
+				max-width: 300px;
+				align-items: center;
+			}
+		}
+
+		.menu-item {
+			width: 100%;
 		}
 	}
 }
