@@ -104,9 +104,28 @@ function theme_30w_customize_register($wp_customize) {
     'label' => __('Couleur du texte', 'theme_30w'),
     'section' => 'hero_section',
   )));
+  
+
+ /** Section Erreur 404 */
+$wp_customize->add_section('erreur_404_section', array(
+  'title' => __('Page Erreur 404', 'theme_30w'),
+  'priority' => 35,
+));
+
+/** Image d’arrière-plan pour la page 404 */
+$wp_customize->add_setting('erreur_background', array(
+  'default' => '',
+  'sanitize_callback' => 'esc_url_raw',
+));
+
+$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'erreur_background', array(
+  'label' => __('Image de fond pour la page 404', 'theme_30w'),
+  'section' => 'erreur_404_section',
+)));
+  
  
   }
  
-  add_action('customize_register', 'theme_30w_customize_register');
- 
+    add_action('customize_register', 'theme_30w_customize_register');
+
 ?>

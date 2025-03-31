@@ -1,0 +1,30 @@
+.error404 {
+	height: 120vh;
+	width: 100%;
+	font-family: "Montserrat", sans-serif;
+	font-optical-sizing: auto;
+	// font-weight: weight;
+	font-style: normal;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	.H1Erreur404 {
+		font-weight: 900;
+		color: yellow;
+		background-color: rgb(189, 189, 189, 0.3);
+		font-size: 64px;
+	}
+	.H2Erreur404 {
+		font-size: 22px;
+		color: yellow;
+	}
+	.btn-home {
+		color: grey;
+		background-color: yellow;
+		border-radius: 5px;
+	}
+	// @media screen and (max-width: 801px) {
+
+	// }
+}
