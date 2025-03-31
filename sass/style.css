@@ -125,6 +125,10 @@ p {
   text-decoration: none !important;
   font-weight: 600 !important;
 }
+.error404 .menu-menu404 li {
+  background-color: rgba(71, 71, 222, 0.2);
+  padding: 10px;
+}
 @media screen and (max-width: 801px) {
   .error404 {
     flex-direction: column !important;

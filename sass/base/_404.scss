@@ -51,6 +51,11 @@
 		font-weight: 600 !important;
 	}
 
+	.menu-menu404 li {
+		background-color: rgb(71, 71, 222, 0.2);
+		padding: 10px;
+	}
+
 	@media screen and (max-width: 801px) {
 		flex-direction: column !important;
 		gap: 15px;
