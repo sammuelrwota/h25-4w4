@@ -2,28 +2,41 @@
 	height: 120vh;
 	width: 100%;
 	font-family: "Montserrat", sans-serif;
-	font-optical-sizing: auto;
+	// font-optical-sizing: auto;
 	// font-weight: weight;
-	font-style: normal;
+	// font-style: normal;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	.H1Erreur404 {
-		font-weight: 900;
+		font-weight: 600;
 		color: yellow;
-		background-color: rgb(189, 189, 189, 0.3);
+		background-color: rgba(189, 189, 189, 0.3);
 		font-size: 64px;
+		width: 65%;
+		/* margin-left: 550px; */
+		text-align: center;
 	}
+
 	.H2Erreur404 {
 		font-size: 22px;
 		color: yellow;
+		text-align: center;
+		background-color: rgba(189, 189, 189, 0.3);
+		width: 30%;
+		// margin-left: 690px;
 	}
 	.btn-home {
-		color: grey;
 		background-color: yellow;
 		border-radius: 5px;
+		padding: 10px;
+		color: rgb(112, 125, 164);
+		font-size: 36px;
+		text-decoration: none !important;
+		font-weight: 600 !important;
 	}
+
 	// @media screen and (max-width: 801px) {
 
 	// }
