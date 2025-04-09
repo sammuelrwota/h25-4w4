@@ -34,3 +34,4 @@ $erreur_texte_couleur = get_theme_mod('erreur_texte_couleur', '#000000');
 <?php get_footer(); ?>
 </body>
 </html>
+96

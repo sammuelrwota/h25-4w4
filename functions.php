@@ -1,17 +1,18 @@
-<?php 
-/**
- * FUNCTIONS.PHP
- * 
- * Fichier functions.php : Ce fichier inclut des fichiers supplémentaires pour la gestion des fonctionnalités du thème. 
- * - Le fichier `customizer.php` permet de gérer les options personnalisées du Customizer de WordPress.
- * - Le fichier `options.php` contient des options supplémentaires de configuration du thème.
- */
+<?php
 
-
-
+// Chemin vers le dossier functions
 $functions_dir = get_template_directory() . '/functions/';
-// Inclure les fichiers spécifiques
-include_once $functions_dir . 'customizer.php';
-include_once $functions_dir . 'options.php';
 
-?>
+// Liste des fichiers à inclure
+$function_files = array(
+    'genere-boutons.php',
+    'customizer.php',
+    'options.php'
+);
+
+// Boucle pour inclure tous les fichiers
+foreach ($function_files as $file) {
+    include_once $functions_dir . $file;
+}
+
+
