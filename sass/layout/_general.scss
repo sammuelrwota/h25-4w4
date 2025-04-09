@@ -8,19 +8,18 @@
  */
 
 .populaire {
-    background-color : rgb(129, 129, 129);
+	background-color: rgb(129, 129, 129);
 }
 
-.global{
-    max-width: 1100px;
-    padding: 10vh 5vw;
+.global {
+	padding: 10vh 5vw;
 }
 
 .populaire .global {
-    display: flex;
-    flex-wrap: wrap;
-    p {
-        padding: 0;
-    }
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	p {
+		padding: 0;
+	}
 }
-
