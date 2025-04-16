@@ -51,7 +51,6 @@ h1 {
 
 h2 {
   font-size: clamp(1.5rem, 2.5vw, 3rem);
-  text-shadow: 4px 6px 12px rgba(0, 0, 0, 0.6);
   text-align: center;
 }
 
@@ -290,6 +289,14 @@ Les composants
  *  Style des cartes : Définit l'apparence des cartes (image, contenu, bouton, etc.) avec des styles de base,
  *  une disposition flexible, et un design réactif pour les petites résolutions.
  */
+.carte__div__h1 {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 150px;
+  color: rgba(255, 255, 255, 0.3);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
 .carte {
   display: flex;
   flex-direction: column;
@@ -426,8 +433,11 @@ Les composants
   }
 }
 /**
-bouton-categorie.scss ------------------------------ .categorie__ul
-*/
+ * BOUTON CATEGORIE SCSS .categorie__ul
+ *
+ *
+ *
+ */
 .categorie__ul {
   display: flex;
   gap: 5px;
@@ -504,6 +514,14 @@ Les layouts
 
 .global {
   padding: 14vh 5vw;
+}
+
+.globalTitre {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 250px;
+  color: rgba(255, 255, 255, 0.3);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .populaire .global {
@@ -928,7 +946,7 @@ footer {
   width: 100%;
   padding: 30px 40px;
   background-color: #2c2c2c;
-  border-radius: 15px;
+  border-radius: 0;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   transition: all 0.4s ease, transform 0.3s ease;
 }
@@ -973,7 +991,7 @@ footer {
   width: 100%;
   padding: 30px 40px;
   background-color: #333;
-  border-radius: 15px;
+  border-radius: 0;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   transition: all 0.4s ease;
   text-align: center;
@@ -1045,7 +1063,7 @@ footer {
   width: 120%;
   padding: 30px 40px;
   background-color: #2c2c2c;
-  border-radius: 15px;
+  border-radius: 0;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   transition: all 0.4s ease;
 }

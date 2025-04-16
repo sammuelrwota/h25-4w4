@@ -15,6 +15,17 @@
 	padding: 14vh 5vw;
 }
 
+.globalTitre {
+	text-align: center;
+	font-size: 50px;
+	margin-top: 250px;
+
+	color: rgba(255, 255, 255, 0.3);
+	// background: #1a1a1a;
+	text-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+		0 0 10px rgba(255, 255, 255, 0.5);
+}
+
 .populaire .global {
 	display: flex;
 	flex-wrap: wrap;

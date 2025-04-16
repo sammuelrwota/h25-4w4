@@ -1,3 +1,10 @@
+/**
+ * CARROUSEL
+ *
+ *
+ *
+ */
+
 (function () {
 	console.log("carrousel.js");
 

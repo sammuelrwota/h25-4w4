@@ -1,9 +1,10 @@
 /**
- *  Script js permettant d'extraite des destinations de voyage
- */
-/**
+ * DESTINATION
+ *
+ *
  * Script js permettant d'extraire des destinations de voyage
  */
+
 (function () {
 	console.log("destination.js");
 	const categoryId = 3; // Remplacez par l'ID de la catégorie souhaitée
