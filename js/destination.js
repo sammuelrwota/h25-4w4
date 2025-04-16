@@ -1,17 +1,12 @@
 /**
- * DESTINATION
- *
- *
- * Script js permettant d'extraire des destinations de voyage
+ *  Script js permettant d'extraite des destinations de voyage
  */
-
 (function () {
 	console.log("destination.js");
 	const categoryId = 3; // Remplacez par l'ID de la catégorie souhaitée
 	const domaine = window.location.href;
 	const apiUrl = `${domaine}wp-json/wp/v2/posts?categories=${categoryId}`;
 	console.log(apiUrl);
-
 	parcourir_bouton();
 
 	function parcourir_bouton() {
@@ -29,17 +24,14 @@
 		.then((response) => response.json())
 		.then((data) => {
 			const destinationList = document.querySelector(".destination__list");
-			if (!destinationList) {
-				console.warn("Élément '.destination__list' introuvable.");
-				return;
-			}
-
 			data.forEach((article) => {
 				const articleElement = document.createElement("div");
+				console.log(article.title.rendered);
+				// <div>${article.excerpt.rendered}</div>
 				articleElement.innerHTML = `
                     <h3>${article.title.rendered}</h3>
                     <p>${article.excerpt.rendered}</p>
-                    <a href="${article.link}" target="_blank">Lire plus</a>
+                    <a href="${article.link}">Lire plus</a>
                 `;
 				destinationList.appendChild(articleElement);
 			});

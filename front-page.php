@@ -1,4 +1,4 @@
-<h2?php 
+<?php 
 /**
  * FRONT-PAGE.PHP
  * 
@@ -9,10 +9,6 @@
  * - Le fichier inclut également le pied de page avec get_footer().
  */
 ?>
-
-
-
-
 
 <?php get_header(); ?>
     <?php get_template_part("gabarits/hero"); ?>
