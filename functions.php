@@ -1,5 +1,6 @@
 <?php
-add_image_size('carte_image_carre', 500, 250, true);
+add_image_size('carte_image_dimension', 500, 250, true);
+
 // Chemin vers le dossier functions
 $functions_dir = get_template_directory() . '/functions/';
 

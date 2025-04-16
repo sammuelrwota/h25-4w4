@@ -12,8 +12,14 @@
 
  
 <article class="carte carte--grande">
-  <figure class="carte__image">
-  <?php 
+  <figure class="carte__image"> 
+    <?php
+        if (has_post_thumbnail()) {
+          the_post_thumbnail('carte_image_dimension', ['class' => 'image-carte']);
+
+
+        }
+
       if (has_term('populaire', 'category')) { 
         echo '<span class="carte__etoile">&#9733;</span>';
       }
@@ -21,12 +27,7 @@
   </figure>
   
   <div class="carte__contenu">
-    <?php
-        if (has_post_thumbnail()) {
-          the_post_thumbnail('carte_image_carre');
-
-        }
-    ?>    
+     
     <h4 class="carte__titre"><?php the_title(); ?></h4>
     <p class="carte__description"><?php echo wp_trim_words(get_the_content(), 10, " ... "); ?></p>
     <?php if (function_exists('the_field')) : ?>

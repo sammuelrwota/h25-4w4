@@ -289,14 +289,6 @@ Les composants
  *  Style des cartes : Définit l'apparence des cartes (image, contenu, bouton, etc.) avec des styles de base,
  *  une disposition flexible, et un design réactif pour les petites résolutions.
  */
-.carte__div__h1 {
-  text-align: center;
-  font-size: 40px;
-  margin-top: 150px;
-  color: rgba(255, 255, 255, 0.3);
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
 .carte {
   display: flex;
   flex-direction: column;
@@ -304,7 +296,7 @@ Les composants
   box-sizing: border-box;
   border: 2px solid black;
   border-radius: 0;
-  background-color: #e3e3e3;
+  background: linear-gradient(135deg, rgba(227, 227, 227, 0.8), rgba(255, 127, 80, 0.7), rgba(0, 123, 255, 0.6));
   position: relative;
   overflow: hidden;
   transition: all 3s ease-in-out;
@@ -335,13 +327,23 @@ Les composants
 }
 .carte__image {
   position: relative;
+  width: 100% !important;
+  height: 250px;
+  border: 2px solid rgb(255, 255, 255);
 }
-.carte__image .carte__image img {
-  width: 500px;
+.carte__image__dimension {
+  width: 100% !important;
+  height: auto;
+  max-height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.carte__image .image-carte {
+  width: 100% !important;
   height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 8px;
+  display: block;
 }
 .carte__image .carte__etoile {
   position: absolute;
