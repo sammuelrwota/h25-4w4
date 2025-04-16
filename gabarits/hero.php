@@ -7,33 +7,32 @@
 
 // Récupération des paramètres du customizer
 $hero_auteur = get_theme_mod('hero_auteur', 'Default Title');
-$hero_background = [];
-for ($k = 0; $k < 3; $k++) {
-    $hero_background[$k] = get_theme_mod('hero_background_' . $k, '');
+for ($k=0; $k<3; $k++){
+$hero_background[$k] = get_theme_mod('hero_background_'. $k, '');
 }
-
-$hero_courriel = get_theme_mod('hero_courriel', '');
-$couleur_texte = get_theme_mod('hero_texte', '#000000');  // Couleur du texte
 
 ?>
 
-<style>
-.hero {
-    color: <?php echo esc_attr($couleur_texte); ?>;
-}
-</style>
 
-<div class="hero__carrousel" style="background-image: url('<?php echo esc_url($hero_background[0]); ?>'); background-repeat: no-repeat; background-size: cover;"></div>
-<div class="hero__carrousel" style="background-image: url('<?php echo esc_url($hero_background[1]); ?>'); background-repeat: no-repeat; background-size: cover;"></div>
-<div class="hero__carrousel" style="background-image: url('<?php echo esc_url($hero_background[2]); ?>'); background-repeat: no-repeat; background-size: cover;"></div>
+
+<div class="hero__carrousel" style="background-image: url(<?php echo $hero_background[0] ?>)"></div>
+<div class="hero__carrousel" style="background-image: url(<?php echo $hero_background[1] ?>)"></div>
+<div class="hero__carrousel" style="background-image: url(<?php echo $hero_background[2] ?>)"></div>
+
+<div class="hero__radio">
+  <input class="hero__radio__input" data-id-radio="0" type="radio" name="carrousel" checked>
+  <input class="hero__radio__input" data-id-radio="1" type="radio" name="carrousel">
+  <input class="hero__radio__input" data-id-radio="2" type="radio" name="carrousel">
+</div>
+
 
 <div class="hero__contenu global">
     <h1 class="hero__titre"><?php bloginfo("name"); ?></h1>
     <p class="hero__description"><?php bloginfo("description"); ?></p>
     
     <p class="hero__courriel">
-        <?php echo esc_html($hero_courriel); ?>
-        <a href="mailto:<?php echo esc_attr(get_option('admin_email')); ?>"><?php echo esc_html(get_option('admin_email')); ?></a>
+  
+        <a class="hero__courriel__a" href="mailto:<?php echo esc_attr(get_option('admin_email')); ?>"><?php echo esc_html(get_option('admin_email')); ?></a>
     </p>
 
     <div class="hero__icone">
@@ -41,7 +40,7 @@ $couleur_texte = get_theme_mod('hero_texte', '#000000');  // Couleur du texte
     </div>
 
     <p class="hero__adresse">5800 Sherbrooke-est - Montréal (Québec) H1X 2A2</p>
-    <p class="hero_auteur">Auteur: <?php echo esc_html($hero_auteur); ?></p>
+    <p class="hero__auteur">Auteur: <?php echo esc_html($hero_auteur); ?></p>
     <p class="hero__telephone">514-254-7131</p>
 
     <div class="conteneur">

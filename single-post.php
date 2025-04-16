@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-    <h1>-------- single-post.php ----------</h1>
+
     <section class="populaire">
         <div class="global">
 

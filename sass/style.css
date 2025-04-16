@@ -35,10 +35,13 @@ Les balise de bases
  */
 body {
   font-size: 16px;
-  background-color: rgb(195, 195, 195);
+  background-color: rgb(129, 129, 129);
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   overflow-x: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 h1 {
@@ -215,6 +218,7 @@ Les composants
   width: 16rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 1.5rem;
+  margin-right: 100px;
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.8), rgba(220, 220, 220, 0.8));
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1), 0px 0px 20px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease-in-out;
@@ -292,9 +296,32 @@ Les composants
   flex: 0 0 50%;
   box-sizing: border-box;
   border: 2px solid black;
-  border-radius: 10px;
+  border-radius: 0;
   background-color: #e3e3e3;
-  box-shadow: 5px 5px 15px 5px #000000;
+  position: relative;
+  overflow: hidden;
+  transition: all 3s ease-in-out;
+  cursor: pointer;
+}
+.carte::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none;
+}
+.carte:hover {
+  background-color: rgba(227, 227, 227, 0.8);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, rgba(227, 227, 227, 0.8), rgba(255, 127, 80, 0.7), rgba(0, 123, 255, 0.6));
+}
+.carte:hover::before {
+  opacity: 1;
 }
 .carte--grande {
   flex: 1;
@@ -302,18 +329,22 @@ Les composants
 .carte__image {
   position: relative;
 }
+.carte__image .carte__image img {
+  width: 500px;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
 .carte__image .carte__etoile {
   position: absolute;
-  bottom: -46px;
-  right: -35px;
-  /* height: 60px; */
-  /* width: 60px; */
-  /* font-size: 2rem; */
+  bottom: -85px;
+  right: 15px;
   color: yellow;
-  z-index: 1;
+  z-index: 10;
   transform: rotate(35deg);
   font-size: 5rem;
-  text-shadow: 0 0 5px rgba(255, 255, 0, 0.7), 0 0 10px rgba(255, 255, 0, 0.7), 0 0 20px rgba(255, 255, 0, 0.8), 0 0 30px rgba(255, 255, 0, 0.9), 0 0 40px rgb(255, 255, 0), 0 0 50px rgb(255, 255, 0), 0 0 75px rgb(255, 255, 0);
+  text-shadow: 0 0 2px rgba(255, 255, 0, 0.4), 0 0 5px rgba(255, 255, 0, 0.4), 0 0 10px rgba(255, 255, 0, 0.5), 0 0 15px rgba(255, 255, 0, 0.6), 0 0 20px rgba(255, 255, 0, 0.6), 0 0 25px rgba(255, 255, 0, 0.7);
 }
 .carte__image .carte__image-background {
   position: absolute;
@@ -330,6 +361,11 @@ Les composants
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+@media screen and (max-width: 800px) {
+  .carte__contenu {
+    padding: 0;
+  }
 }
 .carte__contenu__titre {
   text-align: center;
@@ -467,7 +503,7 @@ Les layouts
 }
 
 .global {
-  padding: 10vh 5vw;
+  padding: 14vh 5vw;
 }
 
 .populaire .global {
@@ -498,8 +534,35 @@ Les layouts
   align-items: center;
   position: relative;
   padding: 10px 20px;
-  background-color: rgb(228, 228, 228);
+  z-index: 1000;
+  left: 0;
+  width: 100%;
+  background-color: #4b4b4b;
+  min-height: 100px;
   box-shadow: 2px 11px 39px 21px rgba(0, 0, 0, 0.75);
+}
+.entete::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-25deg);
+  animation: glissementGlace 4s infinite;
+  pointer-events: none;
+}
+@keyframes glissementGlace {
+  0% {
+    right: -75%;
+  }
+  50% {
+    right: 100%;
+  }
+  100% {
+    right: 100%;
+  }
 }
 .entete__navigation {
   display: flex;
@@ -546,7 +609,6 @@ Les layouts
 .entete .menu-toggle-checkbox:checked ~ .entete__menu-wrapper {
   max-height: 500px;
   opacity: 1;
-  background-color: rgb(228, 228, 228);
 }
 .entete .entete__menu {
   display: flex;
@@ -593,6 +655,10 @@ Les layouts
 }
 
 @media screen and (max-width: 800px) {
+  .entete::after {
+    display: none;
+    content: none;
+  }
   .entete {
     flex-direction: column;
     align-items: flex-start;
@@ -623,16 +689,16 @@ Les layouts
     top: 10px;
     left: -10px;
     width: 100%;
-    background-color: rgb(228, 228, 228);
+    background-color: #4b4b4b !important;
     padding: 43px;
     opacity: 0;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transition: max-height 1.5s ease-in-out, opacity 1.5s ease-in-out;
     pointer-events: none;
   }
   .entete .menu-toggle-checkbox:checked ~ .entete__menu-wrapper {
-    max-height: 500px;
+    max-height: 600px;
     opacity: 1;
     pointer-events: auto;
   }
@@ -640,7 +706,6 @@ Les layouts
     display: flex;
     flex-direction: column;
     align-items: left;
-    width: 100%;
     text-align: center;
     gap: 15px;
   }
@@ -665,20 +730,48 @@ Les layouts
 .hero {
   position: relative;
   background-repeat: no-repeat;
-  max-height: 100vh;
+  min-height: 100vh;
+  background-size: cover;
 }
 .hero__carrousel {
   position: absolute;
-  top: 0;
   left: 0;
   min-height: 100vh;
   width: 100%;
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
   transition: opacity 1s ease-in-out;
+  z-index: 1;
+}
+.hero__carrousel.active {
+  opacity: 1;
+  z-index: 2;
+}
+.hero__radio {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 100;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  top: 120%;
+}
+.hero__radio__input {
+  cursor: pointer;
 }
 .hero__contenu {
   z-index: 9;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.hero__description {
+  color: white;
 }
 .hero__titre {
   color: white;
@@ -686,32 +779,55 @@ Les layouts
   border-radius: 5px;
   width: 100%;
   text-shadow: 0 -1px 4px #fff, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #f00;
-  padding-left: 2px;
 }
 .hero__titre p {
   padding: 0;
 }
 .hero__courriel {
   color: white;
-  padding: 9px;
+  text-align: center;
   border-radius: 5px;
   width: 18%;
-  padding-left: 2px;
   text-shadow: 0 -1px 4px #fff, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #f00;
 }
 .hero__courriel p {
   padding: 0;
 }
+.hero__courriel a {
+  color: white;
+  text-decoration: none;
+}
 .hero__adresse {
   color: white;
-  padding: 9px;
   border-radius: 5px;
   width: 100%;
   text-shadow: 0 -1px 4px #fff, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #f00;
-  padding-left: 2px;
+  text-align: center;
 }
 .hero__adresse p {
   padding: 0;
+}
+.hero__auteur {
+  color: white;
+}
+.hero__icone {
+  display: flex;
+  gap: 25px;
+}
+.hero__icone img {
+  transition: transform 0.4s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+@media screen and (max-width: 800px) {
+  .hero__icone img {
+    width: 20px;
+    width: 20px;
+    margin-bottom: 20px;
+  }
+}
+.hero__icone img:hover {
+  transform: scale(1.3);
+  filter: drop-shadow(0 0 8px rgba(255, 107, 107, 0.7));
 }
 .hero__telephone {
   color: white;
@@ -720,6 +836,7 @@ Les layouts
   width: 100%;
   padding-left: 2px;
   text-shadow: 0 -1px 4px #fff, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #f00;
+  text-align: center;
 }
 .hero__telephone p {
   padding: 0;
@@ -732,21 +849,19 @@ Les layouts
 .conteneur {
   display: flex;
   justify-content: center;
-  position: absolute;
   right: 490px;
-  bottom: -230px;
 }
 
 td {
-  border: 1px solid rgb(0, 217, 255);
+  border: 1px solid rgb(0, 0, 0);
 }
 
 table {
   margin: 50px auto;
-  background: white;
+  background: #252525;
   width: auto;
   border-collapse: collapse;
-  box-shadow: 5px 6px 5px 4px #000000;
+  box-shadow: #fff 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px, red 0 -18px 40px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 th {
@@ -756,10 +871,12 @@ th {
 td,
 th {
   padding: 8px;
+  color: white;
+  border-color: white;
 }
 
 td {
-  color: #666;
+  color: #acacac;
 }
 
 td:last-child {
@@ -803,6 +920,7 @@ footer {
   .piedpage.global {
     justify-content: flex-start;
     align-items: flex-start;
+    text-align: left;
   }
 }
 
@@ -831,6 +949,12 @@ footer {
   display: flex;
   justify-content: center;
   gap: 25px;
+}
+@media screen and (max-width: 800px) {
+  .piedpage__s1 .piedpage__s1__externe {
+    justify-content: flex-start;
+    margin-left: -42px;
+  }
 }
 .piedpage__s1 .piedpage__s1__externe a {
   color: #fff;
@@ -864,6 +988,11 @@ footer {
   color: #fff;
   margin-bottom: 20px;
 }
+@media screen and (max-width: 800px) {
+  .piedpage__s2 h3 {
+    text-align: left;
+  }
+}
 .piedpage__s2 .piedpage__s2__contact,
 .piedpage__s2 .piedpage__s2__adresse,
 .piedpage__s2 .piedpage__s2__description {
@@ -876,10 +1005,23 @@ footer {
   margin-bottom: 20px;
   text-align: center;
 }
+@media screen and (max-width: 800px) {
+  .piedpage__s2 .piedpage__s2__contact,
+  .piedpage__s2 .piedpage__s2__adresse,
+  .piedpage__s2 .piedpage__s2__description {
+    text-align: left;
+    align-items: flex-start;
+  }
+}
 .piedpage__s2 .piedpage__s2__icones_reseaux_sociaux {
   display: flex;
   gap: 25px;
   justify-content: center;
+}
+@media screen and (max-width: 800px) {
+  .piedpage__s2 .piedpage__s2__icones_reseaux_sociaux {
+    justify-content: flex-start;
+  }
 }
 .piedpage__s2 .piedpage__s2__icones_reseaux_sociaux img {
   width: 30px;
@@ -984,11 +1126,10 @@ footer {
   }
   .piedpage__3_menu_nav {
     flex-direction: column;
-    gap: 15px;
+    margin-left: -35px;
   }
   .piedpage__s1__externe {
     flex-direction: column;
-    align-items: center;
   }
 }
 @media (max-width: 600px) {
@@ -1008,6 +1149,13 @@ footer {
     font-size: 14px;
   }
 }
+@media screen and (max-width: 800px) {
+  .destination__titre {
+    text-align: left;
+    margin-left: 70px;
+  }
+}
+
 .destination__list {
   display: flex;
   flex-direction: column;
@@ -1059,4 +1207,11 @@ footer {
 }
 .destination__list a:hover::before {
   opacity: 0.4;
+}
+
+@media screen and (max-width: 800px) {
+  .categorie__ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }/*# sourceMappingURL=style.css.map */

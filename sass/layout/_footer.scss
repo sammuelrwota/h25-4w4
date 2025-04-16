@@ -27,6 +27,7 @@ footer {
 	@media screen and (max-width: 880px) {
 		justify-content: flex-start;
 		align-items: flex-start;
+		text-align: left;
 	}
 }
 
@@ -57,6 +58,10 @@ footer {
 		display: flex;
 		justify-content: center;
 		gap: 25px;
+		@media screen and (max-width: 800px) {
+			justify-content: flex-start;
+			margin-left: -42px;
+		}
 
 		a {
 			color: #fff;
@@ -93,6 +98,9 @@ footer {
 		font-weight: 600;
 		color: #fff;
 		margin-bottom: 20px;
+		@media screen and (max-width: 800px) {
+			text-align: left;
+		}
 	}
 
 	.piedpage__s2__contact,
@@ -106,12 +114,19 @@ footer {
 		font-size: 18px;
 		margin-bottom: 20px;
 		text-align: center;
+		@media screen and (max-width: 800px) {
+			text-align: left;
+			align-items: flex-start;
+		}
 	}
 
 	.piedpage__s2__icones_reseaux_sociaux {
 		display: flex;
 		gap: 25px;
 		justify-content: center;
+		@media screen and (max-width: 800px) {
+			justify-content: flex-start;
+		}
 
 		img {
 			width: 30px;
@@ -227,12 +242,13 @@ footer {
 
 	.piedpage__3_menu_nav {
 		flex-direction: column;
-		gap: 15px;
+
+		margin-left: -35px;
 	}
 
 	.piedpage__s1__externe {
 		flex-direction: column;
-		align-items: center;
+		// align-items: center;
 	}
 }
 

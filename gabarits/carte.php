@@ -21,7 +21,8 @@
   <div class="carte__contenu">
     <?php
         if (has_post_thumbnail()) {
-            the_post_thumbnail('thumbnail'); 
+          the_post_thumbnail('carte_image_carre');
+
         }
     ?>    
     <h4 class="carte__titre"><?php the_title(); ?></h4>
