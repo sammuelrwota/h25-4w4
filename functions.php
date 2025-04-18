@@ -1,4 +1,5 @@
 <?php
+// Définir une nouvelle taille d'image personnalisée
 add_image_size('carte_image_dimension', 500, 250, true);
 
 // Chemin vers le dossier functions
@@ -11,9 +12,12 @@ $function_files = array(
     'options.php'
 );
 
-// Boucle pour inclure tous les fichiers
+// Boucle pour inclure tous les fichiers si le fichier existe
 foreach ($function_files as $file) {
-    include_once $functions_dir . $file;
+    $path = $functions_dir . $file;
+    if (file_exists($path)) {
+        include_once $path;
+    } else {
+        error_log("Le fichier de fonction suivant est introuvable : $path");
+    }
 }
-
-
