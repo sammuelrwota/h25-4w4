@@ -1,4 +1,4 @@
-# TP2
+# TP2 - (Exercice - 2)
 
 ## Concevoir un site Wordpress pour un club de voyage, offrant plusieurs destinations.
 

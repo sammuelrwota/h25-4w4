@@ -1,8 +1,14 @@
 /**
- * CARROUSEL
+ * CARROUSEL.JS
  *
+ * Gère un carrousel d’images dans la section hero.
+ * - Défilement automatique toutes les 5s
+ * - Changement manuel via boutons radio
+ * - Réinitialise le minuteur après interaction
  *
- *
+ * Cibles :
+ * - .hero__carrousel : images
+ * - .hero__radio__input : boutons radio avec data-id-radio
  */
 
 (function () {

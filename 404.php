@@ -1,4 +1,21 @@
-<?php 
+<?php
+
+/**
+ * TEMPLATE 404.PHP
+ *
+ * Ce modèle s'affiche lorsqu'une page demandée n'existe pas.
+ * Il propose un message d’erreur personnalisé et esthétique avec :
+ * 
+ * - Une image de fond personnalisable via le customizer (`erreur_background`)
+ * - Une couleur de texte personnalisable (`erreur_texte_couleur`)
+ * - Un message engageant pour l’utilisateur
+ * - Un bouton de retour à l’accueil
+ * - Un menu secondaire dédié (menu404)
+ *
+ * Ce template améliore l'expérience utilisateur en conservant
+ * une esthétique cohérente avec le reste du thème.
+ */
+
 $erreur_background = get_theme_mod('erreur_background', '');
 $erreur_texte_couleur = get_theme_mod('erreur_texte_couleur', '#000000'); 
 ?>

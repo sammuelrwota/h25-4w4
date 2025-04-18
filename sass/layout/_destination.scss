@@ -1,3 +1,15 @@
+/**
+ * DESTINATION SCSS
+ *
+ *  Styles associés à la section "Destination" du site.
+ *  Inclut la mise en page responsive des titres et listes,
+ *  ainsi que des liens stylisés avec dégradé, animation et effets visuels avancés.
+ *
+ *  - .destination__titre : alignement adaptatif pour les petits écrans.
+ *  - .destination__list : structure de la liste avec style des boutons/lien.
+ *  - a::before + animation flash : effet lumineux circulaire animé.
+ */
+
 .destination {
 	&__titre {
 		@media screen and (max-width: 800px) {

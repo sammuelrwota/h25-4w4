@@ -76,6 +76,13 @@ p {
   margin: 0 20px;
 }
 
+/**
+ * PAGE 404
+ * 
+ *  Style spécifique pour la page d'erreur 404 : mise en page centrée, 
+ *  polices lisibles, boutons de navigation, et adaptation responsive 
+ *  pour assurer une bonne expérience utilisateur même en cas d'erreur.
+ */
 .error404 {
   height: 100vh;
   width: 100vw;
@@ -440,10 +447,13 @@ Les composants
   }
 }
 /**
- * BOUTON CATEGORIE SCSS .categorie__ul
- *
- *
- *
+ * BOUTONS CATÉGORIES
+ * 
+ *  Styles pour la liste de catégories affichée horizontalement ou verticalement
+ *  selon la largeur de l'écran. Chaque bouton est stylisé avec des dégradés,
+ *  effets au survol et clic, pour une interface moderne et interactive.
+ * 
+ *  Cible principale : .categorie__ul et ses éléments enfants .categorie__ul__li
  */
 .categorie__ul {
   display: flex;
@@ -1194,6 +1204,17 @@ footer {
     font-size: 14px;
   }
 }
+/**
+ * DESTINATION SCSS
+ *
+ *  Styles associés à la section "Destination" du site.
+ *  Inclut la mise en page responsive des titres et listes,
+ *  ainsi que des liens stylisés avec dégradé, animation et effets visuels avancés.
+ *
+ *  - .destination__titre : alignement adaptatif pour les petits écrans.
+ *  - .destination__list : structure de la liste avec style des boutons/lien.
+ *  - a::before + animation flash : effet lumineux circulaire animé.
+ */
 @media screen and (max-width: 800px) {
   .destination__titre {
     text-align: left;
@@ -1260,6 +1281,15 @@ footer {
     align-items: flex-start;
   }
 }
+/**
+ * SINGLE POST - CATÉGORIES
+ * 
+ *  Style des catégories affichées dans un article unique.
+ *  Mise en forme des liens de catégories avec effets de lumière, 
+ *  dégradés radiaux et ombrages pour un rendu visuel riche et engageant.
+ * 
+ *  Cible principale : .post-categories li a
+ */
 .post-categories {
   list-style-type: none;
 }
