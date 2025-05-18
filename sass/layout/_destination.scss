@@ -57,4 +57,9 @@
 	a:hover::before {
 		opacity: 0.4;
 	}
+	.destination__titre {
+		@media screen and (max-width: 800px) {
+			text-align: left;
+		}
+	}
 }

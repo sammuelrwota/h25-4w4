@@ -12,7 +12,20 @@
 }
 
 .global {
-	padding: 10vh 5vw;
+	padding: 14vh 5vw;
+}
+
+.globalTitre {
+	text-align: center;
+	font-size: 50px;
+	margin-top: 250px;
+
+	color: rgba(255, 255, 255);
+	// background: #1a1a1a
+
+	@media screen and (max-width: 800px) {
+		font-size: 30px;
+	}
 }
 
 .populaire .global {

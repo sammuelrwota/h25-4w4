@@ -1,16 +1,23 @@
 /**
-bouton-categorie.scss ------------------------------ .categorie__ul
-*/
+ * BOUTONS CATÉGORIES
+ * 
+ *  Styles pour la liste de catégories affichée horizontalement ou verticalement
+ *  selon la largeur de l'écran. Chaque bouton est stylisé avec des dégradés,
+ *  effets au survol et clic, pour une interface moderne et interactive.
+ * 
+ *  Cible principale : .categorie__ul et ses éléments enfants .categorie__ul__li
+ */
 
 .categorie__ul {
 	display: flex;
 	gap: 5px;
 	list-style-type: none;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 	flex-direction: row;
 	@media screen and (max-width: 800px) {
 		flex-direction: column;
+		margin-left: -25px;
 	}
 	&__li {
 		display: inline-block;
@@ -63,6 +70,11 @@ bouton-categorie.scss ------------------------------ .categorie__ul
 		&:active {
 			transform: translateY(0);
 			box-shadow: 0 0 10px rgba(56, 56, 56, 0.5);
+		}
+	}
+	.destination__titre {
+		@media screen and (max-width: 800px) {
+			text-align: left;
 		}
 	}
 }

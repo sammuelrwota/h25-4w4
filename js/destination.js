@@ -1,12 +1,17 @@
 /**
- *  Script js permettant d'extraite des destinations de voyage
+ * DESTINATION.JS
+ *
+ * Récupère et affiche les articles d'une catégorie (ex: voyages) via l'API WP.
+ * Gère aussi les clics sur les boutons de catégories.
  */
+
 (function () {
 	console.log("destination.js");
 	const categoryId = 3; // Remplacez par l'ID de la catégorie souhaitée
 	const domaine = window.location.href;
 	const apiUrl = `${domaine}wp-json/wp/v2/posts?categories=${categoryId}`;
 	console.log(apiUrl);
+
 	parcourir_bouton();
 
 	function parcourir_bouton() {
@@ -20,18 +25,24 @@
 		});
 	}
 
+	// créer une fonction
+
 	fetch(apiUrl)
 		.then((response) => response.json())
 		.then((data) => {
 			const destinationList = document.querySelector(".destination__list");
+			if (!destinationList) {
+				console.warn("Élément '.destination__list' introuvable.");
+				return;
+				// destinationList doit etre vide
+			}
+
 			data.forEach((article) => {
 				const articleElement = document.createElement("div");
-				console.log(article.title.rendered);
-				// <div>${article.excerpt.rendered}</div>
 				articleElement.innerHTML = `
                     <h3>${article.title.rendered}</h3>
                     <p>${article.excerpt.rendered}</p>
-                    <a href="${article.link}">Lire plus</a>
+                    <a href="${article.link}" target="_blank">Lire plus</a>
                 `;
 				destinationList.appendChild(articleElement);
 			});

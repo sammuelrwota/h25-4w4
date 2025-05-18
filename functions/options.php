@@ -7,6 +7,8 @@ function mon_theme_supports() {
 add_theme_support('title-tag');
 add_theme_support('menus');
 add_theme_support('post-thumbnails');
+    // Définir une nouvelle taille d'image personnalisée
+add_image_size('carte_image_dimension', 500, 250, true);
 add_theme_support('custom-logo', array(
   'height'      => 250,
   'width'       => 250,

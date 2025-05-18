@@ -8,9 +8,11 @@
  * - Section 3 : Menu principal et formulaire de recherche.
  *   Ce fichier inclut également la fonction `wp_footer()` pour charger les scripts et ressources nécessaires avant la fermeture du balise body.
  */
+$footer_couleur = get_theme_mod('footer_couleur', '#aaa');
+genere_vague($footer_couleur);
 ?>
 
-<footer>
+<footer style="background-color: <?= $footer_couleur?>">
     <div class="piedpage global">
         <section class="piedpage__s1">
             <h3 class="liens-de-voyage">Liens de voyage</h3>
