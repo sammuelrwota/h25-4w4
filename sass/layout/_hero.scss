@@ -39,13 +39,46 @@
 		align-items: center;
 		width: 100%;
 		position: absolute;
-		top: 117%;
-		@media screen and (max-width: 800px) {
-			top: 125%;
-		}
+		top: 110%;
+		// @media screen and (max-width: 800px) {
+		// 	top: 119%;
+		// }
 
 		&__input {
+			appearance: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			width: 20px;
+			height: 20px;
+			border: 2px solid #ccc;
+			border-radius: 50%;
+			outline: none;
 			cursor: pointer;
+			position: relative;
+			transition: border-color 0.2s ease-in-out;
+			background-color: white;
+
+			&:checked {
+				border-color: #ff1500;
+				background-color: #ff6f00;
+			}
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background: rgb(255, 255, 255);
+				display: none;
+			}
+
+			&:checked::before {
+				display: block;
+			}
 		}
 	}
 

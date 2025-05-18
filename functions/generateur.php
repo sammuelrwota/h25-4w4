@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * 
+ * Génère une ou plusieurs vague svg
+ * 
+ */
+function genere_vague($couleur) { ?>
+    <svg style="top:50px;" class="vague" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="<?= $couleur ?>" fill-opacity="1" d="M0,64L60,64C120,64,240,64,360,90.7C480,117,600,171,720,202.7C840,235,960,245,1080,240C1200,235,1320,213,1380,202.7L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+<?php }

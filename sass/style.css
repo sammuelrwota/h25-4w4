@@ -514,6 +514,10 @@ Les composants
   box-shadow: 0 0 10px rgba(56, 56, 56, 0.5);
 }
 
+.vague {
+  position: relative;
+}
+
 /* /////////////////////////////////
 Les layouts
 //////////////////////////////////// */
@@ -797,15 +801,40 @@ Les layouts
   align-items: center;
   width: 100%;
   position: absolute;
-  top: 117%;
-}
-@media screen and (max-width: 800px) {
-  .hero__radio {
-    top: 125%;
-  }
+  top: 110%;
 }
 .hero__radio__input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  outline: none;
   cursor: pointer;
+  position: relative;
+  transition: border-color 0.2s ease-in-out;
+  background-color: white;
+}
+.hero__radio__input:checked {
+  border-color: #ff1500;
+  background-color: #ff6f00;
+}
+.hero__radio__input::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgb(255, 255, 255);
+  display: none;
+}
+.hero__radio__input:checked::before {
+  display: block;
 }
 .hero__contenu {
   z-index: 9;
@@ -953,10 +982,8 @@ td:last-child {
  *  
  */
 footer {
-  background-color: #1e1e1e;
   color: #fff;
   padding: 50px 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   position: relative;
   z-index: 1;
 }

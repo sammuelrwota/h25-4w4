@@ -25,6 +25,8 @@
 		});
 	}
 
+	// créer une fonction
+
 	fetch(apiUrl)
 		.then((response) => response.json())
 		.then((data) => {
@@ -32,6 +34,7 @@
 			if (!destinationList) {
 				console.warn("Élément '.destination__list' introuvable.");
 				return;
+				// destinationList doit etre vide
 			}
 
 			data.forEach((article) => {

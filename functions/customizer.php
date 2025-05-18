@@ -17,7 +17,7 @@
  ));
  ///////////////////////////////// ajout de la donnée
  $wp_customize->add_setting('hero_auteur', array(
-   'default' => __('Sammuel Rwota', 'theme_tp'),
+   'default' => __('Eddy Martin', 'theme_tp'),
    'sanitize_callback' => 'sanitize_text_field'
  ));
  ///////////////////////////////// ajout du contrôle de la donnée
