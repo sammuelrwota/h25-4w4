@@ -8,6 +8,19 @@
  *  Cible principale : .post-categories li a
  */
 
+.singlepost {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	&__article {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
 .post-categories {
 	list-style-type: none;
 
