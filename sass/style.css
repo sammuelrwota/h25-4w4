@@ -7,7 +7,7 @@ Author URI: https://github.com/sammuelrwota
 Description: Thème développé dans le cadre du cours 4w4 Q1 
 Version: 1.0
 Requires at least: 6.0
-Tested up to: 5.3
+Tested up to: 5.3d
 Requires PHP: 7.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -378,7 +378,8 @@ Les composants
   z-index: -1;
 }
 .carte__contenu {
-  padding: 15px 90px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1281,9 +1282,12 @@ footer {
 .destination__list a:hover::before {
   opacity: 0.4;
 }
+
 @media screen and (max-width: 800px) {
-  .destination__list .destination__titre {
+  .destination__titre {
     text-align: left;
+    margin-left: 50px;
+    margin-top: 100px;
   }
 }
 
@@ -1331,11 +1335,7 @@ footer {
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
 }
-.global__singlepost__article:hover {
-  transform: translateY(-5px);
-}
 .global__singlepost__image {
-  width: 100% !important;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -1371,10 +1371,18 @@ footer {
 .global__singlepost__categories {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
   gap: 1rem;
   padding-top: 1.5rem;
+  width: 100%;
+}
+.global__singlepost__categories .post-categories {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  width: auto;
 }
 .global__singlepost__categories .post-categories li a {
   padding: 10px 20px;

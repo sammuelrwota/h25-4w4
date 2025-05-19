@@ -44,13 +44,13 @@
 			padding: 2rem;
 			box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 			transition: transform 0.3s ease;
-			&:hover {
-				transform: translateY(-5px);
-			}
+			// &:hover {
+			// 	transform: translateY(-5px);
+			// }
 		}
 
 		&__image {
-			width: 100% !important;
+			// width: 100% !important;
 			height: 100%;
 			object-fit: cover;
 			display: block;
@@ -89,11 +89,19 @@
 		&__categories {
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: center;
+			// justify-content: center;
 			align-items: center;
 			gap: 1rem;
 			padding-top: 1.5rem;
+			width: 100%;
 			.post-categories {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				gap: 3rem;
+				width: auto;
+
 				li a {
 					padding: 10px 20px;
 					text-align: left;

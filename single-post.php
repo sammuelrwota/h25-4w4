@@ -7,12 +7,12 @@
                
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <article class="global__singlepost__article"> 
-            <div class="global__singlepost__image">
+
             <?php
                 if (has_post_thumbnail()) {
-                    the_post_thumbnail('ma_taille_custom');
+                    the_post_thumbnail('ma_taille_custom', ['class' => 'global__singlepost__image']);
                 }
-            ?></div>
+            ?>
                 <div class="global__singlepost__div"><?php the_content() ?>
 
                 <div class="global__singlepost__temperatures">
@@ -24,6 +24,7 @@
                 </div>
 
                 <div class="global__singlepost__categories">
+                    <p>Catégories : </p>
                <?php the_category(); ?>
                  <?php  $tableau = get_the_category(); 
                     // print_r ($tableau);
