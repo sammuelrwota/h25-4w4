@@ -19,11 +19,6 @@ $hero_background[$k] = get_theme_mod('hero_background_'. $k, '');
 <div class="hero__carrousel" style="background-image: url(<?php echo $hero_background[1] ?>)"></div>
 <div class="hero__carrousel" style="background-image: url(<?php echo $hero_background[2] ?>)"></div>
 
-<div class="hero__radio">
-  <input class="hero__radio__input" data-id-radio="0" type="radio" name="carrousel" checked>
-  <input class="hero__radio__input" data-id-radio="1" type="radio" name="carrousel">
-  <input class="hero__radio__input" data-id-radio="2" type="radio" name="carrousel">
-</div>
 
 
 <div class="hero__contenu global">
@@ -61,5 +56,12 @@ $hero_background[$k] = get_theme_mod('hero_background_'. $k, '');
             </tr>
         </table>
     </div>
+    <div class="hero__radios">
+<div class="hero__radio">
+  <input class="hero__radio__input" data-id-radio="0" type="radio" name="carrousel" checked>
+  <input class="hero__radio__input" data-id-radio="1" type="radio" name="carrousel">
+  <input class="hero__radio__input" data-id-radio="2" type="radio" name="carrousel">
+</div>
+</div>
 </div>
 </section>

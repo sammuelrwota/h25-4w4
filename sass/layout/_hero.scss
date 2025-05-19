@@ -31,53 +31,62 @@
 		}
 	}
 
-	&__radio {
+	&__radios {
+		position: relative;
+		width: 100%;
 		display: flex;
 		justify-content: center;
-		gap: 10px;
-		z-index: 100;
 		align-items: center;
-		width: 100%;
-		position: absolute;
-		top: 110%;
-		// @media screen and (max-width: 800px) {
-		// 	top: 119%;
-		// }
 
-		&__input {
-			appearance: none;
-			-webkit-appearance: none;
-			-moz-appearance: none;
-			width: 15px;
-			height: 15px;
-			border: 2px solid #ccc;
-			border-radius: 50%;
-			outline: none;
-			cursor: pointer;
-			position: relative;
-			transition: border-color 0.2s ease-in-out;
-			background-color: transparent;
+		.hero__radio {
+			display: flex;
+			justify-content: center;
+			gap: 10px;
+			z-index: 100;
+			align-items: center;
+			width: 100%;
+			position: absolute;
+			top: 110%;
+			// @media screen and (max-width: 800px) {
+			// 	top: 119%;
+			// }
 
-			&:checked {
-				// border-color: #ff1500;
-				background-color: #ff6f00;
-			}
-
-			&::before {
-				content: "";
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				width: 10px;
-				height: 10px;
+			&__input {
+				appearance: none;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				width: 15px;
+				height: 15px;
+				border: 2px solid #ccc;
 				border-radius: 50%;
-				background: rgb(255, 255, 255);
-				display: none;
-			}
+				outline: none;
+				cursor: pointer;
+				position: relative;
+				transition: border-color 0.2s ease-in-out;
+				background-color: transparent;
 
-			&:checked::before {
-				display: block;
+				&:checked {
+					// border-color: #ff1500;
+					background-color: none;
+					border: 5px solid white;
+				}
+
+				&::before {
+					content: "";
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					width: 10px;
+					height: 10px;
+					border-radius: 50%;
+					background: rgb(255, 255, 255);
+					display: none;
+				}
+
+				&:checked::before {
+					display: block;
+				}
 			}
 		}
 	}
@@ -89,6 +98,7 @@
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
+		// gap: 5px;
 	}
 
 	&__description {
