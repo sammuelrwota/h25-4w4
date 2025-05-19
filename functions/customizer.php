@@ -42,3 +42,5 @@
  }
  
  add_action('customize_register', 'theme_tp_customize_register');
+
+ 

@@ -2,25 +2,35 @@
 
     <section class="populaire">
         <div class="global"> 
-             <h2 class="singlepost__titre"><?php the_title(); ?></h2>
-            <div class="singlepost">
+             <h2 class="global__titre"><?php the_title(); ?></h2>
+            <div class="global__singlepost">
                
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            <article class="singlepost__article">
+            <article class="global__singlepost__article"> 
+            <div class="global__singlepost__image">
             <?php
                 if (has_post_thumbnail()) {
-                the_post_thumbnail('medium'); }
-            ?>  
-               
-                <div class="singlepost__div"><?php the_content() ?>
-                <?php the_category(); ?>
-                <?php  $tableau = get_the_category(); 
-                // print_r ($tableau);
-                ?>
-                <div class="singlepost__temperatures">
-                <p>Température maximum: <?php the_field('temperature_maximum') ?>&#176;C</p>
-                <p>Température minimum: <?php the_field('temperature_minimum') ?>&#176;C</p>
-                <p>Température moyenne: <?php the_field('temperature_moyenne') ?>&#176;C</p></div>
+                    the_post_thumbnail('ma_taille_custom');
+                }
+            ?></div>
+                <div class="global__singlepost__div"><?php the_content() ?>
+
+                <div class="global__singlepost__temperatures">
+
+                    <p>Température maximum: <strong><?php the_field('temperature_maximum') ?>&#176;C</strong></p>
+                    <p>Température minimum: <strong> <?php the_field('temperature_minimum') ?>&#176;C</strong></p>
+                    <p>Température moyenne: <strong><?php the_field('temperature_moyenne')  ?>&#176;C</strong></p>
+
+                </div>
+
+                <div class="global__singlepost__categories">
+               <?php the_category(); ?>
+                 <?php  $tableau = get_the_category(); 
+                    // print_r ($tableau);
+                 ?>
+                </div>
+                
+            </article>
             <?php endwhile; endif; ?>
             </div>
         </div>
