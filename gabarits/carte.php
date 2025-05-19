@@ -36,7 +36,7 @@
   <p>Température Moyenne: <?php the_field("temperature_moyenne"); ?>°C</p>
 <?php endif; ?>
 
-    <a class="carte__bouton carte__bouton--actif" href="<?php the_permalink() ?>">suite</a>
+    <a class="carte__bouton carte__bouton--actif" href="<?php the_permalink() ?>">En savoir plus</a>
    
   </div>
 </article>

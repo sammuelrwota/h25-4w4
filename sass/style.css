@@ -415,12 +415,10 @@ Les composants
   display: inline-block;
   margin-top: 15px;
   transition: background-color 0.3s;
-  background-color: #6835f5;
-  background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
   box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
 }
 .carte__contenu a:hover {
-  background-color: darkblue;
+  background-color: rgb(76, 76, 224);
 }
 .carte__contenu a.carte__bouton.carte__bouton--actif {
   padding: 10px 20px;
@@ -433,8 +431,6 @@ Les composants
   display: inline-block;
   margin-top: 15px;
   transition: background-color 0.3s;
-  background-color: #6835f5;
-  background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
   box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
 }
 .carte__contenu a.carte__bouton.carte__bouton--actif:hover {
@@ -1395,8 +1391,6 @@ footer {
   display: inline-block;
   margin-top: 15px;
   transition: background-color 0.3s;
-  background-color: #331b76;
-  background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
   box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
 }
 .global__singlepost__categories .post-categories li a:hover {
@@ -1404,7 +1398,7 @@ footer {
 }
 .global__singlepost__categories a {
   text-decoration: none;
-  background-color: #2d89ef;
+  background-color: #b7cde6;
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 2rem;
@@ -1412,5 +1406,14 @@ footer {
   transition: background-color 0.3s ease;
 }
 .global__singlepost__categories a:hover {
-  background-color: #1b61c1;
+  background-color: #b1c2d9;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
 }/*# sourceMappingURL=style.css.map */
