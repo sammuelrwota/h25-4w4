@@ -23,9 +23,24 @@ $hero_background[$k] = get_theme_mod('hero_background_'. $k, '');
 
 
 <div class="hero__contenu global">
+
+
+<div class="hero__animation hero__animation--active">
     <h1 class="hero__titre"><?php bloginfo("name"); ?></h1>
     <p class="hero__description"><?php bloginfo("description"); ?></p>
-    
+</div>
+
+<div class="hero__animation">
+<h1 class="hero__titre">Le monde s’éveille. Saisis-le.</h1>
+<p class="hero__description">Plus que des lieux, des instants gravés.</p>
+
+        </div>
+        <div class="hero__animation">
+        <h1 class="hero__titre">Voyage lent, âme éveillée.</h1>
+<p class="hero__description">Le luxe, c’est le temps. Chaque pas, un poème.</p>
+
+        </div>
+
     <p class="hero__courriel">
   
         <a class="hero__courriel__a" href="mailto:<?php echo esc_attr(get_option('admin_email')); ?>"><?php echo esc_html(get_option('admin_email')); ?></a>

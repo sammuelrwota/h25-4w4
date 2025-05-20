@@ -14,59 +14,50 @@
 (function () {
 	console.log("carrousel.js");
 
-	let images = document.querySelectorAll(".hero__carrousel");
-	let boutonsRadio = document.querySelectorAll(".hero__radio__input");
+	const images = document.querySelectorAll(".hero__carrousel");
+	const boutonsRadio = document.querySelectorAll(".hero__radio__input");
+	const heroContainer = document.querySelector(".hero");
+	const conteneur = document.querySelector(".conteneur");
+	const animations = document.querySelectorAll(".hero__animation");
+
+	const themesHero = [
+		"hero--theme-default",
+		"hero--theme-violet",
+		"hero--theme-marine",
+	];
+
+	const themesConteneur = [
+		"conteneur--theme-default",
+		"conteneur--theme-violet",
+		"conteneur--theme-marine",
+	];
+
 	let indexActuel = 0;
 	let minuterie;
-
-	const heroContainer = document.querySelector(".hero");
-
-	function appliquerTheme(index) {
-		heroContainer.classList.remove(
-			"hero--theme-default",
-			"hero--theme-violet",
-			"hero--theme-marine"
-		);
-		if (index === 0) {
-			heroContainer.classList.add("hero--theme-default");
-		} else if (index === 1) {
-			heroContainer.classList.add("hero--theme-violet");
-		} else if (index === 2) {
-			heroContainer.classList.add("hero--theme-marine");
-		}
-	}
-
-	const conteneur = document.querySelector(".conteneur");
+	let themeHeroActuel = themesHero[0];
+	let themeConteneurActuel = themesConteneur[0];
 
 	function appliquerTheme(index) {
-		heroContainer.classList.remove(
-			"hero--theme-default",
-			"hero--theme-violet",
-			"hero--theme-marine"
-		);
-		conteneur.classList.remove(
-			"conteneur--theme-default",
-			"conteneur--theme-violet",
-			"conteneur--theme-marine"
-		);
-
-		if (index === 0) {
-			heroContainer.classList.add("hero--theme-default");
-			conteneur.classList.add("conteneur--theme-default");
-		} else if (index === 1) {
-			heroContainer.classList.add("hero--theme-violet");
-			conteneur.classList.add("conteneur--theme-violet");
-		} else if (index === 2) {
-			heroContainer.classList.add("hero--theme-marine");
-			conteneur.classList.add("conteneur--theme-marine");
-		}
+		heroContainer.classList.replace(themeHeroActuel, themesHero[index]);
+		conteneur.classList.replace(themeConteneurActuel, themesConteneur[index]);
+		themeHeroActuel = themesHero[index];
+		themeConteneurActuel = themesConteneur[index];
 	}
 
 	function afficherImage(index) {
 		images.forEach((image, i) => image.classList.toggle("active", i === index));
 		boutonsRadio.forEach((bouton, i) => (bouton.checked = i === index));
 		indexActuel = index;
+
 		appliquerTheme(index);
+
+		animations.forEach((anim, i) => {
+			anim.classList.remove("hero__animation--active");
+			if (i === index) {
+				void anim.offsetWidth;
+				anim.classList.add("hero__animation--active");
+			}
+		});
 	}
 
 	function changerImageAuto() {
@@ -78,7 +69,7 @@
 
 	boutonsRadio.forEach((bouton) => {
 		bouton.addEventListener("change", () => {
-			let index = parseInt(bouton.dataset.idRadio);
+			const index = parseInt(bouton.dataset.idRadio);
 			clearInterval(minuterie);
 			afficherImage(index);
 			minuterie = setInterval(changerImageAuto, 5000);
