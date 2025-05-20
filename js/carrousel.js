@@ -19,12 +19,54 @@
 	let indexActuel = 0;
 	let minuterie;
 
-	console.log("hero__radio__input.length", boutonsRadio.length);
+	const heroContainer = document.querySelector(".hero");
+
+	function appliquerTheme(index) {
+		heroContainer.classList.remove(
+			"hero--theme-default",
+			"hero--theme-violet",
+			"hero--theme-marine"
+		);
+		if (index === 0) {
+			heroContainer.classList.add("hero--theme-default");
+		} else if (index === 1) {
+			heroContainer.classList.add("hero--theme-violet");
+		} else if (index === 2) {
+			heroContainer.classList.add("hero--theme-marine");
+		}
+	}
+
+	const conteneur = document.querySelector(".conteneur");
+
+	function appliquerTheme(index) {
+		heroContainer.classList.remove(
+			"hero--theme-default",
+			"hero--theme-violet",
+			"hero--theme-marine"
+		);
+		conteneur.classList.remove(
+			"conteneur--theme-default",
+			"conteneur--theme-violet",
+			"conteneur--theme-marine"
+		);
+
+		if (index === 0) {
+			heroContainer.classList.add("hero--theme-default");
+			conteneur.classList.add("conteneur--theme-default");
+		} else if (index === 1) {
+			heroContainer.classList.add("hero--theme-violet");
+			conteneur.classList.add("conteneur--theme-violet");
+		} else if (index === 2) {
+			heroContainer.classList.add("hero--theme-marine");
+			conteneur.classList.add("conteneur--theme-marine");
+		}
+	}
 
 	function afficherImage(index) {
 		images.forEach((image, i) => image.classList.toggle("active", i === index));
 		boutonsRadio.forEach((bouton, i) => (bouton.checked = i === index));
 		indexActuel = index;
+		appliquerTheme(index);
 	}
 
 	function changerImageAuto() {
