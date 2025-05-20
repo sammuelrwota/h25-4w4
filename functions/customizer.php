@@ -71,7 +71,6 @@ function afficher_icones_sociaux() {
   foreach ($social_networks as $network) {
       $url = get_theme_mod("social_link_$network", '');
       if (!empty($url)) {
-          // Use your trusted SVG icons from svgbox.net
           $icon_url = "https://s2.svgbox.net/social.svg?ic={$network}&color=ffffff";
           echo '<a href="' . esc_url($url) . '" target="_blank" rel="noopener noreferrer" class="hero__icone-link">';
           echo '<img src="' . esc_url($icon_url) . '" width="36" height="36" alt="' . ucfirst($network) . '">';

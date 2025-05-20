@@ -17,17 +17,18 @@ get_header();
         $search_term = get_search_query();
         ?>
 
-        <h2 class="recherche__titre">
-            <?php 
-            if ($total_results === 1) {
-                echo '1 résultat trouvé pour : <strong>' . esc_html($search_term) . '</strong>';
-            } elseif ($total_results > 1) {
-                echo $total_results . ' résultats trouvés pour : <strong>' . esc_html($search_term) . '</strong>';
-            } else {
-                echo 'Aucun résultat trouvé pour : <strong>' . esc_html($search_term) . '</strong>';
-            }
-            ?>
-        </h2>
+    <h2 class="recherche__titre">
+        <?php 
+        if ($total_results === 1) {
+            echo 'Voici le seul résultat correspondant à : <strong class="recherches">' . esc_html($search_term) . '</strong>';
+        } elseif ($total_results > 1) {
+            echo $total_results . ' correspondances détectées pour : <strong class="recherches">' . esc_html($search_term) . '</strong>';
+        } else {
+            echo 'Aucun résultat trouvé pour : <strong class="recherches">' . esc_html($search_term) . '</strong>';
+        }
+        ?>
+    </h2>
+
 
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
@@ -38,7 +39,7 @@ get_header();
                 </article>
             <?php endwhile; ?>
         <?php else : ?>
-            <p>Essayez un autre mot-clé ou vérifiez l’orthographe.</p>
+            <p>Tentez une autre recherche ou vérifiez l’exactitude de votre saisie.</p>
         <?php endif; ?>
     </section>
 </main>

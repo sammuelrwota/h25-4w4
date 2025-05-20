@@ -8,7 +8,7 @@
  * - Section 3 : Menu principal et formulaire de recherche.
  *   Ce fichier inclut également la fonction `wp_footer()` pour charger les scripts et ressources nécessaires avant la fermeture du balise body.
  */
-$footer_couleur = get_theme_mod('footer_couleur', '#aaa');
+$footer_couleur = get_theme_mod('footer_couleur', '#2c2c2c');
 genere_vague($footer_couleur);
 ?>
 
@@ -40,12 +40,15 @@ genere_vague($footer_couleur);
                 <?php echo esc_html(get_theme_mod('footer_mission', 'Votre mission est de voyager pour vivre!')); ?>
             </div>
             <div class="piedpage__s2__icones_reseaux_sociaux">
-                <img src="https://s2.svgbox.net/social.svg?ic=facebook&color=FFF" width="20" height="20">
-                <img src="https://s2.svgbox.net/social.svg?ic=linkedin&color=FFF" width="20" height="20">
-                <img src="https://s2.svgbox.net/social.svg?ic=stackoverflow&color=FFF" width="20" height="20">
-                <img src="https://s2.svgbox.net/social.svg?ic=snapchat&color=FFF" width="20" height="20">
-                <img src="https://s2.svgbox.net/social.svg?ic=instagram&color=FFF" width="20" height="20" >
-                <img src="https://s2.svgbox.net/social.svg?ic=github&color=FFF" width="20" height="20">
+                <a href="https://www.linkedin.com/in/sammuel-rwota-6baa9234b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <img src="https://s2.svgbox.net/social.svg?ic=linkedin&color=FFF" width="20" height="20" alt="LinkedIn">
+                </a>
+                <a href="https://www.instagram.com/sammuelrwota/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <img src="https://s2.svgbox.net/social.svg?ic=instagram&color=FFF" width="20" height="20" alt="Instagram">
+                </a>
+                <a href="https://github.com/sammuelrwota/h25-4w4/tree/tp2" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <img src="https://s2.svgbox.net/social.svg?ic=github&color=FFF" width="20" height="20" alt="GitHub">
+                </a>
             </div>
             <?php get_search_form(); ?>
         </section>

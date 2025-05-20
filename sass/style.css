@@ -104,6 +104,8 @@ p {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: #121212;
+  animation: cosmicPulse 8s ease-in-out infinite alternate;
 }
 .error404 .erreur {
   display: flex;
@@ -113,7 +115,6 @@ p {
 }
 .error404 .H1Erreur404 {
   font-weight: 600;
-  color: yellow;
   background-color: rgba(189, 189, 189, 0.3);
   font-size: 64px;
   width: -moz-fit-content;
@@ -123,10 +124,26 @@ p {
   height: fit-content;
   text-align: center !important;
   padding: 10px 20px;
+  border: 3px solid white;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInOpacity 4s ease forwards, shimmerText 6s linear infinite;
+}
+.error404 .H1Erreur404::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  left: -50%;
+  width: 200%;
+  height: 160%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15), transparent 70%);
+  animation: rotateShimmer 5s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(8px);
 }
 .error404 .H2Erreur404 {
-  font-size: 22px;
-  color: yellow;
+  font-size: 18px;
   text-align: center;
   background-color: rgba(189, 189, 189, 0.3);
   width: -moz-fit-content;
@@ -136,31 +153,91 @@ p {
   padding: 10px 20px;
   margin-bottom: 30px;
   max-width: 50%;
+  border: 3px solid white;
+  opacity: 0;
+  animation: fadeInOpacity 6s ease forwards 1s;
 }
 .error404 .btn-home {
-  background-color: yellow;
-  border-radius: 5px;
-  padding: 10px;
-  color: rgb(161, 180, 236);
-  font-size: 1.5rem;
-  text-decoration: none !important;
-  font-weight: 600 !important;
+  background: linear-gradient(135deg, #ffe259, #ffa751);
+  color: #ffffff;
+  padding: 0.95rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.6px;
+  box-shadow: 0 6px 25px rgba(255, 210, 80, 0.45);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  backface-visibility: hidden;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+.error404 .btn-home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 220%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0));
+  transition: all 0.6s ease;
+  z-index: 0;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+  border-radius: 50px;
+}
+.error404 .btn-home:hover::before {
+  left: 120%;
+}
+.error404 .btn-home:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 14px 35px rgba(255, 210, 80, 0.7), 0 0 15px rgba(255, 210, 80, 0.5);
+}
+.error404 .btn-home:active {
+  transform: scale(0.96);
+  box-shadow: 0 5px 15px rgba(255, 180, 50, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .error404 .menu {
   display: flex;
   flex-direction: row;
   list-style-type: none;
   gap: 10px 10px;
+  margin-right: 50px;
 }
 .error404 .menu-item {
-  text-decoration: none;
-  /* color: grey !important; */
-  background-color: rgba(121, 121, 189, 0.8);
-  padding: 10px;
-  border-radius: 5px;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.85), rgba(255, 165, 0, 0.85));
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 165, 0, 0.6);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  animation: pulseOpacity 5s ease-in-out infinite;
+}
+.error404 .menu-item:hover {
+  background: linear-gradient(135deg, rgb(255, 220, 50), rgb(255, 140, 0));
+  box-shadow: 0 8px 24px rgba(255, 165, 0, 0.9);
+  transform: translateY(-3px) scale(1.05);
+  animation-play-state: paused;
 }
 .error404 .menu-item a {
-  color: rgb(18, 11, 62);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  transition: color 0.3s ease;
+}
+.menu-item:hover .error404 .menu-item a {
+  color: #fff9e1;
 }
 @media screen and (max-width: 801px) {
   .error404 {
@@ -184,14 +261,67 @@ p {
     justify-items: center;
     max-width: 300px;
     align-items: center;
+    margin-right: 50px;
   }
 }
 @media screen and (max-width: 801px) {
   .error404 .menu-item {
     width: 100%;
+    padding: 12px 10px;
   }
 }
 
+/* Animations */
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+    filter: blur(3px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+@keyframes shimmerText {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+@keyframes rotateShimmer {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 6px 25px rgba(255, 210, 80, 0.45);
+  }
+  50% {
+    box-shadow: 0 12px 40px rgba(255, 210, 80, 0.75);
+  }
+}
+@keyframes pulseOpacity {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.65;
+  }
+}
+@keyframes cosmicPulse {
+  0%, 100% {
+    background-color: #121212;
+  }
+  50% {
+    background-color: #292929;
+  }
+}
 /* /////////////////////////////////
 Les composants
 //////////////////////////////////// */
@@ -306,6 +436,13 @@ Les composants
   font-size: 36px;
 }
 
+.recherches {
+  font-family: "Beau Rivage", cursive;
+  font-size: 1.4em;
+  letter-spacing: 0.5px;
+  color: #000000;
+}
+
 /**
  * CARTE
  *
@@ -323,6 +460,9 @@ Les composants
   overflow: hidden;
   transition: all 3s ease-in-out;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+.carte:hover {
+  cursor: pointer;
 }
 .carte--grande {
   flex: 1;
