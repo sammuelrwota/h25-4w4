@@ -10,12 +10,21 @@
 		justify-content: center;
 		flex-direction: column;
 		gap: 10px;
+		@media screen and (max-width: 800px) {
+			align-items: flex-start;
+			justify-content: flex-start;
+			gap: 10px;
+		}
 		h3 {
 			font-size: 36px;
 			font-family: "Beau Rivage", cursive;
 		}
 		p {
 			max-width: 50%;
+			@media screen and (max-width: 800px) {
+				max-width: fit-content;
+				text-align: left;
+			}
 		}
 	}
 	p {

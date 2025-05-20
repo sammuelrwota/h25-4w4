@@ -138,13 +138,14 @@
 			0 0 40px rgb(255, 255, 255);
 
 		@media screen and (max-width: 800px) {
-			position: static;
-			transform: none;
-			top: auto;
-			left: auto;
-			font-size: 32px;
-			font-family: "Montserrat", sans-serif;
-			width: fit-content;
+			/* position: static; */
+			/* transform: none; */
+			/* top: auto; */
+			/* left: auto; */
+			/* font-size: 32px; */
+			/* font-family: "Montserrat", sans-serif; */
+			// width: -moz-fit-content;
+			/* width: fit-content; */
 		}
 	}
 	&__description {
