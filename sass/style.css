@@ -553,6 +553,10 @@ Les composants
   }
 }
 
+.vague {
+  position: relative;
+}
+
 /* /////////////////////////////////
 Les layouts
 //////////////////////////////////// */
@@ -1409,6 +1413,19 @@ footer {
     margin-left: 50px;
     margin-top: 100px;
   }
+}
+
+.categorie__ul__li.active {
+  background-color: #333;
+  color: white;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.loader {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 1rem;
 }
 
 /**

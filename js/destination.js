@@ -7,11 +7,8 @@
 
 (function () {
 	console.log("destination.js");
-	const categoryId = 3; // Remplacez par l'ID de la catégorie souhaitée
+	let categoryId = 3;
 	const domaine = window.location.href;
-	const apiUrl = `${domaine}wp-json/wp/v2/posts?categories=${categoryId}`;
-	console.log(apiUrl);
-
 	parcourir_bouton();
 
 	function parcourir_bouton() {
@@ -21,33 +18,33 @@
 			elm.addEventListener("mousedown", function () {
 				console.log(elm.tagName);
 				console.log("elm.dataset.category_id = ", elm.dataset.category_id);
+				categoryId = elm.dataset.category_id;
+				mon_fetch(categoryId);
 			});
 		});
 	}
 
-	// créer une fonction
-
-	fetch(apiUrl)
-		.then((response) => response.json())
-		.then((data) => {
-			const destinationList = document.querySelector(".destination__list");
-			if (!destinationList) {
-				console.warn("Élément '.destination__list' introuvable.");
-				return;
-				// destinationList doit etre vide
-			}
-
-			data.forEach((article) => {
-				const articleElement = document.createElement("div");
-				articleElement.innerHTML = `
+	function mon_fetch(categoryId) {
+		let apiUrl = `${domaine}wp-json/wp/v2/posts?categories=${categoryId}`;
+		fetch(apiUrl)
+			.then((response) => response.json())
+			.then((data) => {
+				const destinationsList = document.querySelector(".destination__list");
+				destinationsList.innerHTML = "";
+				data.forEach((article) => {
+					const articleElement = document.createElement("div");
+					console.log(article.title.rendered);
+					articleElement.innerHTML = `
                     <h3>${article.title.rendered}</h3>
+                    <label for="rad_${categoryId}">...</label>
                     <p>${article.excerpt.rendered}</p>
-                    <a href="${article.link}" target="_blank">Lire plus</a>
+                    <a href="${article.link}">Lire plus</a>
                 `;
-				destinationList.appendChild(articleElement);
-			});
-		})
-		.catch((error) =>
-			console.error("Erreur lors de la récupération des articles:", error)
-		);
+					destinationsList.appendChild(articleElement);
+				});
+			})
+			.catch((error) =>
+				console.error("Erreur lors de la récupération des articles:", error)
+			);
+	}
 })();
