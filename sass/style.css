@@ -34,7 +34,9 @@ Les balise de bases
  *  (body, h1, h2, h3, h4, h5, h6, p) avec des valeurs responsives pour une meilleure adaptabilité.
  */
 @import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Fleur+De+Leah&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+AU+SA:wght@100..400&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Fleur+De+Leah&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+AU+SA:wght@100..400&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+AU+SA:wght@100..400&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Fleur+De+Leah&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+AU+SA:wght@100..400&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Fleur+De+Leah&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+AU+SA:wght@100..400&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 body {
   font-size: 16px;
@@ -50,6 +52,9 @@ body {
 h1 {
   font-size: clamp(2rem, 3vw, 5rem);
   text-align: center;
+  padding-bottom: 25px;
+  padding: 3rem;
+  font-family: "Beau Rivage", cursive;
 }
 
 h2 {
@@ -76,7 +81,8 @@ h6 {
 p {
   font-size: clamp(0.8rem, 1.7vw, 1rem);
   line-height: 2;
-  margin: 0 20px;
+  margin: 0 75px;
+  text-align: center;
 }
 
 /**
@@ -309,14 +315,14 @@ Les composants
 .carte {
   display: flex;
   flex-direction: column;
-  flex: 0 0 50%;
+  flex: 0 0 49%;
   box-sizing: border-box;
-  border: 2px solid black;
   border-radius: 0;
   background-color: rgb(255, 255, 255);
   position: relative;
   overflow: hidden;
   transition: all 3s ease-in-out;
+  box-shadow: 5px 5px 33px 2px #000000;
 }
 .carte--grande {
   flex: 1;
@@ -347,7 +353,7 @@ Les composants
   color: yellow;
   z-index: 10;
   transform: rotate(35deg);
-  font-size: 5rem;
+  font-size: 2rem;
   text-shadow: 0 0 2px rgba(255, 255, 0, 0.4), 0 0 5px rgba(255, 255, 0, 0.4), 0 0 10px rgba(255, 255, 0, 0.5), 0 0 15px rgba(255, 255, 0, 0.6), 0 0 20px rgba(255, 255, 0, 0.6), 0 0 25px rgba(255, 255, 0, 0.7);
 }
 @media screen and (max-width: 800px) {
@@ -367,15 +373,15 @@ Les composants
 }
 .carte__titre {
   position: absolute;
-  top: 36%;
-  transform: translate(-50%, -50%);
+  top: 35%;
+  transform: translate(-50%, -55%);
   left: 50%;
   font-family: "Beau Rivage", cursive;
   font-size: 50px;
   width: 100%;
   text-align: center;
-  color: rgb(0, 0, 0);
-  text-shadow: 0 0 5px rgb(203, 199, 199), 0 0 10px rgb(203, 199, 199), 0 0 15px rgb(203, 199, 199), 0 0 20px rgb(203, 199, 199), 0 0 25px rgb(203, 199, 199);
+  color: rgb(131, 131, 131);
+  text-shadow: 0 0 2px rgb(255, 255, 255), 0 0 5px rgb(255, 255, 255), 0 0 10px rgb(255, 255, 255), 0 0 15px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255), 0 0 30px rgb(255, 255, 255), 0 0 40px rgb(255, 255, 255);
 }
 @media screen and (max-width: 800px) {
   .carte__titre {
@@ -409,6 +415,7 @@ Les composants
 .carte__temperatures p {
   margin: 0;
   font-weight: 600;
+  text-align: left;
 }
 .carte__contenu {
   padding-top: 10px;
@@ -416,11 +423,13 @@ Les composants
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 25px;
 }
 @media screen and (max-width: 800px) {
   .carte__contenu {
     padding: 0;
     align-items: left;
+    gap: 0;
   }
 }
 .carte__contenu__titre {
@@ -579,9 +588,10 @@ Les layouts
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 5px;
 }
 .populaire .global .carte {
-  flex: 0 0 50%;
+  flex: 0 0 49%;
   box-sizing: border-box;
   padding: 10px;
 }
@@ -694,14 +704,14 @@ Les layouts
 }
 .entete .entete__menu li a {
   display: block;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   position: relative;
   pointer-events: auto;
 }
 .entete .entete__menu li::after {
   content: "";
-  background: white;
+  background: rgb(0, 0, 0);
   width: calc(100% + 20px);
   height: 0;
   position: absolute;
@@ -1343,7 +1353,7 @@ footer {
  *  Cible principale : .post-categories li a
  */
 .global__titre {
-  font-size: 3.25rem;
+  font-size: 4rem;
   font-weight: 800;
   text-align: center;
   color: #000000;
@@ -1351,6 +1361,7 @@ footer {
   letter-spacing: 1px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   width: 100%;
+  font-family: "Beau Rivage", cursive;
 }
 .global__singlepost {
   display: flex;
@@ -1358,7 +1369,7 @@ footer {
   align-items: center;
   flex-direction: column;
   padding: 2rem;
-  background: linear-gradient(145deg, #000000, #000000);
+  background: linear-gradient(145deg, #f5f7fa, #c3cfe2);
   border-radius: 1rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.4s ease-in-out;
@@ -1376,6 +1387,10 @@ footer {
   padding: 2rem;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
+}
+.global__singlepost__article p {
+  margin: 0;
+  text-align: left;
 }
 .global__singlepost__image {
   height: 100%;
@@ -1409,6 +1424,7 @@ footer {
   margin: 0;
   font-weight: 600;
   color: #2c3e50;
+  text-align: left;
 }
 .global__singlepost__categories {
   display: flex;

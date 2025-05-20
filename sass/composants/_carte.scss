@@ -9,12 +9,18 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Fleur+De+Leah&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+AU+SA:wght@100..400&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
+// .cartes {
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	flex-direction: column;
+// }
 .carte {
 	display: flex;
 	flex-direction: column;
-	flex: 0 0 50%;
+	flex: 0 0 49%;
 	box-sizing: border-box;
-	border: 2px solid black;
+	// border: 2px solid black;
 	border-radius: 0;
 	// background: linear-gradient(
 	// 	135deg,
@@ -26,6 +32,8 @@
 	position: relative;
 	overflow: hidden;
 	transition: all 3s ease-in-out;
+	-webkit-box-shadow: 5px 5px 33px 2px #000000;
+	box-shadow: 5px 5px 33px 2px #000000;
 
 	// &::before {
 	// 	content: "";
@@ -90,7 +98,7 @@
 			color: yellow;
 			z-index: 10;
 			transform: rotate(35deg);
-			font-size: 5rem;
+			font-size: 2rem;
 			text-shadow: 0 0 2px rgba(255, 255, 0, 0.4),
 				0 0 5px rgba(255, 255, 0, 0.4), 0 0 10px rgba(255, 255, 0, 0.5),
 				0 0 15px rgba(255, 255, 0, 0.6), 0 0 20px rgba(255, 255, 0, 0.6),
@@ -116,17 +124,19 @@
 
 	&__titre {
 		position: absolute;
-		top: 36%;
-		transform: translate(-50%, -50%);
+		top: 35%;
+		transform: translate(-50%, -55%);
 		left: 50%;
 		font-family: "Beau Rivage", cursive;
 		font-size: 50px;
 		width: 100%;
 		text-align: center;
-		color: rgb(0, 0, 0);
-		text-shadow: 0 0 5px rgb(203, 199, 199), 0 0 10px rgb(203, 199, 199),
-			0 0 15px rgb(203, 199, 199), 0 0 20px rgb(203, 199, 199),
-			0 0 25px rgb(203, 199, 199);
+		color: rgb(131, 131, 131);
+		text-shadow: 0 0 2px rgb(255, 255, 255), 0 0 5px rgb(255, 255, 255),
+			0 0 10px rgb(255, 255, 255), 0 0 15px rgb(255, 255, 255),
+			0 0 20px rgb(255, 255, 255), 0 0 30px rgb(255, 255, 255),
+			0 0 40px rgb(255, 255, 255);
+
 		@media screen and (max-width: 800px) {
 			position: static;
 			transform: none;
@@ -157,6 +167,7 @@
 			margin: 0;
 			font-weight: 600;
 			// color: #ffffff;
+			text-align: left;
 		}
 		gap: 30px;
 	}
@@ -167,9 +178,11 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		gap: 25px;
 		@media screen and (max-width: 800px) {
 			padding: 0;
 			align-items: left;
+			gap: 0;
 		}
 
 		&__titre {

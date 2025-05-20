@@ -32,9 +32,10 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	gap: 5px;
 
 	.carte {
-		flex: 0 0 50%;
+		flex: 0 0 49%;
 		box-sizing: border-box;
 		padding: 10px;
 	}
