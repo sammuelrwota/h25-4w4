@@ -33,6 +33,9 @@
 				destinationsList.innerHTML = "";
 				data.forEach((article) => {
 					const articleElement = document.createElement("div");
+					articleElement.classList.add("fondu");
+					const randomDelay = Math.floor(Math.random() * 300);
+					articleElement.style.animationDelay = `${randomDelay}ms`;
 					console.log(article.title.rendered);
 					articleElement.innerHTML = `
                     <h3>${article.title.rendered}</h3>
