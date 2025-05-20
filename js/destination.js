@@ -31,23 +31,61 @@
 			.then((data) => {
 				const destinationsList = document.querySelector(".destination__list");
 				destinationsList.innerHTML = "";
-				data.forEach((article) => {
+				data.forEach((article, index) => {
 					const articleElement = document.createElement("div");
-					articleElement.classList.add("fondu");
+					articleElement.classList.add("fondu", "element-article");
 					const randomDelay = Math.floor(Math.random() * 300);
 					articleElement.style.animationDelay = `${randomDelay}ms`;
-					console.log(article.title.rendered);
+
 					articleElement.innerHTML = `
-                    <h3>${article.title.rendered}</h3>
-                    <label for="rad_${categoryId}">...</label>
-                    <p>${article.excerpt.rendered}</p>
-                    <a href="${article.link}">Lire plus</a>
-                `;
+				<div class="accordeon-entete">
+				  <h3>${article.title.rendered}</h3>
+				  <span class="accordeon-icone">&#10147;</span>
+				</div>
+				<div class="accordeon-contenu">
+				  <p>${article.excerpt.rendered}</p>
+				  <a href="${article.link}">Lire plus</a>
+				</div>
+			  `;
+
 					destinationsList.appendChild(articleElement);
 				});
+
+				gererAccordeon();
 			})
 			.catch((error) =>
 				console.error("Erreur lors de la récupération des articles:", error)
 			);
+	}
+
+	function gererAccordeon() {
+		const headers = document.querySelectorAll(".accordeon-entete");
+
+		headers.forEach((header) => {
+			header.addEventListener("click", () => {
+				const content = header.nextElementSibling;
+				const icon = header.querySelector(".accordeon-icone");
+
+				const accordeonOuvert = content.classList.contains("ouvert");
+
+				if (accordeonOuvert) {
+					content.classList.remove("ouvert");
+					icon.style.transform = "rotate(90deg)";
+				} else {
+					document
+						.querySelectorAll(".accordeon-contenu.ouvert")
+						.forEach((ouvertContent) => {
+							ouvertContent.classList.remove("ouvert");
+							ouvertContent.classList.remove("ouverture");
+							ouvertContent.previousElementSibling.querySelector(
+								".accordeon-icone"
+							).style.transform = "rotate(90deg)";
+						});
+					content.classList.add("ouvert");
+					content.classList.add("ouverture");
+					icon.style.transform = "rotate(270deg)";
+				}
+			});
+		});
 	}
 })();
