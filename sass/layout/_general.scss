@@ -8,7 +8,7 @@
  */
 
 .populaire {
-	background-color: rgb(129, 129, 129);
+	background-color: rgb(255, 255, 255);
 }
 
 .global {
@@ -31,7 +31,7 @@
 .populaire .global {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;
 
 	.carte {
 		flex: 0 0 50%;

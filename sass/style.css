@@ -33,9 +33,11 @@ Les balise de bases
  *  Style de base du site : Définit les polices et tailles de police pour les éléments de texte principaux 
  *  (body, h1, h2, h3, h4, h5, h6, p) avec des valeurs responsives pour une meilleure adaptabilité.
  */
+@import url("https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+AU+SA:wght@100..400&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Fleur+De+Leah&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+AU+SA:wght@100..400&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 body {
   font-size: 16px;
-  background-color: rgb(129, 129, 129);
+  background-color: rgb(255, 255, 255);
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   overflow-x: hidden;
@@ -286,31 +288,10 @@ Les composants
   box-sizing: border-box;
   border: 2px solid black;
   border-radius: 0;
-  background: linear-gradient(135deg, rgba(227, 227, 227, 0.8), rgba(255, 127, 80, 0.7), rgba(0, 123, 255, 0.6));
+  background-color: rgb(255, 255, 255);
   position: relative;
   overflow: hidden;
   transition: all 3s ease-in-out;
-  cursor: pointer;
-}
-.carte::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  pointer-events: none;
-}
-.carte:hover {
-  background-color: rgba(227, 227, 227, 0.8);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(135deg, rgba(227, 227, 227, 0.8), rgba(255, 127, 80, 0.7), rgba(0, 123, 255, 0.6));
-}
-.carte:hover::before {
-  opacity: 1;
 }
 .carte--grande {
   flex: 1;
@@ -319,7 +300,6 @@ Les composants
   position: relative;
   width: 100% !important;
   height: 250px;
-  opacity: 0.7;
 }
 .carte__image__dimension {
   width: 100% !important;
@@ -337,7 +317,7 @@ Les composants
 }
 .carte__image .carte__etoile {
   position: absolute;
-  bottom: -85px;
+  top: 0;
   right: 15px;
   color: yellow;
   z-index: 10;
@@ -347,7 +327,7 @@ Les composants
 }
 @media screen and (max-width: 800px) {
   .carte__image .carte__etoile {
-    bottom: -200px;
+    bottom: -2c00px;
   }
 }
 .carte__image .carte__image-background {
@@ -360,16 +340,62 @@ Les composants
   background-position: center;
   z-index: -1;
 }
+.carte__titre {
+  position: absolute;
+  top: 36%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  font-family: "Beau Rivage", cursive;
+  font-size: 50px;
+  width: 100%;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  text-shadow: 0 0 5px rgb(203, 199, 199), 0 0 10px rgb(203, 199, 199), 0 0 15px rgb(203, 199, 199), 0 0 20px rgb(203, 199, 199), 0 0 25px rgb(203, 199, 199);
+}
+@media screen and (max-width: 800px) {
+  .carte__titre {
+    position: static;
+    transform: none;
+    top: auto;
+    left: auto;
+    font-size: 32px;
+    font-family: "Montserrat", sans-serif;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+.carte__description {
+  text-align: center;
+  width: 100%;
+  padding: 1rem !important;
+}
+.carte__temperatures {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background: #f0f4f8;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: inset 0 0 5px rgb(255, 255, 255);
+  padding-right: 10px;
+  gap: 30px;
+}
+.carte__temperatures p {
+  margin: 0;
+  font-weight: 600;
+}
 .carte__contenu {
   padding-top: 10px;
   padding-bottom: 10px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 @media screen and (max-width: 800px) {
   .carte__contenu {
     padding: 0;
+    align-items: left;
   }
 }
 .carte__contenu__titre {
@@ -377,47 +403,40 @@ Les composants
   font-size: 1.5rem;
   margin: 10px 0;
 }
-.carte__contenu__description {
-  font-size: 1rem;
-  color: #666;
-  margin-bottom: 15px;
-  text-align: center;
-}
 .carte__contenu p {
   margin: 5px 0;
   font-size: 1rem;
 }
 .carte__contenu a {
-  padding: 10px 20px;
-  text-align: left;
-  margin-left: -40px;
-  color: white;
+  text-align: center;
+  color: black;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 5px;
   display: inline-block;
   margin-top: 15px;
-  transition: background-color 0.3s;
-  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.carte__contenu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #000, #444);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px;
 }
 .carte__contenu a:hover {
-  background-color: rgb(76, 76, 224);
+  color: #222;
 }
-.carte__contenu a.carte__bouton.carte__bouton--actif {
-  padding: 10px 20px;
-  text-align: left;
-  margin-left: 0px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  display: inline-block;
-  margin-top: 15px;
-  transition: background-color 0.3s;
-  box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
-}
-.carte__contenu a.carte__bouton.carte__bouton--actif:hover {
-  background-color: darkblue;
+.carte__contenu a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 @media screen and (max-width: 800px) {
@@ -512,7 +531,7 @@ Les layouts
  *  
  */
 .populaire {
-  background-color: rgb(129, 129, 129);
+  background-color: rgb(255, 255, 255);
 }
 
 .global {
@@ -534,7 +553,7 @@ Les layouts
 .populaire .global {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 .populaire .global .carte {
   flex: 0 0 50%;
@@ -564,7 +583,6 @@ Les layouts
   width: 100%;
   background-color: #4b4b4b;
   min-height: 100px;
-  box-shadow: 2px 11px 39px 21px rgba(0, 0, 0, 0.75);
 }
 .entete::after {
   content: "";
