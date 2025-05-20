@@ -6,7 +6,7 @@
  * avec des effets de survol et des styles pour le texte de l'espace réservé.
  *  
  */
-
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Fleur+De+Leah&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+AU+SA:wght@100..400&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 .recherche {
 	display: flex;
 	align-items: center;
@@ -61,4 +61,30 @@
 	padding: 0.3rem 1rem;
 	font-weight: 600;
 	letter-spacing: 0.05rem;
+}
+
+.recherche__section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	article {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		p {
+			max-width: 50%;
+		}
+		h5 {
+			a {
+				font-family: "Beau Rivage", cursive;
+				text-decoration: none;
+				padding-left: 20px;
+				color: black;
+				font-size: 36px;
+			}
+		}
+	}
 }
