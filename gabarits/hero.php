@@ -47,8 +47,8 @@ $hero_background[$k] = get_theme_mod('hero_background_'. $k, '');
     </p>
 
     <div class="hero__icone">
-        <?php get_template_part('gabarits/icones'); ?>
-    </div>
+    <?php afficher_icones_sociaux(); ?>
+</div>
 
     <p class="hero__adresse">5800 Sherbrooke-est - Montréal (Québec) H1X 2A2</p>
     <p class="hero__auteur">Auteur: <?php echo esc_html($hero_auteur); ?></p>

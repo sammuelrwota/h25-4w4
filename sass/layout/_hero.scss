@@ -337,3 +337,11 @@ td:last-child {
 			0 -9px 20px #023e8a;
 	}
 }
+
+.hero__icone-list {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}

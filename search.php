@@ -2,23 +2,33 @@
 /**
  * SEARCH.PHP
  * 
- * Modèle pour afficher les résultats de recherche dans WP.
- * Ce fichier est utilisé lorsqu'un utilisateur effectue une recherche sur le site.
- * 
- * Si des résultats de recherche sont trouvés, ils sont affichés sous forme d'articles,
- * avec un lien vers chacun d'eux. Si aucun résultat n'est trouvé, un message indiquant
- * "Aucun résultat trouvé" est affiché.
+ * Modèle pour afficher les résultats de recherche dans WordPress.
+ * Utilisé automatiquement lorsqu'un utilisateur effectue une recherche sur le site.
  */
+
+get_header(); 
 ?>
 
-<?php
-/**
- * Modèle pour les résultats de recherche
- */
-get_header();
-?>
 <main class="site__main">
     <section class="recherche__section">
+        <?php
+        global $wp_query;
+        $total_results = $wp_query->found_posts;
+        $search_term = get_search_query();
+        ?>
+
+        <h2 class="recherche__titre">
+            <?php 
+            if ($total_results === 1) {
+                echo '1 résultat trouvé pour : <strong>' . esc_html($search_term) . '</strong>';
+            } elseif ($total_results > 1) {
+                echo $total_results . ' résultats trouvés pour : <strong>' . esc_html($search_term) . '</strong>';
+            } else {
+                echo 'Aucun résultat trouvé pour : <strong>' . esc_html($search_term) . '</strong>';
+            }
+            ?>
+        </h2>
+
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
                 <article>
@@ -28,8 +38,9 @@ get_header();
                 </article>
             <?php endwhile; ?>
         <?php else : ?>
-            <p>Aucun résultat trouvé.</p>
+            <p>Essayez un autre mot-clé ou vérifiez l’orthographe.</p>
         <?php endif; ?>
     </section>
 </main>
+
 <?php get_footer(); ?>
