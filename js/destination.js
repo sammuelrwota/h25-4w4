@@ -1,8 +1,7 @@
 /**
  * DESTINATION.JS
  *
- * Récupère et affiche les articles d'une catégorie (ex: voyages) via l'API WP.
- * Gère aussi les clics sur les boutons de catégories.
+ * Récupère les articles d'une catégorie WP et gère les clics + accordéons.
  */
 
 (function () {
@@ -40,7 +39,7 @@
 					articleElement.innerHTML = `
 				<div class="accordeon-entete">
 				  <h3>${article.title.rendered}</h3>
-				  <span class="accordeon-icone">&#10147;</span>
+				  <span class="accordeon-icone">&#11208;</span>
 				</div>
 				<div class="accordeon-contenu">
 				  <p>${article.excerpt.rendered}</p>

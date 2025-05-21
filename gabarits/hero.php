@@ -14,7 +14,7 @@ $hero_background[$k] = get_theme_mod('hero_background_'. $k, '');
 ?>
 
 
-<div class="hero hero--theme-default">
+<div class="hero hero--theme-defaut">
 
 <div class="hero__carrousel" style="background-image: url(<?php echo $hero_background[0] ?>)"></div>
 <div class="hero__carrousel" style="background-image: url(<?php echo $hero_background[1] ?>)"></div>
@@ -26,17 +26,17 @@ $hero_background[$k] = get_theme_mod('hero_background_'. $k, '');
 
 
 <div class="hero__animation hero__animation--active">
-    <h1 class="hero__titre"><?php bloginfo("name"); ?></h1>
+    <h2 class="hero__titre"><?php bloginfo("name"); ?></h2>
     <p class="hero__description"><?php bloginfo("description"); ?></p>
 </div>
 
 <div class="hero__animation">
-<h1 class="hero__titre">Le monde s’éveille. Saisis-le.</h1>
+<h2 class="hero__titre">Le monde s’éveille. Saisis-le.</h2>
 <p class="hero__description">Plus que des lieux, des instants gravés.</p>
 
         </div>
         <div class="hero__animation">
-        <h1 class="hero__titre">Voyage lent, âme éveillée.</h1>
+        <h2 class="hero__titre">Voyage lent, âme éveillée.</h2>
 <p class="hero__description">Le luxe, c’est le temps. Chaque pas, un poème.</p>
 
         </div>
@@ -66,7 +66,7 @@ $hero_background[$k] = get_theme_mod('hero_background_'. $k, '');
 </section>
 
 
-<div class="conteneur conteneur--theme-default">
+<div class="conteneur conteneur--theme-defaut">
 
         <table>
             <tr>

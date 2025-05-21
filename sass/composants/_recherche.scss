@@ -1,11 +1,9 @@
 /**
- * RECHERCHE
+ *  RECHERCHE
  *
- * Style de la barre de recherche : Définit l'apparence et le comportement de la barre de recherche, 
- * avec un champ d'entrée réactif et une icône d'image à côté. Le style est optimisé pour l'interaction utilisateur, 
- * avec des effets de survol et des styles pour le texte de l'espace réservé.
- *  
+ * Style de la barre avec champ, icône et responsive UX.
  */
+
 @import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Fleur+De+Leah&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+AU+SA:wght@100..400&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 .recherche {
 	display: flex;
@@ -19,71 +17,101 @@
 	box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.7),
 		0 4px 15px rgba(0, 0, 0, 0.12);
 	font-family: "Montserrat", sans-serif;
-}
 
-.recherche__input {
-	border: none;
-	outline: none;
-	background-color: transparent;
-	flex: 1 0 auto;
-	padding: 0.6rem 1.2rem;
-	font-size: 1.1rem;
-	color: #222;
-	border-radius: 1.8rem;
-	font-weight: 500;
+	&__titre {
+		text-align: center;
+		position: relative;
+		display: inline-block;
+		padding: 0.5em 1em;
+		background: linear-gradient(
+			135deg,
+			rgba(255, 255, 255, 0.8),
+			rgba(240, 240, 240, 0.6)
+		);
+		border-radius: 12px;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(4px);
+		-webkit-backdrop-filter: blur(4px);
+		width: 100%;
+		color: #111;
+		z-index: 1;
+		@media screen and (max-width: 800px) {
+			padding: 2rem;
+		}
+	}
+	&__input {
+		border: none;
+		outline: none;
+		background-color: transparent;
+		flex: 1 0 auto;
+		padding: 0.6rem 1.2rem;
+		font-size: 1.1rem;
+		color: #222;
+		border-radius: 1.8rem;
+		font-weight: 500;
 
-	&::placeholder {
-		color: rgba(0, 0, 0, 0.45);
+		&::placeholder {
+			color: rgba(0, 0, 0, 0.45);
 
+			font-weight: 600;
+		}
+
+		&:focus {
+			box-shadow: none;
+		}
+	}
+	&__img {
+		flex: 0 0 2.8rem;
+		padding: 0.5rem;
+		margin-left: -2.3rem;
+		border-radius: 50%;
+		filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.1));
+	}
+	&__bouton {
+		background-color: transparent;
+		border: none;
+		border-radius: 2rem;
+		font-size: 1rem;
+		color: #333;
+		cursor: pointer;
+		padding: 0.3rem 1rem;
 		font-weight: 600;
+		letter-spacing: 0.05rem;
 	}
-
-	&:focus {
-		box-shadow: none;
-	}
-}
-
-.recherche__img {
-	flex: 0 0 2.8rem;
-	padding: 0.5rem;
-	margin-left: -2.3rem;
-	border-radius: 50%;
-	filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.1));
-}
-
-.recherche__bouton {
-	background-color: transparent;
-	border: none;
-	border-radius: 2rem;
-	font-size: 1rem;
-	color: #333;
-	cursor: pointer;
-	padding: 0.3rem 1rem;
-	font-weight: 600;
-	letter-spacing: 0.05rem;
-}
-
-.recherche__section {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	article {
+	&__section {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		p {
-			max-width: 50%;
-		}
-		h5 {
-			a {
-				font-family: "Beau Rivage", cursive;
-				text-decoration: none;
-				padding-left: 20px;
-				color: black;
-				font-size: 36px;
+		width: 100%;
+		article {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			p {
+				max-width: 50%;
+				@media screen and (max-width: 800px) {
+					text-align: left;
+					max-width: 100%;
+					margin: 0 40px;
+				}
+			}
+			h5 {
+				@media screen and (max-width: 800px) {
+					width: 100%;
+					padding-left: 2rem;
+				}
+				a {
+					font-family: "Beau Rivage", cursive;
+					text-decoration: none;
+					padding-left: 20px;
+					color: black;
+					font-size: 36px;
+					@media screen and (max-width: 800px) {
+						text-align: left;
+					}
+				}
 			}
 		}
 	}

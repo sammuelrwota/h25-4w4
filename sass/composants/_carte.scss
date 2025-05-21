@@ -1,84 +1,66 @@
 /**
- * CARTE
+ *  CARTE
  *
- *  Style des cartes : Définit l'apparence des cartes (image, contenu, bouton, etc.) avec des styles de base,
- *  une disposition flexible, et un design réactif pour les petites résolutions.
+ * Styles visuels pour le composant carte :
+ * - Disposition responsive (flex, media queries)
+ * - Image, contenu, titre, bouton stylés
+ * - Effets de survol, ombres, animations douces
  */
 
 @import url("https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+AU+SA:wght@100..400&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Fleur+De+Leah&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+AU+SA:wght@100..400&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
-// .cartes {
-// 	display: flex;
-// 	justify-content: center;
-// 	align-items: center;
-// 	flex-direction: column;
-// }
 .carte {
 	display: flex;
 	flex-direction: column;
 	flex: 0 0 49%;
 	box-sizing: border-box;
-	// border: 2px solid black;
 	border-radius: 0;
-	// background: linear-gradient(
-	// 	135deg,
-	// 	rgba(227, 227, 227, 0.8),
-	// 	rgba(255, 127, 80, 0.7),
-	// 	rgba(0, 123, 255, 0.6)
-	// );
 	background-color: rgb(255, 255, 255);
 	position: relative;
 	overflow: hidden;
-	transition: all 3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 	-webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
-	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+	box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.45);
 	&:hover {
+		box-shadow: 0 16px 30px rgba(0, 0, 0, 0.3);
 		cursor: pointer;
+		filter: brightness(1.04) contrast(1.06);
 	}
-
-	// &::before {
-	// 	content: "";
-	// 	position: absolute;
-	// 	top: 0;
-	// 	left: 0;
-	// 	right: 0;
-	// 	bottom: 0;
-	// 	background: linear-gradient(
-	// 		45deg,
-	// 		rgba(255, 255, 255, 0.4),
-	// 		rgba(255, 255, 255, 0.1)
-	// 	);
-	// 	// opacity: 0;
-	// 	// transition: opacity 0.5s ease-in-out;
-	// 	// pointer-events: none;
-	// }
-
-	// &:hover {
-	// 	background-color: rgba(227, 227, 227, 0.8);
-	// 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
-	// 	background: linear-gradient(
-	// 		135deg,
-	// 		rgba(227, 227, 227, 0.8),
-	// 		rgba(255, 127, 80, 0.7),
-	// 		rgba(0, 123, 255, 0.6)
-	// 	);
-
-	// 	&::before {
-	// 		opacity: 1;
-	// 	}
-	// }
 	&--grande {
 		flex: 1;
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: -75%;
+		width: 50%;
+		height: 100%;
+		background: linear-gradient(
+			120deg,
+			rgba(255, 255, 255, 0.1) 0%,
+			rgba(255, 255, 255, 0.5) 50%,
+			rgba(255, 255, 255, 0.1) 100%
+		);
+		transform: skewX(-20deg);
+		transition: left 0.6s ease-in-out;
+		pointer-events: none;
+	}
+	&:hover::before {
+		left: 130%;
+	}
+
+	@media screen and (max-width: 800px) {
+		flex: 0 0 100% !important;
+		margin: 0 0 20px;
 	}
 
 	&__image {
 		position: relative;
 		width: 100% !important;
 		height: 250px;
-		// border: 2px solid rgb(255, 255, 255);
-		// opacity: 0.7;
 		&__dimension {
 			width: 100% !important;
 			height: auto;
@@ -96,8 +78,6 @@
 			position: absolute;
 			top: 0;
 			right: 15px;
-			// width: 50px;
-			// height: 50px;
 			color: yellow;
 			z-index: 10;
 			transform: rotate(35deg);
@@ -107,8 +87,6 @@
 				0 0 15px rgba(255, 255, 0, 0.6), 0 0 20px rgba(255, 255, 0, 0.6),
 				0 0 25px rgba(255, 255, 0, 0.7);
 			@media screen and (max-width: 800px) {
-				// width: 30px;
-				// height: 30px;
 				bottom: -2c00px;
 			}
 		}
@@ -139,16 +117,9 @@
 			0 0 10px rgb(255, 255, 255), 0 0 15px rgb(255, 255, 255),
 			0 0 20px rgb(255, 255, 255), 0 0 30px rgb(255, 255, 255),
 			0 0 40px rgb(255, 255, 255);
-
 		@media screen and (max-width: 800px) {
-			/* position: static; */
-			/* transform: none; */
-			/* top: auto; */
-			/* left: auto; */
-			/* font-size: 32px; */
-			/* font-family: "Montserrat", sans-serif; */
-			// width: -moz-fit-content;
-			/* width: fit-content; */
+			top: 30%;
+			font-size: 40px;
 		}
 	}
 	&__description {
@@ -161,22 +132,24 @@
 		flex-direction: row;
 		justify-content: space-around;
 		align-items: center;
-		// width: 100%;
 		background: #f0f4f8;
 		padding: 2rem;
 		border-radius: 1rem;
 		box-shadow: inset 0 0 5px rgba(255, 255, 255);
 		padding-right: 10px;
+		gap: 30px;
+		@media screen and (max-width: 800px) {
+			flex-direction: column;
+			width: 75%;
+			margin-right: 5px;
+		}
 		p {
 			margin: 0;
 			font-weight: 600;
-			// color: #ffffff;
 			text-align: left;
 		}
-		gap: 30px;
 	}
 	&__contenu {
-		// padding: 15px 90px;
 		padding-top: 10px;
 		padding-bottom: 10px;
 		display: flex;
@@ -211,6 +184,11 @@
 			position: relative;
 			transition: color 0.3s ease;
 
+			@media screen and (max-width: 800px) {
+				padding: 1rem;
+				margin-bottom: 0.5rem;
+			}
+
 			&::after {
 				content: "";
 				position: absolute;
@@ -226,7 +204,7 @@
 			}
 
 			&:hover {
-				color: #222; // léger changement de ton pour la classe
+				color: #222;
 
 				&::after {
 					transform: scaleX(1);
@@ -235,20 +213,4 @@
 			}
 		}
 	}
-}
-
-@media screen and (max-width: 800px) {
-	.carte {
-		flex: 0 0 100% !important;
-		margin: 0 0 20px;
-	}
-}
-
-.carte {
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.carte:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }

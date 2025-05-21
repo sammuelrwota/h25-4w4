@@ -66,17 +66,22 @@ add_action('customize_register', 'theme_tp_customize_register');
  * Fonction pour afficher les icônes sociales dynamiquement
  */
 function afficher_icones_sociaux() {
-  $social_networks = ['github', 'linkedin', 'instagram'];
-  echo '<div class="hero__icone-list">';
-  foreach ($social_networks as $network) {
-      $url = get_theme_mod("social_link_$network", '');
-      if (!empty($url)) {
-          $icon_url = "https://s2.svgbox.net/social.svg?ic={$network}&color=ffffff";
-          echo '<a href="' . esc_url($url) . '" target="_blank" rel="noopener noreferrer" class="hero__icone-link">';
-          echo '<img src="' . esc_url($icon_url) . '" width="36" height="36" alt="' . ucfirst($network) . '">';
-          echo '</a>';
-      }
+    $social_links = [
+      'github' => 'https://github.com/sammuelrwota/h25-4w4/tree/tp2',
+      'linkedin' => 'https://www.linkedin.com/in/sammuel-rwota-6baa9234b/',
+      'instagram' => 'https://www.instagram.com/sammuelrwota/'
+    ];
+  
+    echo '<div class="hero__icone-list">';
+    foreach ($social_links as $network => $default_url) {
+        $url = get_theme_mod("social_link_$network", $default_url);
+        if (!empty($url)) {
+            $icon_url = "https://s2.svgbox.net/social.svg?ic={$network}&color=ffffff";
+            echo '<a href="' . esc_url($url) . '" target="_blank" rel="noopener noreferrer" class="hero__icone-link">';
+            echo '<img src="' . esc_url($icon_url) . '" width="36" height="36" alt="' . ucfirst($network) . '">';
+            echo '</a>';
+        }
+    }
+    echo '</div>';
   }
-  echo '</div>';
-}
-
+  

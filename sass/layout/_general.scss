@@ -9,38 +9,42 @@
 
 .populaire {
 	background-color: rgb(255, 255, 255);
-}
-
-.global {
-	padding: 14vh 5vw;
-}
-
-.globalTitre {
-	text-align: center;
-	// font-size: 50px;
-	// margin-top: 100px;
-
-	// color: transparent;
-	// background: #1a1a1a
-
-	@media screen and (max-width: 800px) {
-		font-size: 30px;
+	&__titre {
+		text-align: center;
+		position: relative;
+		display: inline-block;
+		padding: 0.5em 1em;
+		background: linear-gradient(
+			135deg,
+			rgba(255, 255, 255, 0.8),
+			rgba(240, 240, 240, 0.6)
+		);
+		border-radius: 12px;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(4px);
+		-webkit-backdrop-filter: blur(4px);
+		width: 100%;
+		color: #111;
+		z-index: 1;
+		@media screen and (max-width: 800px) {
+			font-size: 30px;
+			padding-left: 0.5rem;
+		}
 	}
-}
-
-.populaire .global {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 5px;
-
-	.carte {
-		flex: 0 0 49%;
-		box-sizing: border-box;
-		padding: 10px;
-	}
-	p {
-		padding: 0;
-		margin: 0;
+	.global {
+		padding: 14vh 5vw;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 5px;
+		.carte {
+			flex: 0 0 49%;
+			box-sizing: border-box;
+			padding: 10px;
+		}
+		p {
+			padding: 0;
+			margin: 0;
+		}
 	}
 }

@@ -1,5 +1,7 @@
 <?php
 /**
+ * OPTIONS
+ * 
  * Les options du thème
 */
 function mon_theme_supports() {

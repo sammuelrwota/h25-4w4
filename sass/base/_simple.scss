@@ -22,8 +22,6 @@ body {
 	font-size: 16px;
 
 	background-color: rgb(255, 255, 255);
-
-	// font-family: "Roboto";
 	font-family: "Montserrat", sans-serif;
 	font-weight: 700;
 	overflow-x: hidden;
@@ -32,15 +30,31 @@ body {
 
 h1 {
 	font-size: clamp(2rem, 3vw, 5rem);
-	// padding-left: 70px;
 	text-align: center;
 	padding-bottom: 25px;
-	padding: 3rem;
-	font-family: "Beau Rivage", cursive;
+	// font-family: "Beau Rivage", cursive;
+	position: relative;
+	display: inline-block;
+	padding: 0.5em 1em;
+	background: linear-gradient(
+		135deg,
+		rgba(255, 255, 255, 0.8),
+		rgba(240, 240, 240, 0.6)
+	);
+	border-radius: 12px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	width: 100%;
+	color: #111;
+	z-index: 1;
+	@media screen and (max-width: 768px) {
+		padding: 1rem;
+		padding-left: 0rem;
+	}
 }
 h2 {
 	font-size: clamp(1.5rem, 2.5vw, 3rem);
-	// text-shadow: 4px 6px 12px rgba(0, 0, 0, 0.6);
 	text-align: center;
 }
 h3 {
@@ -57,9 +71,11 @@ h6 {
 }
 p {
 	font-size: clamp(0.8rem, 1.7vw, 1rem);
-	// padding: 10px 70px;
 	line-height: 2;
-	// max-width: 600px;
 	margin: 0 75px;
 	text-align: center;
+	@media screen and (max-width: 768px) {
+		text-align: left;
+		margin: 0 40px;
+	}
 }

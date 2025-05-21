@@ -1,9 +1,8 @@
 <?php
-
 /**
- * 
- * Génère une ou plusieurs vague svg
- * 
+ * GÉNÉRATEUR
+ *
+ * Génère une vague SVG animée avec la couleur donnée.
  */
 function genere_vague($couleur) { ?>
     <svg style="top:50px;" class="vague" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">

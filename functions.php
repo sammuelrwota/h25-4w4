@@ -1,8 +1,12 @@
 <?php
-// Chemin vers le dossier functions
+/**
+ * FONCTIONS
+ * 
+ * Charge les fichiers de fonctions personnalisées du thème.
+ *
+ */ 
 $functions_dir = get_template_directory() . '/functions/';
 
-// Liste des fichiers à inclure
 $function_files = array(
     'images.php',           
     'options.php',            
@@ -11,8 +15,6 @@ $function_files = array(
     'genere-boutons.php'      
 );
 
-
-// Boucle pour inclure tous les fichiers si le fichier existe
 foreach ($function_files as $file) {
     $path = $functions_dir . $file;
     if (file_exists($path)) {

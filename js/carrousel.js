@@ -21,13 +21,13 @@
 	const animations = document.querySelectorAll(".hero__animation");
 
 	const themesHero = [
-		"hero--theme-default",
+		"hero--theme-defaut",
 		"hero--theme-violet",
 		"hero--theme-marine",
 	];
 
 	const themesConteneur = [
-		"conteneur--theme-default",
+		"conteneur--theme-defaut",
 		"conteneur--theme-violet",
 		"conteneur--theme-marine",
 	];

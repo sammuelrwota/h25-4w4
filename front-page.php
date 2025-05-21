@@ -14,7 +14,7 @@
     <?php get_template_part("gabarits/hero"); ?>
 
     <section class="populaire">
-        <h2 class="globalTitre">Nos Destinations</h2>
+        <h2 class="populaire__titre">Nos Destinations</h2>
         <div class="global">
             <?php if (have_posts()) : while (have_posts()) : the_post(); 
             if (in_category("galerie"))  {

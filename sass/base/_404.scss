@@ -18,9 +18,7 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-color: #121212; // dark cosmic base for contrast
-
-	// Cosmic pulse animation on main container for subtle life
+	background-color: #121212;
 	animation: cosmicPulse 8s ease-in-out infinite alternate;
 
 	.erreur {
@@ -42,8 +40,6 @@
 		border: 3px solid white;
 		position: relative;
 		overflow: hidden;
-
-		// Layered fade and shimmer on the heading text
 		animation: fadeInOpacity 4s ease forwards, shimmerText 6s linear infinite;
 
 		&::before {
@@ -158,8 +154,6 @@
 		cursor: pointer;
 		position: relative;
 		overflow: hidden;
-
-		// Menu items fade in and out with pulsing opacity
 		animation: pulseOpacity 5s ease-in-out infinite;
 
 		&:hover {
@@ -170,7 +164,7 @@
 			);
 			box-shadow: 0 8px 24px rgba(255, 165, 0, 0.9);
 			transform: translateY(-3px) scale(1.05);
-			animation-play-state: paused; // freeze pulse on hover
+			animation-play-state: paused;
 		}
 
 		a {
