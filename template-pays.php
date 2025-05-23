@@ -7,7 +7,6 @@
         ?>
 <section class="populaire">
     <div class="global">
- 
 
         <section class="galerie">
             <div class="global">
