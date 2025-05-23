@@ -1,13 +1,13 @@
 <?php get_header(); ?>
-
-<section class="populaire">
-    <div class="global">
-        <?php
+       <?php
         $couleur_haut = '#4a90e2'; 
         $couleur_bas = '#002244';  
 
         genere_vague__ef($couleur_haut, $couleur_bas);
         ?>
+<section class="populaire">
+    <div class="global">
+ 
 
         <section class="galerie">
             <div class="global">
