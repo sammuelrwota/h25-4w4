@@ -10,9 +10,11 @@
 }
 
 .galerie__grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	gap: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
 }
 .carte-pays {
 	background: #fff;

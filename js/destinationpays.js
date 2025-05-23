@@ -1,87 +1,82 @@
-/**
- * DESTINATIONPAYS.JS
- *
- * ${methode}
- */
-
 (function () {
-	console.log("destination.js");
-	let categoryId = 3;
+	console.log("destination.js loaded");
+
+	const domaine = window.location.origin + "/";
+	const destinationsList = document.querySelector(".destination__list");
+
+	mon_fetch({ method: "search", value: "France" });
+
 	parcourir_bouton();
-	const domaine = document.querySelector("base").href;
 
 	function parcourir_bouton() {
-		const categorie__ul__li = document.querySelectorAll(".categorie__ul__li");
-		console.log("categorie__ul__li.length = ", categorie__ul__li.length);
-		categorie__ul__li.forEach((elm) => {
+		const boutons = document.querySelectorAll(".categorie__ul__li");
+
+		boutons.forEach((elm) => {
 			elm.addEventListener("mousedown", function () {
-				console.log(elm.tagName);
-				console.log("elm.dataset.category_id = ", elm.dataset.category_id);
-				categoryId = elm.dataset.category_id;
-				mon_fetch(categoryId);
+				const method = elm.dataset.method;
+				const value =
+					method === "category" ? elm.dataset.category_id : elm.dataset.search;
+				mon_fetch({ method, value });
 			});
 		});
 	}
 
-	function mon_fetch(categoryId) {
-		let apiUrl = `${domaine}wp-json/wp/v2/posts?categories=${categoryId}`;
+	function mon_fetch({ method, value }) {
+		let apiUrl = domaine + "wp-json/wp/v2/posts?";
+		apiUrl +=
+			method === "category"
+				? `categories=${value}`
+				: `search=${encodeURIComponent(value)}`;
+
 		fetch(apiUrl)
 			.then((response) => response.json())
 			.then((data) => {
-				const destinationsList = document.querySelector(".destination__list");
 				destinationsList.innerHTML = "";
-				data.forEach((article, index) => {
+
+				if (!data.length) {
+					destinationsList.innerHTML = "<p>Aucune destination trouvée.</p>";
+					return;
+				}
+
+				data.forEach((article) => {
 					const articleElement = document.createElement("div");
 					articleElement.classList.add("fondu", "element-article");
-					const randomDelay = Math.floor(Math.random() * 300);
-					articleElement.style.animationDelay = `${randomDelay}ms`;
-
 					articleElement.innerHTML = `
-				<div class="accordeon-entete">
-				  <h3>${article.title.rendered}</h3>
-				  <span class="accordeon-icone">&#11208;</span>
-				</div>
-				<div class="accordeon-contenu">
-				  <p>${article.excerpt.rendered}</p>
-				  <a href="${article.link}">Lire plus</a>
-				</div>
-			  `;
-
+						<div class="accordeon-entete">
+							<h3>${article.title.rendered}</h3>
+							<span class="accordeon-icone">&#11208;</span>
+						</div>
+						<div class="accordeon-contenu">
+							<p>${article.excerpt.rendered}</p>
+							<a href="${article.link}">Lire plus</a>
+						</div>
+					`;
 					destinationsList.appendChild(articleElement);
 				});
-
 				gererAccordeon();
 			})
-			.catch((error) =>
-				console.error("Erreur lors de la récupération des articles:", error)
-			);
+			.catch((error) => {
+				console.error("Erreur de récupération:", error);
+			});
 	}
 
 	function gererAccordeon() {
-		const headers = document.querySelectorAll(".accordeon-entete");
-
-		headers.forEach((header) => {
+		document.querySelectorAll(".accordeon-entete").forEach((header) => {
 			header.addEventListener("click", () => {
 				const content = header.nextElementSibling;
 				const icon = header.querySelector(".accordeon-icone");
 
-				const accordeonOuvert = content.classList.contains("ouvert");
+				const isOpen = content.classList.contains("ouvert");
 
-				if (accordeonOuvert) {
-					content.classList.remove("ouvert");
-					icon.style.transform = "rotate(90deg)";
-				} else {
-					document
-						.querySelectorAll(".accordeon-contenu.ouvert")
-						.forEach((ouvertContent) => {
-							ouvertContent.classList.remove("ouvert");
-							ouvertContent.classList.remove("ouverture");
-							ouvertContent.previousElementSibling.querySelector(
-								".accordeon-icone"
-							).style.transform = "rotate(90deg)";
-						});
-					content.classList.add("ouvert");
-					content.classList.add("ouverture");
+				document.querySelectorAll(".accordeon-contenu.ouvert").forEach((c) => {
+					c.classList.remove("ouvert", "ouverture");
+					c.previousElementSibling.querySelector(
+						".accordeon-icone"
+					).style.transform = "rotate(90deg)";
+				});
+
+				if (!isOpen) {
+					content.classList.add("ouvert", "ouverture");
 					icon.style.transform = "rotate(270deg)";
 				}
 			});

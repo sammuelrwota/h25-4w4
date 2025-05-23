@@ -51,7 +51,23 @@ add_action('wp_enqueue_scripts', 'theme_4w4_enqueue_styles');
 
 
 
+function afficher_menu_pays() {
+  $parent = get_category_by_slug('pays');
+  if (!$parent) {
+    echo '<p>Catégorie "Pays" non trouvée.</p>';
+    return;
+  }
 
+  $children = get_categories(array('parent' => $parent->term_id));
+  echo '<ul class="categorie__ul">';
+  foreach ($children as $cat) {
+    echo '<li class="categorie__ul__li" ';
+    echo 'data-method="search" data-search="' . esc_attr($cat->name) . '">';
+    echo esc_html($cat->name);
+    echo '</li>';
+  }
+  echo '</ul>';
+}
 
 /**
 * Modifie la requete principale de WordPress avant qu'elle soit exécuté

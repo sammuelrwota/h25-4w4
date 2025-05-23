@@ -8,11 +8,12 @@
 $functions_dir = get_template_directory() . '/functions/';
 
 $function_files = array(
-    'images.php',           
-    'options.php',            
-    'customizer.php',         
-    'generateur.php',       
-    'genere-boutons.php'      
+    'images.php',
+    'options.php',
+    'customizer.php',
+    'generateur.php',
+    'genere-boutons.php',
+    'page-templates.php' 
 );
 
 foreach ($function_files as $file) {
