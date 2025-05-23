@@ -2050,4 +2050,26 @@ footer {
   100% {
     transform: translateY(0);
   }
+}
+/**
+ * PAYS
+ *
+ *  styles de pays
+ */
+.galerie__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.carte-pays {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+
+.carte-pays:hover {
+  transform: scale(1.03);
 }/*# sourceMappingURL=style.css.map */
